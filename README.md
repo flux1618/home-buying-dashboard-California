@@ -1,8 +1,14 @@
 # Home-Buying Decision Engine — Los Angeles County
 
+**Live dashboard:** <https://flux1618.github.io/home-buying-dashboard-California/>
+
 A local-first decision engine for comparing a buyer's **all-in** monthly cost,
 property evidence, commute fit, risk caveats, and school-data uncertainty. This
 is not a listing browser and does not make an offer recommendation.
+
+The published site is the static frontend only (`index.html`, `app.js`,
+`data.json`); the Python engine, tests, and ledger under `analyzer/`, `service/`,
+and `ledger/` are meant to be run locally against your own inputs.
 
 The current scenario is anchored at **Keck Hospital of USC, 1500 San Pablo St,
 Los Angeles, CA 90033**, with a weekday arrival target of 06:30–07:00. A result
