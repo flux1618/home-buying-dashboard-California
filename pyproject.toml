@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "home-buying-analyzer"
+version = "0.1.0"
+description = "Deterministic property scoring engine for the Los Angeles home purchase"
+requires-python = ">=3.11"          # tomllib is stdlib from 3.11
+dependencies = []                    # core is stdlib-only by design, see docs/adr/0002
+
+[project.optional-dependencies]
+# The HTTP door is optional on purpose. The CLI, the batch runner, and the scoring core
+# all work with none of this installed, which is what keeps ADR 0002 enforceable and
+# what lets the container stay small. See service/__init__.py.
+api = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "python-multipart>=0.0.9",   # required for the CSV upload on /shortlist
+]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27",                 # httpx backs fastapi's TestClient
+    "home-buying-analyzer[api]",   # test_service.py exercises the real HTTP door
+]
+# Only the bounded-Parquet snapshot writer needs Arrow; the analyzer and its runtime stay stdlib-only.
+parcels = ["pyarrow>=25.0"]
+
+[tool.setuptools.packages.find]
+# `ledger*` is here for a reason worth remembering: CI installs the project and then runs
+# bare `pytest`, which does not put the working directory on sys.path. A package that is
+# importable locally because of the current directory and missing from this list passes
+# every local run and fails in CI with ModuleNotFoundError. That has happened once already,
+# with the scripts under tools/.
+include = ["analyzer*", "service*", "ledger*"]
+
+[tool.setuptools.package-data]
+# The .txt is the sample inspection report the extractor's docs and tests point at. Left out
+# of an installed copy it would make `python -m analyzer.extract.cli read <sample>` -- the
+# first command in the extraction docs -- fail for anyone who installed rather than cloned.
+analyzer = ["fixtures/*.json", "fixtures/*.txt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Live tests are opt-in: `pytest -m live`. A suite that fails because a county server is
+# down teaches you nothing about your code, so those checks stay out of the default run.
+addopts = "-q --strict-markers -m 'not live'"
+markers = [
+    "live: hits real public endpoints; run with `pytest -m live` to verify contracts",
+]

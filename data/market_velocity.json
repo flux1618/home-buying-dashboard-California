@@ -1,0 +1,5587 @@
+{
+  "attribution": "Data provided by Redfin, a national real estate brokerage.",
+  "fetched_at": "2026-08-20T02:08:45+00:00",
+  "geography": {
+    "county_fips": "45083",
+    "county_label": "Spartanburg County, SC",
+    "metro_code": "43900",
+    "metro_label": "Spartanburg, SC (county-equivalent market scope)",
+    "metro_scope_note": "CBSA 43900 is represented by Spartanburg County here; verify this mapping if OMB delineations change.",
+    "metro_scope_source_url": "https://www2.census.gov/programs-surveys/popest/datasets/2020-2022/metro/totals/cbsa-est2022.csv",
+    "target_zip_source": "buyer_profile.toml [market_velocity].target_zips",
+    "target_zips": [
+      "29301",
+      "29302",
+      "29303",
+      "29306",
+      "29307",
+      "29316",
+      "29323",
+      "29334",
+      "29346",
+      "29349",
+      "29365",
+      "29369",
+      "29372",
+      "29376",
+      "29385",
+      "29388",
+      "29650",
+      "29651"
+    ]
+  },
+  "license_note": "Redfin Data Center data is used here only for this non-commercial personal decision-support repository with Redfin attribution. The repository commits a small derived aggregate snapshot, does not retain or redistribute the raw downloads, and does not sell, sublicense, or use them to operate a commercial data product.",
+  "markets": {
+    "county": {
+      "45083": {
+        "current": {
+          "active_inventory": 2260,
+          "median_days_on_market": 59,
+          "months_of_supply": 3.8,
+          "new_listings": 790,
+          "price_cut_share": 0.4252212389,
+          "sale_to_list_ratio": 0.9885387248
+        },
+        "history": [
+          {
+            "active_inventory": 2415,
+            "median_days_on_market": 64,
+            "months_of_supply": 3.1,
+            "new_listings": 925,
+            "period_begin": "2025-05-01",
+            "price_cut_share": 0.300621118,
+            "sale_to_list_ratio": 0.9859630658
+          },
+          {
+            "active_inventory": 2395,
+            "median_days_on_market": 61,
+            "months_of_supply": 3.3,
+            "new_listings": 786,
+            "period_begin": "2025-06-01",
+            "price_cut_share": 0.3244258873,
+            "sale_to_list_ratio": 0.9858351249
+          },
+          {
+            "active_inventory": 2459,
+            "median_days_on_market": 56,
+            "months_of_supply": 3.6,
+            "new_listings": 840,
+            "period_begin": "2025-07-01",
+            "price_cut_share": 0.3765758438,
+            "sale_to_list_ratio": 0.9840569658
+          },
+          {
+            "active_inventory": 2424,
+            "median_days_on_market": 63,
+            "months_of_supply": 4,
+            "new_listings": 729,
+            "period_begin": "2025-08-01",
+            "price_cut_share": 0.347359736,
+            "sale_to_list_ratio": 0.9817214295
+          },
+          {
+            "active_inventory": 2379,
+            "median_days_on_market": 77,
+            "months_of_supply": 3.9,
+            "new_listings": 680,
+            "period_begin": "2025-09-01",
+            "price_cut_share": 0.3135771332,
+            "sale_to_list_ratio": 0.9819812115
+          },
+          {
+            "active_inventory": 2418,
+            "median_days_on_market": 67,
+            "months_of_supply": 4.8,
+            "new_listings": 712,
+            "period_begin": "2025-10-01",
+            "price_cut_share": 0.3755169562,
+            "sale_to_list_ratio": 0.979854801
+          },
+          {
+            "active_inventory": 2356,
+            "median_days_on_market": 63,
+            "months_of_supply": 5.2,
+            "new_listings": 535,
+            "period_begin": "2025-11-01",
+            "price_cut_share": 0.3391341256,
+            "sale_to_list_ratio": 0.9807285259
+          },
+          {
+            "active_inventory": 2146,
+            "median_days_on_market": 86,
+            "months_of_supply": 3.4,
+            "new_listings": 430,
+            "period_begin": "2025-12-01",
+            "price_cut_share": 0.2460391426,
+            "sale_to_list_ratio": 0.983759036
+          },
+          {
+            "active_inventory": 2138,
+            "median_days_on_market": 79,
+            "months_of_supply": 5.8,
+            "new_listings": 595,
+            "period_begin": "2026-01-01",
+            "price_cut_share": 0.2628624883,
+            "sale_to_list_ratio": 0.9855155605
+          },
+          {
+            "active_inventory": 2195,
+            "median_days_on_market": 97,
+            "months_of_supply": 5.5,
+            "new_listings": 693,
+            "period_begin": "2026-02-01",
+            "price_cut_share": 0.2924829157,
+            "sale_to_list_ratio": 0.9821095557
+          },
+          {
+            "active_inventory": 2187,
+            "median_days_on_market": 94,
+            "months_of_supply": 3.9,
+            "new_listings": 839,
+            "period_begin": "2026-03-01",
+            "price_cut_share": 0.3200731596,
+            "sale_to_list_ratio": 0.9841440706
+          },
+          {
+            "active_inventory": 2330,
+            "median_days_on_market": 67,
+            "months_of_supply": 3.8,
+            "new_listings": 933,
+            "period_begin": "2026-04-01",
+            "price_cut_share": 0.3360515021,
+            "sale_to_list_ratio": 0.9823887245
+          },
+          {
+            "active_inventory": 2260,
+            "median_days_on_market": 59,
+            "months_of_supply": 3.8,
+            "new_listings": 790,
+            "period_begin": "2026-05-01",
+            "price_cut_share": 0.4252212389,
+            "sale_to_list_ratio": 0.9885387248
+          }
+        ],
+        "label": "Spartanburg County, SC",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-05-01",
+        "period_duration_days": 30,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -21.940559
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 36.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 32.514286
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 1.583916
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -17.5
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -4.971429
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.055245
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -0.05
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -0.16
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 4.405594
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -24.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 84.571429
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 5.8e-05
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.052574
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.032659
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.000183
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.002197
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.000473
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": -155.0,
+            "direction": "decreasing",
+            "percent_change": -0.064182,
+            "prior_value": 2415
+          },
+          "median_days_on_market": {
+            "absolute_change": -5.0,
+            "direction": "decreasing",
+            "percent_change": -0.078125,
+            "prior_value": 64
+          },
+          "months_of_supply": {
+            "absolute_change": 0.7,
+            "direction": "increasing",
+            "percent_change": 0.225806,
+            "prior_value": 3.1
+          },
+          "new_listings": {
+            "absolute_change": -135.0,
+            "direction": "decreasing",
+            "percent_change": -0.145946,
+            "prior_value": 925
+          },
+          "price_cut_share": {
+            "absolute_change": 0.1246,
+            "direction": "increasing",
+            "percent_change": 0.414475,
+            "prior_value": 0.300621118
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.002576,
+            "direction": "increasing",
+            "percent_change": 0.002613,
+            "prior_value": 0.9859630658
+          }
+        }
+      }
+    },
+    "metro": {
+      "43900": {
+        "current": {
+          "active_inventory": 2260,
+          "median_days_on_market": 59,
+          "months_of_supply": 3.8,
+          "new_listings": 790,
+          "price_cut_share": 0.4252212389,
+          "sale_to_list_ratio": 0.9885387248
+        },
+        "history": [
+          {
+            "active_inventory": 2415,
+            "median_days_on_market": 64,
+            "months_of_supply": 3.1,
+            "new_listings": 925,
+            "period_begin": "2025-05-01",
+            "price_cut_share": 0.300621118,
+            "sale_to_list_ratio": 0.9859630658
+          },
+          {
+            "active_inventory": 2395,
+            "median_days_on_market": 61,
+            "months_of_supply": 3.3,
+            "new_listings": 786,
+            "period_begin": "2025-06-01",
+            "price_cut_share": 0.3244258873,
+            "sale_to_list_ratio": 0.9858351249
+          },
+          {
+            "active_inventory": 2459,
+            "median_days_on_market": 56,
+            "months_of_supply": 3.6,
+            "new_listings": 840,
+            "period_begin": "2025-07-01",
+            "price_cut_share": 0.3765758438,
+            "sale_to_list_ratio": 0.9840569658
+          },
+          {
+            "active_inventory": 2424,
+            "median_days_on_market": 63,
+            "months_of_supply": 4,
+            "new_listings": 729,
+            "period_begin": "2025-08-01",
+            "price_cut_share": 0.347359736,
+            "sale_to_list_ratio": 0.9817214295
+          },
+          {
+            "active_inventory": 2379,
+            "median_days_on_market": 77,
+            "months_of_supply": 3.9,
+            "new_listings": 680,
+            "period_begin": "2025-09-01",
+            "price_cut_share": 0.3135771332,
+            "sale_to_list_ratio": 0.9819812115
+          },
+          {
+            "active_inventory": 2418,
+            "median_days_on_market": 67,
+            "months_of_supply": 4.8,
+            "new_listings": 712,
+            "period_begin": "2025-10-01",
+            "price_cut_share": 0.3755169562,
+            "sale_to_list_ratio": 0.979854801
+          },
+          {
+            "active_inventory": 2356,
+            "median_days_on_market": 63,
+            "months_of_supply": 5.2,
+            "new_listings": 535,
+            "period_begin": "2025-11-01",
+            "price_cut_share": 0.3391341256,
+            "sale_to_list_ratio": 0.9807285259
+          },
+          {
+            "active_inventory": 2146,
+            "median_days_on_market": 86,
+            "months_of_supply": 3.4,
+            "new_listings": 430,
+            "period_begin": "2025-12-01",
+            "price_cut_share": 0.2460391426,
+            "sale_to_list_ratio": 0.983759036
+          },
+          {
+            "active_inventory": 2138,
+            "median_days_on_market": 79,
+            "months_of_supply": 5.8,
+            "new_listings": 595,
+            "period_begin": "2026-01-01",
+            "price_cut_share": 0.2628624883,
+            "sale_to_list_ratio": 0.9855155605
+          },
+          {
+            "active_inventory": 2195,
+            "median_days_on_market": 97,
+            "months_of_supply": 5.5,
+            "new_listings": 693,
+            "period_begin": "2026-02-01",
+            "price_cut_share": 0.2924829157,
+            "sale_to_list_ratio": 0.9821095557
+          },
+          {
+            "active_inventory": 2187,
+            "median_days_on_market": 94,
+            "months_of_supply": 3.9,
+            "new_listings": 839,
+            "period_begin": "2026-03-01",
+            "price_cut_share": 0.3200731596,
+            "sale_to_list_ratio": 0.9841440706
+          },
+          {
+            "active_inventory": 2330,
+            "median_days_on_market": 67,
+            "months_of_supply": 3.8,
+            "new_listings": 933,
+            "period_begin": "2026-04-01",
+            "price_cut_share": 0.3360515021,
+            "sale_to_list_ratio": 0.9823887245
+          },
+          {
+            "active_inventory": 2260,
+            "median_days_on_market": 59,
+            "months_of_supply": 3.8,
+            "new_listings": 790,
+            "period_begin": "2026-05-01",
+            "price_cut_share": 0.4252212389,
+            "sale_to_list_ratio": 0.9885387248
+          }
+        ],
+        "label": "Spartanburg, SC (county-equivalent market scope)",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-05-01",
+        "period_duration_days": 30,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -21.940559
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 36.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 32.514286
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 1.583916
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -17.5
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -4.971429
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.055245
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -0.05
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -0.16
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 4.405594
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -24.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 84.571429
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 5.8e-05
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.052574
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.032659
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.000183
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.002197
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.000473
+            }
+          }
+        },
+        "source_scope": "county",
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": -155.0,
+            "direction": "decreasing",
+            "percent_change": -0.064182,
+            "prior_value": 2415
+          },
+          "median_days_on_market": {
+            "absolute_change": -5.0,
+            "direction": "decreasing",
+            "percent_change": -0.078125,
+            "prior_value": 64
+          },
+          "months_of_supply": {
+            "absolute_change": 0.7,
+            "direction": "increasing",
+            "percent_change": 0.225806,
+            "prior_value": 3.1
+          },
+          "new_listings": {
+            "absolute_change": -135.0,
+            "direction": "decreasing",
+            "percent_change": -0.145946,
+            "prior_value": 925
+          },
+          "price_cut_share": {
+            "absolute_change": 0.1246,
+            "direction": "increasing",
+            "percent_change": 0.414475,
+            "prior_value": 0.300621118
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.002576,
+            "direction": "increasing",
+            "percent_change": 0.002613,
+            "prior_value": 0.9859630658
+          }
+        }
+      }
+    },
+    "zip": {
+      "29301": {
+        "current": {
+          "active_inventory": 194,
+          "median_days_on_market": 72.5,
+          "months_of_supply": null,
+          "new_listings": 239,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9759689739
+        },
+        "history": [
+          {
+            "active_inventory": 149,
+            "median_days_on_market": 35,
+            "months_of_supply": null,
+            "new_listings": 188,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9723657776
+          },
+          {
+            "active_inventory": 173,
+            "median_days_on_market": 35,
+            "months_of_supply": null,
+            "new_listings": 216,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.972785807
+          },
+          {
+            "active_inventory": 146,
+            "median_days_on_market": 39,
+            "months_of_supply": null,
+            "new_listings": 202,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9796475967
+          },
+          {
+            "active_inventory": 161,
+            "median_days_on_market": 41,
+            "months_of_supply": null,
+            "new_listings": 195,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9782028686
+          },
+          {
+            "active_inventory": 171,
+            "median_days_on_market": 45.5,
+            "months_of_supply": null,
+            "new_listings": 180,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9773847542
+          },
+          {
+            "active_inventory": 184,
+            "median_days_on_market": 49.5,
+            "months_of_supply": null,
+            "new_listings": 193,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9769992717
+          },
+          {
+            "active_inventory": 188,
+            "median_days_on_market": 55,
+            "months_of_supply": null,
+            "new_listings": 178,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.977311573
+          },
+          {
+            "active_inventory": 167,
+            "median_days_on_market": 56,
+            "months_of_supply": null,
+            "new_listings": 143,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9819075848
+          },
+          {
+            "active_inventory": 169,
+            "median_days_on_market": 61.5,
+            "months_of_supply": null,
+            "new_listings": 118,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.982988765
+          },
+          {
+            "active_inventory": 172,
+            "median_days_on_market": 71,
+            "months_of_supply": null,
+            "new_listings": 125,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9832628677
+          },
+          {
+            "active_inventory": 175,
+            "median_days_on_market": 89,
+            "months_of_supply": null,
+            "new_listings": 179,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9760458
+          },
+          {
+            "active_inventory": 191,
+            "median_days_on_market": 88,
+            "months_of_supply": null,
+            "new_listings": 220,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9748396744
+          },
+          {
+            "active_inventory": 194,
+            "median_days_on_market": 72.5,
+            "months_of_supply": null,
+            "new_listings": 239,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9759689739
+          }
+        ],
+        "label": "Zip Code: 29301",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 2.353147
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 9.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 5.828571
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 4.734266
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -8.25
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 5.142857
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.811189
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 30.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 24.0
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.0001
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -3.8e-05
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -0.001753
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": 45.0,
+            "direction": "increasing",
+            "percent_change": 0.302013,
+            "prior_value": 149
+          },
+          "median_days_on_market": {
+            "absolute_change": 37.5,
+            "direction": "increasing",
+            "percent_change": 1.071429,
+            "prior_value": 35
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": 51.0,
+            "direction": "increasing",
+            "percent_change": 0.271277,
+            "prior_value": 188
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.003603,
+            "direction": "increasing",
+            "percent_change": 0.003705,
+            "prior_value": 0.9723657776
+          }
+        }
+      },
+      "29302": {
+        "current": {
+          "active_inventory": 77,
+          "median_days_on_market": 52,
+          "months_of_supply": null,
+          "new_listings": 83,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9851626728
+        },
+        "history": [
+          {
+            "active_inventory": 76,
+            "median_days_on_market": 69,
+            "months_of_supply": null,
+            "new_listings": 80,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9740176882
+          },
+          {
+            "active_inventory": 74,
+            "median_days_on_market": 48.5,
+            "months_of_supply": null,
+            "new_listings": 93,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.982934231
+          },
+          {
+            "active_inventory": 71,
+            "median_days_on_market": 52,
+            "months_of_supply": null,
+            "new_listings": 93,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9786376148
+          },
+          {
+            "active_inventory": 82,
+            "median_days_on_market": 41,
+            "months_of_supply": null,
+            "new_listings": 90,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9748942069
+          },
+          {
+            "active_inventory": 81,
+            "median_days_on_market": 53,
+            "months_of_supply": null,
+            "new_listings": 92,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9686285191
+          },
+          {
+            "active_inventory": 71,
+            "median_days_on_market": 58.5,
+            "months_of_supply": null,
+            "new_listings": 82,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.964786627
+          },
+          {
+            "active_inventory": 75,
+            "median_days_on_market": 62,
+            "months_of_supply": null,
+            "new_listings": 77,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9608610737
+          },
+          {
+            "active_inventory": 68,
+            "median_days_on_market": 58.5,
+            "months_of_supply": null,
+            "new_listings": 60,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9608260417
+          },
+          {
+            "active_inventory": 76,
+            "median_days_on_market": 63,
+            "months_of_supply": null,
+            "new_listings": 66,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.961599968
+          },
+          {
+            "active_inventory": 86,
+            "median_days_on_market": 64.5,
+            "months_of_supply": null,
+            "new_listings": 62,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9530835314
+          },
+          {
+            "active_inventory": 90,
+            "median_days_on_market": 60,
+            "months_of_supply": null,
+            "new_listings": 86,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9720114076
+          },
+          {
+            "active_inventory": 77,
+            "median_days_on_market": 29,
+            "months_of_supply": null,
+            "new_listings": 81,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9708389806
+          },
+          {
+            "active_inventory": 77,
+            "median_days_on_market": 52,
+            "months_of_supply": null,
+            "new_listings": 83,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9851626728
+          }
+        ],
+        "label": "Zip Code: 29302",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.615385
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -6.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 1.485714
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.111888
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -4.0
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -3.971429
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -1.611888
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -1.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 5.257143
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.000536
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.006576
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.004809
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": 1.0,
+            "direction": "increasing",
+            "percent_change": 0.013158,
+            "prior_value": 76
+          },
+          "median_days_on_market": {
+            "absolute_change": -17.0,
+            "direction": "decreasing",
+            "percent_change": -0.246377,
+            "prior_value": 69
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": 3.0,
+            "direction": "increasing",
+            "percent_change": 0.0375,
+            "prior_value": 80
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.011145,
+            "direction": "increasing",
+            "percent_change": 0.011442,
+            "prior_value": 0.9740176882
+          }
+        }
+      },
+      "29303": {
+        "current": {
+          "active_inventory": 171,
+          "median_days_on_market": 62.5,
+          "months_of_supply": null,
+          "new_listings": 198,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9875478756
+        },
+        "history": [
+          {
+            "active_inventory": 159,
+            "median_days_on_market": 77,
+            "months_of_supply": null,
+            "new_listings": 156,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9760723486
+          },
+          {
+            "active_inventory": 148,
+            "median_days_on_market": 77,
+            "months_of_supply": null,
+            "new_listings": 149,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9747140269
+          },
+          {
+            "active_inventory": 150,
+            "median_days_on_market": 75,
+            "months_of_supply": null,
+            "new_listings": 133,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9732621856
+          },
+          {
+            "active_inventory": 136,
+            "median_days_on_market": 67,
+            "months_of_supply": null,
+            "new_listings": 125,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9779598836
+          },
+          {
+            "active_inventory": 134,
+            "median_days_on_market": 81,
+            "months_of_supply": null,
+            "new_listings": 117,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9793241278
+          },
+          {
+            "active_inventory": 144,
+            "median_days_on_market": 82,
+            "months_of_supply": null,
+            "new_listings": 117,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.979801353
+          },
+          {
+            "active_inventory": 147,
+            "median_days_on_market": 80,
+            "months_of_supply": null,
+            "new_listings": 120,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9768995548
+          },
+          {
+            "active_inventory": 129,
+            "median_days_on_market": 57,
+            "months_of_supply": null,
+            "new_listings": 102,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9857421788
+          },
+          {
+            "active_inventory": 149,
+            "median_days_on_market": 68.5,
+            "months_of_supply": null,
+            "new_listings": 126,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.988058009
+          },
+          {
+            "active_inventory": 147,
+            "median_days_on_market": 71.5,
+            "months_of_supply": null,
+            "new_listings": 128,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9939168414
+          },
+          {
+            "active_inventory": 138,
+            "median_days_on_market": 79,
+            "months_of_supply": null,
+            "new_listings": 166,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9943631579
+          },
+          {
+            "active_inventory": 149,
+            "median_days_on_market": 68,
+            "months_of_supply": null,
+            "new_listings": 166,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9858462425
+          },
+          {
+            "active_inventory": 171,
+            "median_days_on_market": 62.5,
+            "months_of_supply": null,
+            "new_listings": 198,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9875478756
+          }
+        ],
+        "label": "Zip Code: 29303",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 1.118881
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 16.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 5.742857
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.872378
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -8.25
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.957143
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 4.15035
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 16.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 18.228571
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.001664
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -0.003408
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 8.1e-05
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": 12.0,
+            "direction": "increasing",
+            "percent_change": 0.075472,
+            "prior_value": 159
+          },
+          "median_days_on_market": {
+            "absolute_change": -14.5,
+            "direction": "decreasing",
+            "percent_change": -0.188312,
+            "prior_value": 77
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": 42.0,
+            "direction": "increasing",
+            "percent_change": 0.269231,
+            "prior_value": 156
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.011476,
+            "direction": "increasing",
+            "percent_change": 0.011757,
+            "prior_value": 0.9760723486
+          }
+        }
+      },
+      "29306": {
+        "current": {
+          "active_inventory": 124,
+          "median_days_on_market": 96.5,
+          "months_of_supply": null,
+          "new_listings": 123,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9807439895
+        },
+        "history": [
+          {
+            "active_inventory": 125,
+            "median_days_on_market": 66.5,
+            "months_of_supply": null,
+            "new_listings": 153,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9680320757
+          },
+          {
+            "active_inventory": 128,
+            "median_days_on_market": 51,
+            "months_of_supply": null,
+            "new_listings": 142,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9740585471
+          },
+          {
+            "active_inventory": 115,
+            "median_days_on_market": 51,
+            "months_of_supply": null,
+            "new_listings": 129,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9745028971
+          },
+          {
+            "active_inventory": 116,
+            "median_days_on_market": 56,
+            "months_of_supply": null,
+            "new_listings": 110,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9777081166
+          },
+          {
+            "active_inventory": 124,
+            "median_days_on_market": 56,
+            "months_of_supply": null,
+            "new_listings": 113,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9662807713
+          },
+          {
+            "active_inventory": 136,
+            "median_days_on_market": 65,
+            "months_of_supply": null,
+            "new_listings": 111,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9672623475
+          },
+          {
+            "active_inventory": 130,
+            "median_days_on_market": 48.5,
+            "months_of_supply": null,
+            "new_listings": 96,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9636046157
+          },
+          {
+            "active_inventory": 125,
+            "median_days_on_market": 67,
+            "months_of_supply": null,
+            "new_listings": 71,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9798303789
+          },
+          {
+            "active_inventory": 120,
+            "median_days_on_market": 77,
+            "months_of_supply": null,
+            "new_listings": 69,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9734561663
+          },
+          {
+            "active_inventory": 114,
+            "median_days_on_market": 85,
+            "months_of_supply": null,
+            "new_listings": 71,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9746540968
+          },
+          {
+            "active_inventory": 131,
+            "median_days_on_market": 116,
+            "months_of_supply": null,
+            "new_listings": 108,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9735347353
+          },
+          {
+            "active_inventory": 134,
+            "median_days_on_market": 114.5,
+            "months_of_supply": null,
+            "new_listings": 116,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9806348441
+          },
+          {
+            "active_inventory": 124,
+            "median_days_on_market": 96.5,
+            "months_of_supply": null,
+            "new_listings": 123,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9807439895
+          }
+        ],
+        "label": "Zip Code: 29306",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.451049
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -3.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 1.542857
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 5.914336
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -9.75
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 8.314286
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -2.451049
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 7.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 12.514286
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.000616
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.003605
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.000714
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": -1.0,
+            "direction": "decreasing",
+            "percent_change": -0.008,
+            "prior_value": 125
+          },
+          "median_days_on_market": {
+            "absolute_change": 30.0,
+            "direction": "increasing",
+            "percent_change": 0.451128,
+            "prior_value": 66.5
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": -30.0,
+            "direction": "decreasing",
+            "percent_change": -0.196078,
+            "prior_value": 153
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.012712,
+            "direction": "increasing",
+            "percent_change": 0.013132,
+            "prior_value": 0.9680320757
+          }
+        }
+      },
+      "29307": {
+        "current": {
+          "active_inventory": 136,
+          "median_days_on_market": 67,
+          "months_of_supply": null,
+          "new_listings": 132,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9929803589
+        },
+        "history": [
+          {
+            "active_inventory": 132,
+            "median_days_on_market": 57.5,
+            "months_of_supply": null,
+            "new_listings": 152,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9767583291
+          },
+          {
+            "active_inventory": 115,
+            "median_days_on_market": 45,
+            "months_of_supply": null,
+            "new_listings": 159,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.986441659
+          },
+          {
+            "active_inventory": 137,
+            "median_days_on_market": 40.5,
+            "months_of_supply": null,
+            "new_listings": 157,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9794047586
+          },
+          {
+            "active_inventory": 151,
+            "median_days_on_market": 40.5,
+            "months_of_supply": null,
+            "new_listings": 159,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9733548016
+          },
+          {
+            "active_inventory": 149,
+            "median_days_on_market": 44,
+            "months_of_supply": null,
+            "new_listings": 155,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.963004914
+          },
+          {
+            "active_inventory": 146,
+            "median_days_on_market": 63.5,
+            "months_of_supply": null,
+            "new_listings": 117,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9651659458
+          },
+          {
+            "active_inventory": 149,
+            "median_days_on_market": 57.5,
+            "months_of_supply": null,
+            "new_listings": 99,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9709913283
+          },
+          {
+            "active_inventory": 128,
+            "median_days_on_market": 63.5,
+            "months_of_supply": null,
+            "new_listings": 86,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.970148182
+          },
+          {
+            "active_inventory": 137,
+            "median_days_on_market": 61,
+            "months_of_supply": null,
+            "new_listings": 99,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9692393238
+          },
+          {
+            "active_inventory": 140,
+            "median_days_on_market": 89,
+            "months_of_supply": null,
+            "new_listings": 99,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9691743062
+          },
+          {
+            "active_inventory": 134,
+            "median_days_on_market": 64.5,
+            "months_of_supply": null,
+            "new_listings": 117,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9772405334
+          },
+          {
+            "active_inventory": 141,
+            "median_days_on_market": 62,
+            "months_of_supply": null,
+            "new_listings": 128,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9900752085
+          },
+          {
+            "active_inventory": 136,
+            "median_days_on_market": 67,
+            "months_of_supply": null,
+            "new_listings": 132,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9929803589
+          }
+        ],
+        "label": "Zip Code: 29307",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.192308
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 1.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 1.314286
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 2.891608
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 1.25
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -0.114286
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -4.192308
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 7.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 9.571429
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.00083
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.00787
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.005278
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": 4.0,
+            "direction": "increasing",
+            "percent_change": 0.030303,
+            "prior_value": 132
+          },
+          "median_days_on_market": {
+            "absolute_change": 9.5,
+            "direction": "increasing",
+            "percent_change": 0.165217,
+            "prior_value": 57.5
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": -20.0,
+            "direction": "decreasing",
+            "percent_change": -0.131579,
+            "prior_value": 152
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.016222,
+            "direction": "increasing",
+            "percent_change": 0.016608,
+            "prior_value": 0.9767583291
+          }
+        }
+      },
+      "29316": {
+        "current": {
+          "active_inventory": 206,
+          "median_days_on_market": 67,
+          "months_of_supply": null,
+          "new_listings": 256,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9842129645
+        },
+        "history": [
+          {
+            "active_inventory": 205,
+            "median_days_on_market": 57,
+            "months_of_supply": null,
+            "new_listings": 263,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9819139528
+          },
+          {
+            "active_inventory": 199,
+            "median_days_on_market": 57,
+            "months_of_supply": null,
+            "new_listings": 244,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9824842271
+          },
+          {
+            "active_inventory": 203,
+            "median_days_on_market": 46,
+            "months_of_supply": null,
+            "new_listings": 270,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9833300036
+          },
+          {
+            "active_inventory": 184,
+            "median_days_on_market": 42,
+            "months_of_supply": null,
+            "new_listings": 224,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9825110936
+          },
+          {
+            "active_inventory": 194,
+            "median_days_on_market": 41,
+            "months_of_supply": null,
+            "new_listings": 233,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9838189534
+          },
+          {
+            "active_inventory": 194,
+            "median_days_on_market": 42.5,
+            "months_of_supply": null,
+            "new_listings": 208,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9847701962
+          },
+          {
+            "active_inventory": 187,
+            "median_days_on_market": 45,
+            "months_of_supply": null,
+            "new_listings": 204,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9820811856
+          },
+          {
+            "active_inventory": 177,
+            "median_days_on_market": 59,
+            "months_of_supply": null,
+            "new_listings": 182,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9809943182
+          },
+          {
+            "active_inventory": 187,
+            "median_days_on_market": 63,
+            "months_of_supply": null,
+            "new_listings": 180,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9811508178
+          },
+          {
+            "active_inventory": 205,
+            "median_days_on_market": 71.5,
+            "months_of_supply": null,
+            "new_listings": 200,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9844169151
+          },
+          {
+            "active_inventory": 218,
+            "median_days_on_market": 74.5,
+            "months_of_supply": null,
+            "new_listings": 220,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9802759521
+          },
+          {
+            "active_inventory": 224,
+            "median_days_on_market": 65,
+            "months_of_supply": null,
+            "new_listings": 251,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9832104022
+          },
+          {
+            "active_inventory": 206,
+            "median_days_on_market": 67,
+            "months_of_supply": null,
+            "new_listings": 256,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9842129645
+          }
+        ],
+        "label": "Zip Code: 29316",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 1.846154
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -6.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 7.685714
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 2.575175
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -3.75
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 1.4
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -1.181818
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 18.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 17.228571
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -2.3e-05
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.001969
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.000518
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": 1.0,
+            "direction": "increasing",
+            "percent_change": 0.004878,
+            "prior_value": 205
+          },
+          "median_days_on_market": {
+            "absolute_change": 10.0,
+            "direction": "increasing",
+            "percent_change": 0.175439,
+            "prior_value": 57
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": -7.0,
+            "direction": "decreasing",
+            "percent_change": -0.026616,
+            "prior_value": 263
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.002299,
+            "direction": "increasing",
+            "percent_change": 0.002341,
+            "prior_value": 0.9819139528
+          }
+        }
+      },
+      "29323": {
+        "current": {
+          "active_inventory": 82,
+          "median_days_on_market": 96,
+          "months_of_supply": null,
+          "new_listings": 84,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.978401091
+        },
+        "history": [
+          {
+            "active_inventory": 114,
+            "median_days_on_market": 73.5,
+            "months_of_supply": null,
+            "new_listings": 115,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9860600397
+          },
+          {
+            "active_inventory": 118,
+            "median_days_on_market": 65,
+            "months_of_supply": null,
+            "new_listings": 104,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9883499814
+          },
+          {
+            "active_inventory": 118,
+            "median_days_on_market": 62,
+            "months_of_supply": null,
+            "new_listings": 102,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9870670092
+          },
+          {
+            "active_inventory": 97,
+            "median_days_on_market": 62,
+            "months_of_supply": null,
+            "new_listings": 83,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.984763752
+          },
+          {
+            "active_inventory": 88,
+            "median_days_on_market": 75,
+            "months_of_supply": null,
+            "new_listings": 73,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9836184687
+          },
+          {
+            "active_inventory": 96,
+            "median_days_on_market": 102,
+            "months_of_supply": null,
+            "new_listings": 72,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9792845604
+          },
+          {
+            "active_inventory": 113,
+            "median_days_on_market": 88,
+            "months_of_supply": null,
+            "new_listings": 87,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9773761641
+          },
+          {
+            "active_inventory": 105,
+            "median_days_on_market": 81.5,
+            "months_of_supply": null,
+            "new_listings": 78,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9787313883
+          },
+          {
+            "active_inventory": 104,
+            "median_days_on_market": 61,
+            "months_of_supply": null,
+            "new_listings": 74,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9851517997
+          },
+          {
+            "active_inventory": 102,
+            "median_days_on_market": 83.5,
+            "months_of_supply": null,
+            "new_listings": 65,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9778698318
+          },
+          {
+            "active_inventory": 95,
+            "median_days_on_market": 104,
+            "months_of_supply": null,
+            "new_listings": 80,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9706068475
+          },
+          {
+            "active_inventory": 90,
+            "median_days_on_market": 109,
+            "months_of_supply": null,
+            "new_listings": 80,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9709543156
+          },
+          {
+            "active_inventory": 82,
+            "median_days_on_market": 96,
+            "months_of_supply": null,
+            "new_listings": 84,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.978401091
+          }
+        ],
+        "label": "Zip Code: 29323",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -2.013986
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -6.5
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -4.685714
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 3.395105
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -4.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 6.771429
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -1.685315
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 2.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 1.8
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.00127
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.003897
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -0.001472
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": -32.0,
+            "direction": "decreasing",
+            "percent_change": -0.280702,
+            "prior_value": 114
+          },
+          "median_days_on_market": {
+            "absolute_change": 22.5,
+            "direction": "increasing",
+            "percent_change": 0.306122,
+            "prior_value": 73.5
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": -31.0,
+            "direction": "decreasing",
+            "percent_change": -0.269565,
+            "prior_value": 115
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": -0.007659,
+            "direction": "decreasing",
+            "percent_change": -0.007767,
+            "prior_value": 0.9860600397
+          }
+        }
+      },
+      "29334": {
+        "current": {
+          "active_inventory": 81,
+          "median_days_on_market": 57,
+          "months_of_supply": null,
+          "new_listings": 85,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9831608229
+        },
+        "history": [
+          {
+            "active_inventory": 76,
+            "median_days_on_market": 30,
+            "months_of_supply": null,
+            "new_listings": 112,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9816320701
+          },
+          {
+            "active_inventory": 81,
+            "median_days_on_market": 34.5,
+            "months_of_supply": null,
+            "new_listings": 96,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9855168268
+          },
+          {
+            "active_inventory": 88,
+            "median_days_on_market": 49,
+            "months_of_supply": null,
+            "new_listings": 100,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9842617209
+          },
+          {
+            "active_inventory": 84,
+            "median_days_on_market": 49,
+            "months_of_supply": null,
+            "new_listings": 87,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9895425641
+          },
+          {
+            "active_inventory": 88,
+            "median_days_on_market": 49,
+            "months_of_supply": null,
+            "new_listings": 83,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9830156828
+          },
+          {
+            "active_inventory": 98,
+            "median_days_on_market": 53.5,
+            "months_of_supply": null,
+            "new_listings": 82,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.983701691
+          },
+          {
+            "active_inventory": 91,
+            "median_days_on_market": 43,
+            "months_of_supply": null,
+            "new_listings": 77,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9862602759
+          },
+          {
+            "active_inventory": 84,
+            "median_days_on_market": 64,
+            "months_of_supply": null,
+            "new_listings": 68,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9841770029
+          },
+          {
+            "active_inventory": 78,
+            "median_days_on_market": 67,
+            "months_of_supply": null,
+            "new_listings": 50,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9826905565
+          },
+          {
+            "active_inventory": 74,
+            "median_days_on_market": 76,
+            "months_of_supply": null,
+            "new_listings": 50,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9810947846
+          },
+          {
+            "active_inventory": 69,
+            "median_days_on_market": 106,
+            "months_of_supply": null,
+            "new_listings": 58,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9844641214
+          },
+          {
+            "active_inventory": 70,
+            "median_days_on_market": 88,
+            "months_of_supply": null,
+            "new_listings": 69,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9828333183
+          },
+          {
+            "active_inventory": 81,
+            "median_days_on_market": 57,
+            "months_of_supply": null,
+            "new_listings": 85,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9831608229
+          }
+        ],
+        "label": "Zip Code: 29334",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -1.412587
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 6.0
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -1.257143
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 4.174825
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -24.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 1.657143
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -3.052448
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 13.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 4.285714
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.000311
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -0.000652
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -3.7e-05
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": 5.0,
+            "direction": "increasing",
+            "percent_change": 0.065789,
+            "prior_value": 76
+          },
+          "median_days_on_market": {
+            "absolute_change": 27.0,
+            "direction": "increasing",
+            "percent_change": 0.9,
+            "prior_value": 30
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": -27.0,
+            "direction": "decreasing",
+            "percent_change": -0.241071,
+            "prior_value": 112
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.001529,
+            "direction": "increasing",
+            "percent_change": 0.001558,
+            "prior_value": 0.9816320701
+          }
+        }
+      },
+      "29346": {
+        "current": {
+          "active_inventory": 3,
+          "median_days_on_market": 33,
+          "months_of_supply": null,
+          "new_listings": 2,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9545804465
+        },
+        "history": [
+          {
+            "active_inventory": 1,
+            "median_days_on_market": 23,
+            "months_of_supply": null,
+            "new_listings": 2,
+            "period_begin": "2024-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9230769231
+          },
+          {
+            "active_inventory": 1,
+            "median_days_on_market": 23,
+            "months_of_supply": null,
+            "new_listings": 1,
+            "period_begin": "2024-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9230769231
+          },
+          {
+            "active_inventory": 1,
+            "median_days_on_market": 98.5,
+            "months_of_supply": null,
+            "new_listings": 1,
+            "period_begin": "2024-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9728768341
+          },
+          {
+            "active_inventory": null,
+            "median_days_on_market": 174,
+            "months_of_supply": null,
+            "new_listings": null,
+            "period_begin": "2024-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 1.022676745
+          },
+          {
+            "active_inventory": null,
+            "median_days_on_market": 131.5,
+            "months_of_supply": null,
+            "new_listings": null,
+            "period_begin": "2024-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9616385727
+          },
+          {
+            "active_inventory": null,
+            "median_days_on_market": 89,
+            "months_of_supply": null,
+            "new_listings": null,
+            "period_begin": "2024-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9006004003
+          },
+          {
+            "active_inventory": null,
+            "median_days_on_market": 89,
+            "months_of_supply": null,
+            "new_listings": null,
+            "period_begin": "2024-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9006004003
+          },
+          {
+            "active_inventory": 1,
+            "median_days_on_market": 35,
+            "months_of_supply": null,
+            "new_listings": 2,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 1
+          },
+          {
+            "active_inventory": 1,
+            "median_days_on_market": 35,
+            "months_of_supply": null,
+            "new_listings": null,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 1
+          },
+          {
+            "active_inventory": 1,
+            "median_days_on_market": 35,
+            "months_of_supply": null,
+            "new_listings": null,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 1
+          },
+          {
+            "active_inventory": 1,
+            "median_days_on_market": 33,
+            "months_of_supply": null,
+            "new_listings": 1,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9545804465
+          },
+          {
+            "active_inventory": 3,
+            "median_days_on_market": 33,
+            "months_of_supply": null,
+            "new_listings": 3,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9545804465
+          },
+          {
+            "active_inventory": 3,
+            "median_days_on_market": 33,
+            "months_of_supply": null,
+            "new_listings": 2,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9545804465
+          }
+        ],
+        "label": "Zip Code: 29346",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": null,
+              "observations": 12,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 1.0
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 6,
+              "slope_per_month": null
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": null,
+              "observations": 12,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": "flat",
+              "observations": 3,
+              "slope_per_month": 0.0
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 6,
+              "slope_per_month": null
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": null,
+              "observations": 12,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.5
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 6,
+              "slope_per_month": null
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": null,
+              "observations": 12,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": "flat",
+              "observations": 3,
+              "slope_per_month": 0.0
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 6,
+              "slope_per_month": null
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "median_days_on_market": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          }
+        }
+      },
+      "29349": {
+        "current": {
+          "active_inventory": 238,
+          "median_days_on_market": 69.5,
+          "months_of_supply": null,
+          "new_listings": 272,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9881914047
+        },
+        "history": [
+          {
+            "active_inventory": 265,
+            "median_days_on_market": 64,
+            "months_of_supply": null,
+            "new_listings": 307,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9915005291
+          },
+          {
+            "active_inventory": 293,
+            "median_days_on_market": 61,
+            "months_of_supply": null,
+            "new_listings": 323,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9909038745
+          },
+          {
+            "active_inventory": 316,
+            "median_days_on_market": 57,
+            "months_of_supply": null,
+            "new_listings": 303,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9909626337
+          },
+          {
+            "active_inventory": 286,
+            "median_days_on_market": 59,
+            "months_of_supply": null,
+            "new_listings": 263,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9858595803
+          },
+          {
+            "active_inventory": 279,
+            "median_days_on_market": 57,
+            "months_of_supply": null,
+            "new_listings": 241,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.985320465
+          },
+          {
+            "active_inventory": 260,
+            "median_days_on_market": 68,
+            "months_of_supply": null,
+            "new_listings": 222,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9825644572
+          },
+          {
+            "active_inventory": 234,
+            "median_days_on_market": 78,
+            "months_of_supply": null,
+            "new_listings": 201,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9849680415
+          },
+          {
+            "active_inventory": 209,
+            "median_days_on_market": 93,
+            "months_of_supply": null,
+            "new_listings": 172,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9840992516
+          },
+          {
+            "active_inventory": 200,
+            "median_days_on_market": 87.5,
+            "months_of_supply": null,
+            "new_listings": 151,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9873911733
+          },
+          {
+            "active_inventory": 211,
+            "median_days_on_market": 82.5,
+            "months_of_supply": null,
+            "new_listings": 190,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9859727487
+          },
+          {
+            "active_inventory": 231,
+            "median_days_on_market": 85,
+            "months_of_supply": null,
+            "new_listings": 229,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9894172919
+          },
+          {
+            "active_inventory": 244,
+            "median_days_on_market": 92,
+            "months_of_supply": null,
+            "new_listings": 269,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.985442824
+          },
+          {
+            "active_inventory": 238,
+            "median_days_on_market": 69.5,
+            "months_of_supply": null,
+            "new_listings": 272,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9881914047
+          }
+        ],
+        "label": "Zip Code: 29349",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -7.632867
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 3.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 8.485714
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 2.767483
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -7.75
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -2.9
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -5.601399
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 21.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 25.514286
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.000132
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -0.000613
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.000516
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": -27.0,
+            "direction": "decreasing",
+            "percent_change": -0.101887,
+            "prior_value": 265
+          },
+          "median_days_on_market": {
+            "absolute_change": 5.5,
+            "direction": "increasing",
+            "percent_change": 0.085938,
+            "prior_value": 64
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": -35.0,
+            "direction": "decreasing",
+            "percent_change": -0.114007,
+            "prior_value": 307
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": -0.003309,
+            "direction": "decreasing",
+            "percent_change": -0.003337,
+            "prior_value": 0.9915005291
+          }
+        }
+      },
+      "29365": {
+        "current": {
+          "active_inventory": 114,
+          "median_days_on_market": 66.5,
+          "months_of_supply": null,
+          "new_listings": 136,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9910252869
+        },
+        "history": [
+          {
+            "active_inventory": 129,
+            "median_days_on_market": 65,
+            "months_of_supply": null,
+            "new_listings": 161,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9965907375
+          },
+          {
+            "active_inventory": 121,
+            "median_days_on_market": 66,
+            "months_of_supply": null,
+            "new_listings": 151,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9956173737
+          },
+          {
+            "active_inventory": 133,
+            "median_days_on_market": 64,
+            "months_of_supply": null,
+            "new_listings": 144,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9973298137
+          },
+          {
+            "active_inventory": 125,
+            "median_days_on_market": 65,
+            "months_of_supply": null,
+            "new_listings": 126,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9977579436
+          },
+          {
+            "active_inventory": 130,
+            "median_days_on_market": 63,
+            "months_of_supply": null,
+            "new_listings": 129,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9957532774
+          },
+          {
+            "active_inventory": 152,
+            "median_days_on_market": 67,
+            "months_of_supply": null,
+            "new_listings": 135,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9908048849
+          },
+          {
+            "active_inventory": 138,
+            "median_days_on_market": 75,
+            "months_of_supply": null,
+            "new_listings": 121,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9887148143
+          },
+          {
+            "active_inventory": 119,
+            "median_days_on_market": 71,
+            "months_of_supply": null,
+            "new_listings": 115,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9938890265
+          },
+          {
+            "active_inventory": 125,
+            "median_days_on_market": 76.5,
+            "months_of_supply": null,
+            "new_listings": 109,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.997921552
+          },
+          {
+            "active_inventory": 124,
+            "median_days_on_market": 81,
+            "months_of_supply": null,
+            "new_listings": 129,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9972205442
+          },
+          {
+            "active_inventory": 102,
+            "median_days_on_market": 78,
+            "months_of_supply": null,
+            "new_listings": 128,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.992197461
+          },
+          {
+            "active_inventory": 105,
+            "median_days_on_market": 80,
+            "months_of_supply": null,
+            "new_listings": 125,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9892067629
+          },
+          {
+            "active_inventory": 114,
+            "median_days_on_market": 66.5,
+            "months_of_supply": null,
+            "new_listings": 136,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9910252869
+          }
+        ],
+        "label": "Zip Code: 29365",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -2.167832
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 6.0
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -3.057143
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 1.241259
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -5.75
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -0.428571
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -1.41958
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 4.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 4.342857
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.00045
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -0.000586
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -0.0013
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": -15.0,
+            "direction": "decreasing",
+            "percent_change": -0.116279,
+            "prior_value": 129
+          },
+          "median_days_on_market": {
+            "absolute_change": 1.5,
+            "direction": "increasing",
+            "percent_change": 0.023077,
+            "prior_value": 65
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": -25.0,
+            "direction": "decreasing",
+            "percent_change": -0.15528,
+            "prior_value": 161
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": -0.005565,
+            "direction": "decreasing",
+            "percent_change": -0.005584,
+            "prior_value": 0.9965907375
+          }
+        }
+      },
+      "29369": {
+        "current": {
+          "active_inventory": 139,
+          "median_days_on_market": 92,
+          "months_of_supply": null,
+          "new_listings": 166,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9896832152
+        },
+        "history": [
+          {
+            "active_inventory": 222,
+            "median_days_on_market": 77.5,
+            "months_of_supply": null,
+            "new_listings": 288,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9952699536
+          },
+          {
+            "active_inventory": 215,
+            "median_days_on_market": 74,
+            "months_of_supply": null,
+            "new_listings": 252,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9929531762
+          },
+          {
+            "active_inventory": 242,
+            "median_days_on_market": 75,
+            "months_of_supply": null,
+            "new_listings": 216,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9929449255
+          },
+          {
+            "active_inventory": 241,
+            "median_days_on_market": 75,
+            "months_of_supply": null,
+            "new_listings": 212,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9895479949
+          },
+          {
+            "active_inventory": 222,
+            "median_days_on_market": 85,
+            "months_of_supply": null,
+            "new_listings": 203,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9909339497
+          },
+          {
+            "active_inventory": 226,
+            "median_days_on_market": 91,
+            "months_of_supply": null,
+            "new_listings": 173,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9893713677
+          },
+          {
+            "active_inventory": 211,
+            "median_days_on_market": 101,
+            "months_of_supply": null,
+            "new_listings": 143,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9891162941
+          },
+          {
+            "active_inventory": 175,
+            "median_days_on_market": 107.5,
+            "months_of_supply": null,
+            "new_listings": 114,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9876680308
+          },
+          {
+            "active_inventory": 174,
+            "median_days_on_market": 114,
+            "months_of_supply": null,
+            "new_listings": 103,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9916338157
+          },
+          {
+            "active_inventory": 176,
+            "median_days_on_market": 117,
+            "months_of_supply": null,
+            "new_listings": 117,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9932513138
+          },
+          {
+            "active_inventory": 170,
+            "median_days_on_market": 114.5,
+            "months_of_supply": null,
+            "new_listings": 145,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9918761717
+          },
+          {
+            "active_inventory": 176,
+            "median_days_on_market": 104,
+            "months_of_supply": null,
+            "new_listings": 173,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9910511499
+          },
+          {
+            "active_inventory": 139,
+            "median_days_on_market": 92,
+            "months_of_supply": null,
+            "new_listings": 166,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9896832152
+          }
+        ],
+        "label": "Zip Code: 29369",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -8.213287
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -15.5
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -5.142857
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 3.395105
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -11.25
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -3.142857
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -8.63986
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 10.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 14.228571
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -6.9e-05
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -0.001096
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.000199
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": -83.0,
+            "direction": "decreasing",
+            "percent_change": -0.373874,
+            "prior_value": 222
+          },
+          "median_days_on_market": {
+            "absolute_change": 14.5,
+            "direction": "increasing",
+            "percent_change": 0.187097,
+            "prior_value": 77.5
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": -122.0,
+            "direction": "decreasing",
+            "percent_change": -0.423611,
+            "prior_value": 288
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": -0.005587,
+            "direction": "decreasing",
+            "percent_change": -0.005614,
+            "prior_value": 0.9952699536
+          }
+        }
+      },
+      "29372": {
+        "current": {
+          "active_inventory": 12,
+          "median_days_on_market": 105,
+          "months_of_supply": null,
+          "new_listings": 11,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9190884211
+        },
+        "history": [
+          {
+            "active_inventory": 11,
+            "median_days_on_market": 73.5,
+            "months_of_supply": null,
+            "new_listings": 14,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9405774376
+          },
+          {
+            "active_inventory": 14,
+            "median_days_on_market": 57,
+            "months_of_supply": null,
+            "new_listings": 13,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9458518018
+          },
+          {
+            "active_inventory": 15,
+            "median_days_on_market": 70,
+            "months_of_supply": null,
+            "new_listings": 15,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9430091648
+          },
+          {
+            "active_inventory": 13,
+            "median_days_on_market": 63.5,
+            "months_of_supply": null,
+            "new_listings": 15,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9697186521
+          },
+          {
+            "active_inventory": 14,
+            "median_days_on_market": 78,
+            "months_of_supply": null,
+            "new_listings": 14,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9700507401
+          },
+          {
+            "active_inventory": 16,
+            "median_days_on_market": 64,
+            "months_of_supply": null,
+            "new_listings": 14,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9772855059
+          },
+          {
+            "active_inventory": 18,
+            "median_days_on_market": 62,
+            "months_of_supply": null,
+            "new_listings": 13,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9773154338
+          },
+          {
+            "active_inventory": 20,
+            "median_days_on_market": 65,
+            "months_of_supply": null,
+            "new_listings": 12,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9756614216
+          },
+          {
+            "active_inventory": 18,
+            "median_days_on_market": 79.5,
+            "months_of_supply": null,
+            "new_listings": 10,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9610949412
+          },
+          {
+            "active_inventory": 15,
+            "median_days_on_market": 91,
+            "months_of_supply": null,
+            "new_listings": 9,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9571251095
+          },
+          {
+            "active_inventory": 13,
+            "median_days_on_market": 57,
+            "months_of_supply": null,
+            "new_listings": 7,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9307541444
+          },
+          {
+            "active_inventory": 11,
+            "median_days_on_market": 93.5,
+            "months_of_supply": null,
+            "new_listings": 8,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.8873920123
+          },
+          {
+            "active_inventory": 12,
+            "median_days_on_market": 105,
+            "months_of_supply": null,
+            "new_listings": 11,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9190884211
+          }
+        ],
+        "label": "Zip Code: 29372",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.157343
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -0.5
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -1.8
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 2.826923
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 24.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 5.942857
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.625874
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 2.0
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -0.371429
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.004135
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -0.005833
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -0.015153
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": 1.0,
+            "direction": "increasing",
+            "percent_change": 0.090909,
+            "prior_value": 11
+          },
+          "median_days_on_market": {
+            "absolute_change": 31.5,
+            "direction": "increasing",
+            "percent_change": 0.428571,
+            "prior_value": 73.5
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": -3.0,
+            "direction": "decreasing",
+            "percent_change": -0.214286,
+            "prior_value": 14
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": -0.021489,
+            "direction": "decreasing",
+            "percent_change": -0.022847,
+            "prior_value": 0.9405774376
+          }
+        }
+      },
+      "29376": {
+        "current": {
+          "active_inventory": 43,
+          "median_days_on_market": 100,
+          "months_of_supply": null,
+          "new_listings": 54,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9908395541
+        },
+        "history": [
+          {
+            "active_inventory": 44,
+            "median_days_on_market": 79.5,
+            "months_of_supply": null,
+            "new_listings": 41,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9803629175
+          },
+          {
+            "active_inventory": 43,
+            "median_days_on_market": 72,
+            "months_of_supply": null,
+            "new_listings": 32,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9800430474
+          },
+          {
+            "active_inventory": 44,
+            "median_days_on_market": 78.5,
+            "months_of_supply": null,
+            "new_listings": 34,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9811134127
+          },
+          {
+            "active_inventory": 43,
+            "median_days_on_market": 95.5,
+            "months_of_supply": null,
+            "new_listings": 44,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.984436478
+          },
+          {
+            "active_inventory": 43,
+            "median_days_on_market": 101,
+            "months_of_supply": null,
+            "new_listings": 39,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9818342002
+          },
+          {
+            "active_inventory": 46,
+            "median_days_on_market": 87,
+            "months_of_supply": null,
+            "new_listings": 39,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.987475495
+          },
+          {
+            "active_inventory": 41,
+            "median_days_on_market": 73,
+            "months_of_supply": null,
+            "new_listings": 30,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9813531671
+          },
+          {
+            "active_inventory": 38,
+            "median_days_on_market": 108.5,
+            "months_of_supply": null,
+            "new_listings": 32,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9814047101
+          },
+          {
+            "active_inventory": 41,
+            "median_days_on_market": 124,
+            "months_of_supply": null,
+            "new_listings": 27,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9782894462
+          },
+          {
+            "active_inventory": 38,
+            "median_days_on_market": 117.5,
+            "months_of_supply": null,
+            "new_listings": 27,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9724566291
+          },
+          {
+            "active_inventory": 43,
+            "median_days_on_market": 98,
+            "months_of_supply": null,
+            "new_listings": 39,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9789780467
+          },
+          {
+            "active_inventory": 40,
+            "median_days_on_market": 98,
+            "months_of_supply": null,
+            "new_listings": 45,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9852062017
+          },
+          {
+            "active_inventory": 43,
+            "median_days_on_market": 100,
+            "months_of_supply": null,
+            "new_listings": 54,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9908395541
+          }
+        ],
+        "label": "Zip Code: 29376",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.276224
+            },
+            "3_months": {
+              "direction": "flat",
+              "observations": 3,
+              "slope_per_month": 0.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.771429
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 2.552448
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 1.0
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -4.0
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.741259
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 7.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 5.028571
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.00015
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.005931
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.002127
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": -1.0,
+            "direction": "decreasing",
+            "percent_change": -0.022727,
+            "prior_value": 44
+          },
+          "median_days_on_market": {
+            "absolute_change": 20.5,
+            "direction": "increasing",
+            "percent_change": 0.257862,
+            "prior_value": 79.5
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": 13.0,
+            "direction": "increasing",
+            "percent_change": 0.317073,
+            "prior_value": 41
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.010477,
+            "direction": "increasing",
+            "percent_change": 0.010687,
+            "prior_value": 0.9803629175
+          }
+        }
+      },
+      "29385": {
+        "current": {
+          "active_inventory": 72,
+          "median_days_on_market": 81,
+          "months_of_supply": null,
+          "new_listings": 87,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9835839222
+        },
+        "history": [
+          {
+            "active_inventory": 110,
+            "median_days_on_market": 57.5,
+            "months_of_supply": null,
+            "new_listings": 114,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9892455287
+          },
+          {
+            "active_inventory": 111,
+            "median_days_on_market": 60,
+            "months_of_supply": null,
+            "new_listings": 112,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9917937299
+          },
+          {
+            "active_inventory": 105,
+            "median_days_on_market": 63,
+            "months_of_supply": null,
+            "new_listings": 111,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9965159479
+          },
+          {
+            "active_inventory": 97,
+            "median_days_on_market": 76,
+            "months_of_supply": null,
+            "new_listings": 95,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9943532435
+          },
+          {
+            "active_inventory": 88,
+            "median_days_on_market": 83,
+            "months_of_supply": null,
+            "new_listings": 80,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9943827424
+          },
+          {
+            "active_inventory": 114,
+            "median_days_on_market": 78,
+            "months_of_supply": null,
+            "new_listings": 101,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9839684248
+          },
+          {
+            "active_inventory": 118,
+            "median_days_on_market": 76,
+            "months_of_supply": null,
+            "new_listings": 112,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9782138014
+          },
+          {
+            "active_inventory": 103,
+            "median_days_on_market": 72.5,
+            "months_of_supply": null,
+            "new_listings": 102,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.978691286
+          },
+          {
+            "active_inventory": 100,
+            "median_days_on_market": 72.5,
+            "months_of_supply": null,
+            "new_listings": 73,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9780645489
+          },
+          {
+            "active_inventory": 90,
+            "median_days_on_market": 76,
+            "months_of_supply": null,
+            "new_listings": 69,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9865198602
+          },
+          {
+            "active_inventory": 76,
+            "median_days_on_market": 85,
+            "months_of_supply": null,
+            "new_listings": 84,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9866701699
+          },
+          {
+            "active_inventory": 78,
+            "median_days_on_market": 88,
+            "months_of_supply": null,
+            "new_listings": 95,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9860044518
+          },
+          {
+            "active_inventory": 72,
+            "median_days_on_market": 81,
+            "months_of_supply": null,
+            "new_listings": 87,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9835839222
+          }
+        ],
+        "label": "Zip Code: 29385",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -3.027972
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -2.0
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -6.714286
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 1.622378
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -2.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 2.8
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -2.255245
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 1.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.171429
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.001032
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -0.001543
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.001384
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": -38.0,
+            "direction": "decreasing",
+            "percent_change": -0.345455,
+            "prior_value": 110
+          },
+          "median_days_on_market": {
+            "absolute_change": 23.5,
+            "direction": "increasing",
+            "percent_change": 0.408696,
+            "prior_value": 57.5
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": -27.0,
+            "direction": "decreasing",
+            "percent_change": -0.236842,
+            "prior_value": 114
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": -0.005662,
+            "direction": "decreasing",
+            "percent_change": -0.005724,
+            "prior_value": 0.9892455287
+          }
+        }
+      },
+      "29388": {
+        "current": {
+          "active_inventory": 302,
+          "median_days_on_market": 84,
+          "months_of_supply": null,
+          "new_listings": 341,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9892364655
+        },
+        "history": [
+          {
+            "active_inventory": 276,
+            "median_days_on_market": 77,
+            "months_of_supply": null,
+            "new_listings": 316,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9870738299
+          },
+          {
+            "active_inventory": 248,
+            "median_days_on_market": 72,
+            "months_of_supply": null,
+            "new_listings": 246,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9893861843
+          },
+          {
+            "active_inventory": 266,
+            "median_days_on_market": 72.5,
+            "months_of_supply": null,
+            "new_listings": 253,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9895929478
+          },
+          {
+            "active_inventory": 292,
+            "median_days_on_market": 81,
+            "months_of_supply": null,
+            "new_listings": 240,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9889804184
+          },
+          {
+            "active_inventory": 278,
+            "median_days_on_market": 88,
+            "months_of_supply": null,
+            "new_listings": 250,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9909264108
+          },
+          {
+            "active_inventory": 270,
+            "median_days_on_market": 91,
+            "months_of_supply": null,
+            "new_listings": 235,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.989341318
+          },
+          {
+            "active_inventory": 260,
+            "median_days_on_market": 71,
+            "months_of_supply": null,
+            "new_listings": 193,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9914219159
+          },
+          {
+            "active_inventory": 252,
+            "median_days_on_market": 76,
+            "months_of_supply": null,
+            "new_listings": 172,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9884309008
+          },
+          {
+            "active_inventory": 234,
+            "median_days_on_market": 76,
+            "months_of_supply": null,
+            "new_listings": 151,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9919676848
+          },
+          {
+            "active_inventory": 238,
+            "median_days_on_market": 118,
+            "months_of_supply": null,
+            "new_listings": 189,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9926607913
+          },
+          {
+            "active_inventory": 242,
+            "median_days_on_market": 120,
+            "months_of_supply": null,
+            "new_listings": 237,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9943513148
+          },
+          {
+            "active_inventory": 305,
+            "median_days_on_market": 108.5,
+            "months_of_supply": null,
+            "new_listings": 333,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9883662935
+          },
+          {
+            "active_inventory": 302,
+            "median_days_on_market": 84,
+            "months_of_supply": null,
+            "new_listings": 341,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9892364655
+          }
+        ],
+        "label": "Zip Code: 29388",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.975524
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 30.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 13.342857
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 2.933566
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -18.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 3.985714
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 4.076923
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 52.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 41.114286
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.000135
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -0.002557
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -0.000145
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": 26.0,
+            "direction": "increasing",
+            "percent_change": 0.094203,
+            "prior_value": 276
+          },
+          "median_days_on_market": {
+            "absolute_change": 7.0,
+            "direction": "increasing",
+            "percent_change": 0.090909,
+            "prior_value": 77
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": 25.0,
+            "direction": "increasing",
+            "percent_change": 0.079114,
+            "prior_value": 316
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.002163,
+            "direction": "increasing",
+            "percent_change": 0.002191,
+            "prior_value": 0.9870738299
+          }
+        }
+      },
+      "29650": {
+        "current": {
+          "active_inventory": 166,
+          "median_days_on_market": 55.5,
+          "months_of_supply": null,
+          "new_listings": 204,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.9871408403
+        },
+        "history": [
+          {
+            "active_inventory": 145,
+            "median_days_on_market": 42,
+            "months_of_supply": null,
+            "new_listings": 200,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9848403601
+          },
+          {
+            "active_inventory": 153,
+            "median_days_on_market": 41.5,
+            "months_of_supply": null,
+            "new_listings": 184,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9855175038
+          },
+          {
+            "active_inventory": 152,
+            "median_days_on_market": 47,
+            "months_of_supply": null,
+            "new_listings": 173,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9865022398
+          },
+          {
+            "active_inventory": 145,
+            "median_days_on_market": 53,
+            "months_of_supply": null,
+            "new_listings": 163,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9859323297
+          },
+          {
+            "active_inventory": 140,
+            "median_days_on_market": 64,
+            "months_of_supply": null,
+            "new_listings": 147,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9809802102
+          },
+          {
+            "active_inventory": 145,
+            "median_days_on_market": 64,
+            "months_of_supply": null,
+            "new_listings": 145,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9788669987
+          },
+          {
+            "active_inventory": 135,
+            "median_days_on_market": 65,
+            "months_of_supply": null,
+            "new_listings": 122,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9787325807
+          },
+          {
+            "active_inventory": 118,
+            "median_days_on_market": 65,
+            "months_of_supply": null,
+            "new_listings": 102,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9782448466
+          },
+          {
+            "active_inventory": 114,
+            "median_days_on_market": 74,
+            "months_of_supply": null,
+            "new_listings": 79,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9762570401
+          },
+          {
+            "active_inventory": 123,
+            "median_days_on_market": 85,
+            "months_of_supply": null,
+            "new_listings": 93,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9722965858
+          },
+          {
+            "active_inventory": 148,
+            "median_days_on_market": 85,
+            "months_of_supply": null,
+            "new_listings": 136,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9770486824
+          },
+          {
+            "active_inventory": 162,
+            "median_days_on_market": 72,
+            "months_of_supply": null,
+            "new_listings": 177,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9811749387
+          },
+          {
+            "active_inventory": 166,
+            "median_days_on_market": 55.5,
+            "months_of_supply": null,
+            "new_listings": 204,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9871408403
+          }
+        ],
+        "label": "Zip Code: 29650",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 0.206294
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 9.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 11.685714
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 2.58042
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -14.75
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -1.528571
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -1.472028
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 34.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 24.2
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.000504
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.005046
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.001828
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": 21.0,
+            "direction": "increasing",
+            "percent_change": 0.144828,
+            "prior_value": 145
+          },
+          "median_days_on_market": {
+            "absolute_change": 13.5,
+            "direction": "increasing",
+            "percent_change": 0.321429,
+            "prior_value": 42
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": 4.0,
+            "direction": "increasing",
+            "percent_change": 0.02,
+            "prior_value": 200
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": 0.0023,
+            "direction": "increasing",
+            "percent_change": 0.002335,
+            "prior_value": 0.9848403601
+          }
+        }
+      },
+      "29651": {
+        "current": {
+          "active_inventory": 309,
+          "median_days_on_market": 58,
+          "months_of_supply": null,
+          "new_listings": 371,
+          "price_cut_share": null,
+          "sale_to_list_ratio": 0.98752213
+        },
+        "history": [
+          {
+            "active_inventory": 367,
+            "median_days_on_market": 59,
+            "months_of_supply": null,
+            "new_listings": 381,
+            "period_begin": "2025-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9886115087
+          },
+          {
+            "active_inventory": 354,
+            "median_days_on_market": 54,
+            "months_of_supply": null,
+            "new_listings": 363,
+            "period_begin": "2025-04-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.984952913
+          },
+          {
+            "active_inventory": 326,
+            "median_days_on_market": 56,
+            "months_of_supply": null,
+            "new_listings": 340,
+            "period_begin": "2025-05-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9832254116
+          },
+          {
+            "active_inventory": 326,
+            "median_days_on_market": 61,
+            "months_of_supply": null,
+            "new_listings": 292,
+            "period_begin": "2025-06-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.983315845
+          },
+          {
+            "active_inventory": 302,
+            "median_days_on_market": 69,
+            "months_of_supply": null,
+            "new_listings": 250,
+            "period_begin": "2025-07-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9827635433
+          },
+          {
+            "active_inventory": 280,
+            "median_days_on_market": 81.5,
+            "months_of_supply": null,
+            "new_listings": 229,
+            "period_begin": "2025-08-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.982553175
+          },
+          {
+            "active_inventory": 287,
+            "median_days_on_market": 83,
+            "months_of_supply": null,
+            "new_listings": 207,
+            "period_begin": "2025-09-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9795759188
+          },
+          {
+            "active_inventory": 257,
+            "median_days_on_market": 76,
+            "months_of_supply": null,
+            "new_listings": 194,
+            "period_begin": "2025-10-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9790829604
+          },
+          {
+            "active_inventory": 231,
+            "median_days_on_market": 77,
+            "months_of_supply": null,
+            "new_listings": 166,
+            "period_begin": "2025-11-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9774545097
+          },
+          {
+            "active_inventory": 255,
+            "median_days_on_market": 86.5,
+            "months_of_supply": null,
+            "new_listings": 180,
+            "period_begin": "2025-12-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9760861301
+          },
+          {
+            "active_inventory": 284,
+            "median_days_on_market": 85.5,
+            "months_of_supply": null,
+            "new_listings": 259,
+            "period_begin": "2026-01-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.974982234
+          },
+          {
+            "active_inventory": 327,
+            "median_days_on_market": 69.5,
+            "months_of_supply": null,
+            "new_listings": 355,
+            "period_begin": "2026-02-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.9828985694
+          },
+          {
+            "active_inventory": 309,
+            "median_days_on_market": 58,
+            "months_of_supply": null,
+            "new_listings": 371,
+            "period_begin": "2026-03-01",
+            "price_cut_share": null,
+            "sale_to_list_ratio": 0.98752213
+          }
+        ],
+        "label": "Zip Code: 29651",
+        "last_updated": "2026-06-02 14:33:24.470 Z",
+        "period_begin": "2026-03-01",
+        "period_duration_days": 90,
+        "period_end": "2026-05-31",
+        "recent_slopes": {
+          "active_inventory": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -4.167832
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 12.5
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 16.485714
+            }
+          },
+          "median_days_on_market": {
+            "12_months": {
+              "direction": "increasing",
+              "observations": 12,
+              "slope_per_month": 1.412587
+            },
+            "3_months": {
+              "direction": "decreasing",
+              "observations": 3,
+              "slope_per_month": -13.75
+            },
+            "6_months": {
+              "direction": "decreasing",
+              "observations": 6,
+              "slope_per_month": -3.242857
+            }
+          },
+          "months_of_supply": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "new_listings": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -1.958042
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 56.0
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 43.742857
+            }
+          },
+          "price_cut_share": {
+            "12_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "3_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            },
+            "6_months": {
+              "direction": null,
+              "observations": 0,
+              "slope_per_month": null
+            }
+          },
+          "sale_to_list_ratio": {
+            "12_months": {
+              "direction": "decreasing",
+              "observations": 12,
+              "slope_per_month": -0.000287
+            },
+            "3_months": {
+              "direction": "increasing",
+              "observations": 3,
+              "slope_per_month": 0.00627
+            },
+            "6_months": {
+              "direction": "increasing",
+              "observations": 6,
+              "slope_per_month": 0.001641
+            }
+          }
+        },
+        "year_over_year": {
+          "active_inventory": {
+            "absolute_change": -58.0,
+            "direction": "decreasing",
+            "percent_change": -0.158038,
+            "prior_value": 367
+          },
+          "median_days_on_market": {
+            "absolute_change": -1.0,
+            "direction": "decreasing",
+            "percent_change": -0.016949,
+            "prior_value": 59
+          },
+          "months_of_supply": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "new_listings": {
+            "absolute_change": -10.0,
+            "direction": "decreasing",
+            "percent_change": -0.026247,
+            "prior_value": 381
+          },
+          "price_cut_share": {
+            "absolute_change": null,
+            "direction": null,
+            "percent_change": null,
+            "prior_value": null
+          },
+          "sale_to_list_ratio": {
+            "absolute_change": -0.001089,
+            "direction": "decreasing",
+            "percent_change": -0.001102,
+            "prior_value": 0.9886115087
+          }
+        }
+      }
+    }
+  },
+  "period_covered": {
+    "earliest_retained_period_begin": "2024-01-01",
+    "latest_period_end": "2026-05-31",
+    "zip_period_note": "ZIP rows are Redfin trailing 90-day observations published on a monthly cadence."
+  },
+  "raw_download_urls": {
+    "county": "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/county_market_tracker.tsv000.gz",
+    "zip": "https://redfin-public-data.s3.us-west-2.amazonaws.com/redfin_market_tracker/zip_code_market_tracker.tsv000.gz"
+  },
+  "schema": {
+    "current": "reported aggregate figures for latest period; null means source did not publish metric",
+    "history": "bounded 13-period input history retained only to audit derived comparisons",
+    "markets": "metro/county/zip maps keyed by published Redfin identifiers",
+    "recent_slopes": "derived least-squares slope per month across 3, 6, and 12 contiguous observations; short windows remain seasonal context",
+    "year_over_year": "derived comparison with the same calendar month one year earlier; no month-over-month trend is emitted"
+  },
+  "schema_version": 1,
+  "seasonality": {
+    "decision_comparison": "same-month year-over-year",
+    "not_presented": "month-over-month change is intentionally not called a trend",
+    "slope_caveat": "3- and 6-month slopes describe recent pace but can retain seasonality; use them with the 12-month slope and YoY comparison."
+  },
+  "source_name": "Redfin Data Center Market Tracker",
+  "source_url": "https://www.redfin.com/news/data-center/"
+}

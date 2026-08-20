@@ -1,0 +1,53 @@
+# The local-container path from ADR 0001: the tool Bao points a browser at on his own
+# network, with nothing leaving the machine except requests to public data sources.
+#
+#   docker compose up --build      then open http://localhost:8000/docs
+#
+# The public GitHub Pages snapshot stays a snapshot. This is the live tool.
+
+services:
+  analyzer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: home-buying-analyzer:local
+    ports:
+      # Bound to 127.0.0.1 rather than 0.0.0.0. This service has no authentication and
+      # the responses contain real household financial figures, so it should not be
+      # reachable from the rest of the LAN by default. Change this deliberately, not
+      # accidentally — see docs/THREAT_MODEL.md.
+      - "127.0.0.1:8000:8000"
+    environment:
+      HBA_CACHE_DIR: /var/cache/hba
+      # Where the saved-property ledger lives. Kept separate from the cache directory on
+      # purpose: one is disposable and one is not. See the volumes below.
+      HBA_DATA_DIR: /var/lib/hba
+      # Passed through from the host environment, never baked into the image. An API key
+      # committed to a layer is committed forever, because image layers are immutable and
+      # a later `rm` does not remove it from history.
+      FCC_API_KEY: "${FCC_API_KEY:-}"
+    volumes:
+      # Named volume so restarts reuse cached county responses instead of re-asking a
+      # free public GIS server for facts it already provided.
+      - analyzer-cache:/var/cache/hba
+      # The ledger: shortlist, analysis history, decision journal. Deleting this volume
+      # loses the only record of what was considered and why -- nothing upstream can
+      # replay it, unlike the cache above. Back it up by copying ledger.db out; SQLite is
+      # one file and `sqlite3 ledger.db .dump` is a plain-text export.
+      - analyzer-data:/var/lib/hba
+      # Read-only bind of the profile so you can edit scoring preferences and restart
+      # without rebuilding the image. Read-only because the container has no business
+      # rewriting your rulebook.
+      - ./buyer_profile.toml:/app/buyer_profile.toml:ro
+    restart: unless-stopped
+    # A single analysis is a handful of small JSON responses. These ceilings exist so a
+    # runaway loop cannot take a Raspberry Pi node down with it, and they are generous
+    # for the actual workload.
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+
+volumes:
+  analyzer-cache:
+  analyzer-data:

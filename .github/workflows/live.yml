@@ -1,0 +1,145 @@
+# Nightly contract check against the real public endpoints.
+#
+# This is separated from tests.yml for one reason: these tests can fail for reasons that
+# have nothing to do with any commit. The Census geocoder can be down, OSRM is volunteer-run,
+# and LA County can change a field name without telling anyone. If that turned a
+# push red, red builds would stop meaning anything.
+#
+# So the contract here is different. A failure in this workflow means "an assumption about
+# someone else's data changed, go read the diff" — not "your code is broken". That is
+# genuinely useful information for a tool whose whole job is reading six public sources,
+# and it is the kind of drift that would otherwise be discovered mid-analysis in 2027.
+
+name: live sources
+
+on:
+  schedule:
+    # 09:12 UTC daily — roughly 5am Eastern. Off the hour on purpose: scheduled jobs at
+    # :00 queue behind everyone else's cron, and a deliberately odd minute also spreads
+    # load on the free public servers this hits.
+    - cron: "12 9 * * *"
+  workflow_dispatch:
+    # Manual trigger matters here. When a source breaks mid-week you want to re-check
+    # immediately after a fix rather than waiting for tomorrow morning.
+
+concurrency:
+  group: live-sources
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write      # needed to file the drift report below
+
+jobs:
+  contracts:
+    name: public source contracts
+    runs-on: ubuntu-latest
+    # Generous but bounded. A hung request against an unresponsive government endpoint
+    # should not hold a runner for six hours.
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -e '.[api,dev]'
+
+      - name: Run the live suite
+        id: live
+        env:
+          # Absent by default, and that is the correct behaviour to exercise: the broadband
+          # station degrades to a warning without a key rather than failing the analysis.
+          # If the secret is ever added, the same run starts verifying the real FCC contract.
+          FCC_API_KEY: ${{ secrets.FCC_API_KEY }}
+        run: |
+          # No retries. A retry loop would paper over exactly the flakiness this workflow
+          # exists to surface, and the source-station contract already handles a single
+          # failed source gracefully at runtime.
+          pytest -m live -v --tb=short 2>&1 | tee /tmp/live.log
+
+      - name: Verify the CLI still produces a real answer end to end
+        # The unit-level live tests check each station's response shape. This checks the
+        # thing that actually matters: a full analysis of a real address still completes
+        # and still yields a verdict.
+        run: |
+          # 2475 Verde St is the recorded-fixture address: a real 1957 SFR near the anchor,
+          # so a live failure here is a real upstream change rather than a bad test address.
+          python -m analyzer.cli "2475 Verde St, Los Angeles, CA 90033" 775000 \
+            --roof-age 17 --hvac-age 14 --json > /tmp/live-run.json
+          python - <<'PY'
+          import json
+          doc = json.load(open("/tmp/live-run.json"))
+          score = doc["score"]
+          assert score["verdict"] in {"TAKE", "WATCH", "PASS"}, score
+          # Deliberately not asserting an exact number. TRA rates, insurance figures,
+          # and travel times all move, and pinning the score here would produce a failure
+          # every time reality changed — the opposite of a useful signal. Determinism given
+          # fixed inputs is already covered by the offline suite.
+          print("live end-to-end:", score["verdict"], score["value"])
+          PY
+
+      - name: Upload the log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-source-log
+          path: |
+            /tmp/live.log
+            /tmp/live-run.json
+          retention-days: 14
+          if-no-files-found: warn
+
+      - name: Open or update a drift issue
+        if: failure() && github.event_name == 'schedule'
+        # Only on the schedule. A failed manual run is already being watched by whoever
+        # clicked the button; filing an issue for it is noise.
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'Live source contract failing';
+            const run = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = [
+              'The nightly live-source suite failed.',
+              '',
+              'This usually means a public data source changed, not that the code broke.',
+              'Common causes, in rough order of likelihood:',
+              '',
+              '- a county GIS layer was renamed, renumbered, or republished',
+              '- the Census geocoder benchmark or vintage was retired',
+              '- OSRM or Nominatim rate-limited or refused the request',
+              '- an endpoint started requiring an API key',
+              '',
+              `Run log: ${run}`,
+            ].join('\n');
+
+            // Reuse one open issue rather than filing a new one every night. A source that
+            // stays broken for a week should be one thread, not seven.
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'source-drift',
+            });
+
+            if (existing.data.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.data[0].number,
+                body: `Still failing as of ${new Date().toISOString().slice(0, 10)}. ${run}`,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['source-drift'],
+              });
+            }

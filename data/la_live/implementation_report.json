@@ -1,0 +1,149 @@
+{
+ "tax_keys": [
+  "tax_rate_area",
+  "total_rate_pct",
+  "rate_fiscal_year",
+  "homeowners_exemption",
+  "homeowners_exemption_deadline",
+  "purchase_resets_assessed_value",
+  "annual_assessed_value_growth_cap_pct",
+  "note",
+  "src_rate",
+  "src_prop13",
+  "src_exemption"
+ ],
+ "submarkets": [
+  {
+   "name": "Boyle Heights / East Los Angeles",
+   "zips": [
+    "90022",
+    "90023",
+    "90033"
+   ],
+   "school_district": "Los Angeles Unified",
+   "school_proficiency_pct": 41.61,
+   "drive_min": 12.0,
+   "drive_mi": 6.2
+  },
+  {
+   "name": "Lincoln Heights / El Sereno",
+   "zips": [
+    "90031",
+    "90032"
+   ],
+   "school_district": "Los Angeles Unified",
+   "school_proficiency_pct": 41.61,
+   "drive_min": 6.1,
+   "drive_mi": 2.2
+  },
+  {
+   "name": "Echo Park / Silver Lake",
+   "zips": [
+    "90026"
+   ],
+   "school_district": "Los Angeles Unified",
+   "school_proficiency_pct": 41.61,
+   "drive_min": 10.5,
+   "drive_mi": 5.2
+  },
+  {
+   "name": "Highland Park / Eagle Rock / Glassell Park",
+   "zips": [
+    "90041",
+    "90042",
+    "90065"
+   ],
+   "school_district": "Los Angeles Unified",
+   "school_proficiency_pct": 41.61,
+   "drive_min": 15.1,
+   "drive_mi": 9.2
+  },
+  {
+   "name": "Commerce / Montebello",
+   "zips": [
+    "90040",
+    "90640"
+   ],
+   "school_district": "Montebello Unified",
+   "school_proficiency_pct": 31.47,
+   "drive_min": 14.2,
+   "drive_mi": 8.7
+  },
+  {
+   "name": "South Pasadena",
+   "zips": [
+    "91030"
+   ],
+   "school_district": "South Pasadena Unified",
+   "school_proficiency_pct": 81.45,
+   "drive_min": 11.2,
+   "drive_mi": 5.2
+  },
+  {
+   "name": "Pasadena",
+   "zips": [
+    "91106",
+    "91107"
+   ],
+   "school_district": "Pasadena Unified",
+   "school_proficiency_pct": 42.24,
+   "drive_min": 18.9,
+   "drive_mi": 9.2
+  },
+  {
+   "name": "Monterey Park / Rosemead",
+   "zips": [
+    "91754",
+    "91755",
+    "91770"
+   ],
+   "school_district": "Garvey Elementary / Alhambra Unified Secondary",
+   "school_proficiency_pct": 56.2,
+   "drive_min": 11.1,
+   "drive_mi": 5.4
+  },
+  {
+   "name": "Alhambra",
+   "zips": [
+    "91801",
+    "91803",
+    "91804"
+   ],
+   "school_district": "Alhambra Unified",
+   "school_proficiency_pct": 58.5,
+   "drive_min": 10.7,
+   "drive_mi": 6.3
+  },
+  {
+   "name": "San Gabriel / Temple City",
+   "zips": [
+    "91776"
+   ],
+   "school_district": "San Gabriel Unified",
+   "school_proficiency_pct": 54.05,
+   "drive_min": 13.6,
+   "drive_mi": 8.3
+  }
+ ],
+ "normalization": {
+  "schools": "school_proficiency_pct / 100, rounded to 3 decimals",
+  "price": "inverse min-max of aggregated Redfin median sale price",
+  "leverage": "mean of min-max median DOM and min-max inventory",
+  "commute": "inverse min-max OSRM driving minutes",
+  "safety_fiber": "0.5 neutral unknown policy because no comparable source was recorded"
+ },
+ "unsourced_or_unavailable": {
+  "poi": "Overpass primary unavailable (ConnectionError); fallback unavailable (HTTPError).",
+  "zcta_91804": "Census TIGERweb returned no ZCTA feature for USPS ZIP 91804.",
+  "submarket_crime_rate": "No comparable current submarket crime rate recorded; per1k remains null.",
+  "submarket_fiber": "No address-level FCC availability result recorded; coverage_pct remains null.",
+  "county_population": "No current county population value recorded; field remains null."
+ },
+ "routing_source": "https://router.project-osrm.org/",
+ "geospatial_source_summary": "/home/user/workspace/hbd-ca/data/la_live/summary.json",
+ "validation": {
+  "command": "python3 -m pytest -q",
+  "result": "passed (exit code 0; progress reached 100%)",
+  "snapshot_rules_check": "passed"
+ }
+}

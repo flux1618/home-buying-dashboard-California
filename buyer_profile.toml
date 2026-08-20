@@ -1,0 +1,230 @@
+# Buyer profile — constraints as configuration.
+#
+# Adding a persona means copying this file, not editing code. See docs/CUSTOMER_BRIEF.md
+# for where these values come from.
+#
+# NOTE: the finance block currently holds real household figures and this repo is
+# public. Tracked as an open gap in docs/THREAT_MODEL.md. The intended fix is to ship
+# illustrative defaults here and load real values from an untracked local override.
+
+name = "Los Angeles 2027 — hospital + remote engineer household"
+
+[finance]
+gross_annual_income  = 406480
+monthly_non_housing  = 9400
+target_front_end_dti = 0.22
+mortgage_rate        = 0.0667   # Freddie Mac PMMS, 2026-08-13
+
+# The down payment jumped from $80,000 in the Spartanburg profile to $190,000 here, and
+# that is a researched assumption rather than a transcription. At Spartanburg prices
+# $80,000 was more than 20% of a $315,000 house. In Los Angeles the same $80,000 is under
+# 9% of anything in range, which triggers mortgage insurance the engine does not model and
+# would make every affordability figure in the dashboard an overstatement. $190,000 is a
+# clean 20% of the $950,000 target, which is the assumption the numbers below rest on. If
+# the household cannot reach $190,000, the target price has to come down with it.
+down_payment         = 190000
+
+# California DOI puts the statewide average homeowners premium at $1,571. Los Angeles
+# flatland quotes for a house like this ran $1,851-$2,265 in the same research, and the
+# midpoint is used here because a statewide average blends in cheap inland counties. A
+# hillside address in a Very High Fire Hazard Severity Zone is a different product
+# entirely — FAIR Plan pricing around $6,000/yr — and drops the ceiling by roughly $44,000.
+annual_insurance     = 2058
+
+# Earthquake coverage is a separate policy in California; the standard homeowners form
+# excludes it. It sits OUTSIDE PITI and DTI for the same reason the maintenance reserve
+# does: no lender counts it, and the household pays it anyway. CEA deductibles run 5-25%,
+# and a pre-1980 raised-foundation house is restricted to 15% or higher. Los Angeles
+# estimates spanned $800-$3,500/yr; $1,800 is a mid-range figure for this house.
+annual_earthquake_premium = 1800
+
+loan_term_months     = 360
+
+# Solved with the engine's own tools/solve_la_target.py rather than by hand, so this
+# number and the dashboard cannot disagree. At 1.187380% (tax rate area 00004), 6.67%, and
+# $2,058 insurance, the 22% DTI ceiling supports a LENDER maximum of $1,187,682 — but only
+# $969,896 once the maintenance reserve is funded out of the same 22% of gross. The lender
+# figure is the one an approval letter would show and it is not the one used here. $950,000
+# is a round number under the household ceiling with the earthquake premium still on top.
+#
+# What $950,000 actually buys, against the ZIP medians from research: Boyle Heights 90033
+# ($775K) and 90023 ($692K), Lincoln Heights 90031 ($875K), El Sereno 90032 ($815K), East
+# LA 90022 ($720K) — all comfortably inside. So are the stronger-school ZIPs in Alhambra
+# (91804 $850K, 91801 $925K), Monterey Park (91755 $886K) and San Gabriel (91776 $890K).
+# Out of reach at this target: South Pasadena 91030 ($1.92M), Eagle Rock 90041 ($1.4M),
+# Highland Park 90042 ($1.15M), Glassell Park 90065 ($1.18M). That is the central tension
+# of this profile — the best-scoring school districts are the ones the budget excludes.
+target_price         = 950000
+
+[market_velocity]
+# Explicit scope for the bounded Redfin aggregate snapshot. These are market-context rows, not
+# listing feeds or a geography inferred from an address; see docs/adr/0018.
+#
+# Chosen as the ZIPs within about a 20-minute drive of Keck Hospital that a $950,000 target
+# can actually reach, plus the near-miss school ZIPs kept in deliberately so the dashboard
+# shows what the budget rules out rather than hiding it.
+target_zips = [
+  "90031", "90032", "90033", "90022", "90023", "90040", "90041", "90042",
+  "90065", "90026", "91030", "91801", "91803", "91804", "91754", "91755",
+  "91770", "91776", "90640", "91106", "91107",
+]
+
+[tax]
+# Los Angeles County tax rate area. 13,197 of them exist countywide; the anchor parcel at
+# 1500 San Pablo St sits in 00004. The parcel station overwrites this per-property from the
+# Assessor roll, so this value only governs properties whose TRA did not resolve.
+#
+# TRA 00004 totals 1.187380% for FY 2025-26: the 1% Prop 13 general levy plus voter-approved
+# debt — LAUSD 0.119605%, community college 0.048543%, City of LA 0.012232%, Metropolitan
+# Water District 0.007000%. School debt is about 90% of the voter-approved portion.
+tax_rate_area = "00004"
+
+# Drives the documentary transfer tax calculation: the county charges $1.10 per $1,000 and
+# the City of Los Angeles adds $4.50 per $1,000. Customarily seller-paid here, so it is
+# reported in full but only the buyer's share reaches cash to close.
+in_city_of_la = true
+
+# Disqualifying. A house violating any of these is not a candidate at any price.
+[hard_fails]
+max_commute_min            = 20
+
+# FALSE, and deliberately so — this is the one hard fail that had to be turned off in the
+# California port. The Spartanburg County CAMA record carried a utilities field, so
+# "public water and sewer" was a fact the pipeline could check. The Los Angeles County
+# Assessor roll has no utility fields at all; the station reports water_sewer as
+# unavailable on every parcel by design. Leaving this true would make every single Los
+# Angeles property an unevaluated hard fail and pin every score to 50 — the dashboard
+# would rank nothing. Virtually all of the target ZIPs are on LADWP or Cal Water and
+# city sewer regardless, so the check costs more than it buys. Confirm at the showing.
+require_public_water_sewer = false
+
+exclude_flood_zones        = ["A", "AE", "AO", "AH", "V", "VE"]
+
+# Scored, not disqualifying. A house can fail these and still win on balance.
+[preferences]
+min_beds          = 3
+
+# Dropped from 3 to 2. Three full baths is a common spec in new Upstate South Carolina
+# construction and a rarity in the pre-1960 Los Angeles housing stock this budget reaches;
+# leaving it at 3 would deduct the same 8 points from essentially every candidate, which
+# makes the preference stop discriminating between houses.
+min_baths         = 2
+
+min_sqft          = 1400
+min_garage_spaces = 2
+require_fiber     = true
+max_hoa_monthly   = 100
+
+[preferences.penalties]
+hoa_over_max  = 25
+beds_under    = 20
+sqft_under    = 20
+no_fiber      = 15
+garage_under  = 10
+baths_under   = 8
+
+# School quality — the household named this a priority, so it scores. Deliberately a scored
+# preference and not a hard fail: a weak zoned school is a compromise a family can accept at
+# the right price, the way a one-car garage is, and there is always open enrollment, a
+# magnet, or a charter as a fallback. A flood zone is not negotiable in that way.
+[schools]
+# The floor, as the mean of the ELA and math "met or exceeded standard" percentages from
+# CAASPP. Set at 55% against a Los Angeles Unified district average of 41.6% (46.46% ELA,
+# 36.76% math) — so this floor is genuinely above the district, not a rubber stamp. For
+# scale: Alhambra Unified sits at 58.5%, San Gabriel at 54.1%, South Pasadena at 81.4%.
+min_proficiency_pct = 55.0
+
+# Anything more than 15 points under the floor takes the heavier penalty. A school at 53%
+# is a rounding argument; one at 35% is a different decision, and one number for both
+# would flatten that.
+well_below_margin_pct = 15.0
+
+# All three levels are resolved and the WEAKEST one is scored, because a child passes
+# through every level in sequence and a strong elementary school does not offset the
+# middle school that follows it. Trim this list to score fewer.
+levels = ["elementary", "middle", "high"]
+
+[schools.penalties]
+below_min      = 12   # under the floor, but within 15 points of it
+well_below_min = 25   # more than 15 points under — a standing compromise
+zone_of_choice = 5    # not a quality judgment; the cost of a lottery instead of a guarantee
+
+# Aging systems with a four- or five-figure bill attached. These DO deduct — a note
+# alone let a house with a $14,000 roof score a perfect 100. Dollar ranges live in
+# analyzer/core/capex.py with sources.
+[capital_expenses]
+roof_due_age     = 15   # at or past service life — budget it
+roof_overdue_age = 20   # assume replacement is immediate
+hvac_due_age     = 12
+hvac_overdue_age = 18
+
+[capital_expenses.penalties]
+roof_due     = 25
+roof_overdue = 35
+hvac_due     = 15
+hvac_overdue = 22
+
+# Flagged for attention. No points deducted.
+[caveats]
+# Dropped from 2000 to 1960. The median Boyle Heights or Lincoln Heights house predates
+# 1950; a year-2000 threshold would caveat every candidate and therefore inform nothing.
+# 1960 still catches the pre-war stock where foundation bolting and knob-and-tube wiring
+# are the live questions — and in seismic country an unbolted raised foundation is the
+# single most consequential thing about a house's age.
+preferred_year_built_min = 1960
+
+max_price_over_target_pct = 0.10
+
+# Raised from $200 to $750/sqft. Los Angeles County median price per square foot runs far
+# above the Upstate; $200 would flag literally every house and the caveat would be noise.
+# $750 sits above the target ZIPs and still catches a genuinely overpriced listing.
+max_price_per_sqft        = 750
+
+[verdict]
+take_min  = 75   # >= this: strong fit, take to inspection
+watch_min = 45   # >= this: watch, negotiate or wait. Below: pass.
+
+# Score pinned when a hard-fail input could not be evaluated. Lands in WATCH so an
+# unknown is never mistaken for a clean TAKE, and never for a rejection either.
+unevaluated_score = 50
+
+# Commute anchors. First entry is primary. Rush hour is the 7a hospital shift change,
+# not generic office peak.
+#
+# 1500 San Pablo St is Keck Hospital of USC, on the Health Sciences Campus just north of
+# Boyle Heights. Coordinates are the Census geocoder's match for the address, not a
+# hand-placed pin.
+[[anchor]]
+label          = "Keck Hospital of USC"
+address        = "1500 San Pablo St, Los Angeles, CA 90033"
+lat            = 34.062379537908
+lon            = -118.203042269976
+arrival_window = "weekday 06:30-07:00"
+source_url     = "https://www.keckmedicine.org/locations/keck-hospital-of-usc/"
+
+# Second campus — uncomment to score against both anchors. LAC+USC Medical Center is a
+# ten-minute walk from Keck on the same campus complex.
+# [[anchor]]
+# label          = "LAC+USC Medical Center"
+# address        = "1200 N State St, Los Angeles, CA 90033"
+# lat            = 34.0578
+# lon            = -118.2079
+# arrival_window = "weekday 06:30-07:00"
+# source_url     = "https://dhs.lacounty.gov/lac-usc-medical-center/"
+
+# FEMA National Risk Index hazards to report, as FEMA's four-letter codes. Regional, not
+# personal — Los Angeles County gets wildfire, earthquake, drought, heat and landslide.
+# The Upstate South Carolina list (wind, tornado, hail, winter weather) would be noise
+# here, and this swap is exactly the fork ADR 0009 anticipated: it changes no code.
+#
+# Valid codes: AVLN CFLD CWAV DRGT ERQK HAIL HRCN HWAV ISTM LNDS LTNG RFLD SWND TRND
+#              TSUN VLCN WFIR WNTW
+#
+# caveat_percentile thresholds on the NATIONAL PERCENTILE, not on FEMA's rating label.
+# Those are different scales: a "Relatively Moderate" wildfire rating is the 95th
+# percentile in Paradise, CA — and that distinction stops being academic here, where
+# wildfire is a live hazard rather than a rounding error. See ADR 0009 and
+# analyzer/sources/risk.py.
+[risk]
+hazards           = ["WFIR", "ERQK", "DRGT", "HWAV", "LNDS"]
+caveat_percentile = 90.0

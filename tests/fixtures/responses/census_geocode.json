@@ -1,0 +1,295 @@
+{
+ "result": {
+  "input": {
+   "address": {
+    "address": "2475 Verde St, Los Angeles, CA 90033"
+   },
+   "vintage": {
+    "isDefault": true,
+    "id": "4",
+    "vintageName": "Current_Current",
+    "vintageDescription": "Current Vintage - Current Benchmark"
+   },
+   "benchmark": {
+    "isDefault": true,
+    "benchmarkDescription": "Public Address Ranges - Current Benchmark",
+    "id": "4",
+    "benchmarkName": "Public_AR_Current"
+   }
+  },
+  "addressMatches": [
+   {
+    "tigerLine": {
+     "side": "L",
+     "tigerLineId": "141622822"
+    },
+    "geographies": {
+     "States": [
+      {
+       "STATENS": "01779778",
+       "GEOID": "06",
+       "CENTLAT": "+37.1547616",
+       "AREAWATER": "20288576961",
+       "STATE": "06",
+       "BASENAME": "California",
+       "STUSAB": "CA",
+       "OID": "2749018475066",
+       "LSADC": "00",
+       "FUNCSTAT": "A",
+       "INTPTLAT": "+37.1626642",
+       "DIVISION": "9",
+       "NAME": "California",
+       "REGION": "4",
+       "OBJECTID": 2,
+       "CENTLON": "-119.5277735",
+       "AREALAND": "403676491638",
+       "INTPTLON": "-119.5713456",
+       "MTFCC": "G4000"
+      }
+     ],
+     "Combined Statistical Areas": [
+      {
+       "POP100": "",
+       "GEOID": "348",
+       "CENTLAT": "+34.4706964",
+       "AREAWATER": "3476466808",
+       "BASENAME": "Los Angeles-Long Beach, CA",
+       "OID": "2619034687908066",
+       "LSADC": "M0",
+       "FUNCSTAT": "S",
+       "INTPTLAT": "+34.4636899",
+       "NAME": "Los Angeles-Long Beach, CA CSA",
+       "OBJECTID": 90,
+       "CSA": "348",
+       "CENTLON": "-116.6480322",
+       "INTPTLON": "-116.6586169",
+       "AREALAND": "87986477640",
+       "HU100": "",
+       "MTFCC": "G3100"
+      }
+     ],
+     "County Subdivisions": [
+      {
+       "COUSUB": "91750",
+       "GEOID": "0603791750",
+       "CENTLAT": "+33.9936025",
+       "AREAWATER": "136138457",
+       "STATE": "06",
+       "BASENAME": "Los Angeles",
+       "OID": "276901115259678",
+       "LSADC": "22",
+       "FUNCSTAT": "S",
+       "INTPTLAT": "+33.9957303",
+       "NAME": "Los Angeles CCD",
+       "OBJECTID": 16483,
+       "CENTLON": "-118.3587658",
+       "COUSUBCC": "Z5",
+       "AREALAND": "692183410",
+       "INTPTLON": "-118.3580343",
+       "MTFCC": "G4040",
+       "COUSUBNS": "01935180",
+       "COUNTY": "037"
+      }
+     ],
+     "Urban Areas": [
+      {
+       "GEOID": "51445",
+       "CENTLAT": "+33.9845493",
+       "AREAWATER": "45567078",
+       "BASENAME": "Los Angeles--Long Beach--Anaheim, CA",
+       "OID": "27021435571723",
+       "UA": "51445",
+       "LSADC": "67",
+       "FUNCSTAT": "S",
+       "INTPTLAT": "+33.9849958",
+       "NAME": "Los Angeles--Long Beach--Anaheim, CA Urban Area",
+       "OBJECTID": 260,
+       "CENTLON": "-118.1231631",
+       "AREALAND": "4242653439",
+       "INTPTLON": "-118.1223950",
+       "MTFCC": "G3500"
+      }
+     ],
+     "Incorporated Places": [
+      {
+       "DISP_CLR": 3,
+       "NECTAPCI": "N",
+       "GEOID": "0644000",
+       "CENTLAT": "+34.1069326",
+       "AREAWATER": "81549089",
+       "BASENAME": "Los Angeles",
+       "STATE": "06",
+       "OID": "278901115263549",
+       "LSADC": "25",
+       "PLACE": "44000",
+       "FUNCSTAT": "A",
+       "INTPTLAT": "+34.0193936",
+       "NAME": "Los Angeles city",
+       "OBJECTID": 31919,
+       "PLACECC": "C1",
+       "CENTLON": "-118.4112607",
+       "CBSAPCI": "Y",
+       "AREALAND": "1218637111",
+       "INTPTLON": "-118.4108248",
+       "PLACENS": "02410877",
+       "MTFCC": "G4110"
+      }
+     ],
+     "Counties": [
+      {
+       "GEOID": "06037",
+       "CENTLAT": "+34.1959609",
+       "AREAWATER": "1784887460",
+       "STATE": "06",
+       "BASENAME": "Los Angeles",
+       "OID": "275901063468976",
+       "LSADC": "06",
+       "FUNCSTAT": "A",
+       "INTPTLAT": "+34.1963983",
+       "NAME": "Los Angeles County",
+       "OBJECTID": 2231,
+       "CENTLON": "-118.2618084",
+       "COUNTYCC": "H1",
+       "COUNTYNS": "00277283",
+       "AREALAND": "10516104078",
+       "INTPTLON": "-118.2618616",
+       "MTFCC": "G4020",
+       "COUNTY": "037"
+      }
+     ],
+     "2024 State Legislative Districts - Upper": [
+      {
+       "GEOID": "06026",
+       "CENTLAT": "+34.0784306",
+       "AREAWATER": "2427228",
+       "STATE": "06",
+       "BASENAME": "26",
+       "OID": "2129035951820727",
+       "SLDU": "026",
+       "LSADC": "LU",
+       "FUNCSTAT": "N",
+       "INTPTLAT": "+34.0778478",
+       "NAME": "State Senate District 26",
+       "OBJECTID": 832,
+       "CENTLON": "-118.2398079",
+       "LSY": "2024",
+       "AREALAND": "203994785",
+       "INTPTLON": "-118.2439478",
+       "MTFCC": "G5210",
+       "LDTYP": "O"
+      }
+     ],
+     "2024 State Legislative Districts - Lower": [
+      {
+       "GEOID": "06054",
+       "CENTLAT": "+34.0290068",
+       "SLDL": "054",
+       "AREAWATER": "1114260",
+       "STATE": "06",
+       "BASENAME": "54",
+       "OID": "2139035951821014",
+       "LSADC": "L3",
+       "FUNCSTAT": "N",
+       "INTPTLAT": "+34.0289135",
+       "NAME": "Assembly District 54",
+       "OBJECTID": 4569,
+       "CENTLON": "-118.2010219",
+       "LSY": "2024",
+       "AREALAND": "104842268",
+       "INTPTLON": "-118.2014418",
+       "MTFCC": "G5220",
+       "LDTYP": "O"
+      }
+     ],
+     "2020 Census Blocks": [
+      {
+       "SUFFIX": "",
+       "GEOID": "060372031002008",
+       "CENTLAT": "+34.0575978",
+       "BLOCK": "2008",
+       "AREAWATER": "0",
+       "STATE": "06",
+       "BASENAME": "2008",
+       "OID": "210701001810694",
+       "LSADC": "BK",
+       "FUNCSTAT": "S",
+       "INTPTLAT": "+34.0575978",
+       "NAME": "Block 2008",
+       "OBJECTID": 5599508,
+       "TRACT": "203100",
+       "CENTLON": "-118.1997097",
+       "BLKGRP": "2",
+       "AREALAND": "22733",
+       "INTPTLON": "-118.1997097",
+       "MTFCC": "G5040",
+       "LWBLKTYP": "L",
+       "UR": "U",
+       "COUNTY": "037"
+      }
+     ],
+     "Census Tracts": [
+      {
+       "GEOID": "06037203100",
+       "CENTLAT": "+34.0590790",
+       "AREAWATER": "0",
+       "STATE": "06",
+       "BASENAME": "2031",
+       "OID": "207901115289811",
+       "LSADC": "CT",
+       "FUNCSTAT": "S",
+       "INTPTLAT": "+34.0590790",
+       "NAME": "Census Tract 2031",
+       "OBJECTID": 14910,
+       "TRACT": "203100",
+       "CENTLON": "-118.1964766",
+       "AREALAND": "657446",
+       "INTPTLON": "-118.1964766",
+       "MTFCC": "G5020",
+       "COUNTY": "037"
+      }
+     ],
+     "119th Congressional Districts": [
+      {
+       "GEOID": "0634",
+       "CENTLAT": "+34.0713912",
+       "CDSESSN": "119",
+       "AREAWATER": "962989",
+       "BASENAME": "34",
+       "STATE": "06",
+       "OID": "2119035951820644",
+       "LSADC": "C2",
+       "FUNCSTAT": "N",
+       "INTPTLAT": "+34.0713045",
+       "NAME": "Congressional District 34",
+       "OBJECTID": 98,
+       "CENTLON": "-118.2173738",
+       "CD119": "34",
+       "AREALAND": "128664523",
+       "INTPTLON": "-118.2166365",
+       "MTFCC": "G5200"
+      }
+     ]
+    },
+    "coordinates": {
+     "x": -118.200013900972,
+     "y": 34.057185008756
+    },
+    "addressComponents": {
+     "zip": "90033",
+     "streetName": "VERDE",
+     "preType": "",
+     "city": "LOS ANGELES",
+     "preDirection": "",
+     "suffixDirection": "",
+     "fromAddress": "2401",
+     "state": "CA",
+     "suffixType": "ST",
+     "toAddress": "2511",
+     "suffixQualifier": "",
+     "preQualifier": ""
+    },
+    "matchedAddress": "2475 VERDE ST, LOS ANGELES, CA, 90033"
+   }
+  ]
+ }
+}

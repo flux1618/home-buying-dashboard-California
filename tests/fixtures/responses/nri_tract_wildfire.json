@@ -1,0 +1,271 @@
+{
+ "objectIdFieldName": "OBJECTID",
+ "uniqueIdField": {
+  "name": "OBJECTID",
+  "isSystemMaintained": true
+ },
+ "globalIdFieldName": "",
+ "serverGens": {
+  "minServerGen": 187760764,
+  "serverGen": 187760764
+ },
+ "geometryType": "esriGeometryPolygon",
+ "spatialReference": {
+  "wkid": 102100,
+  "latestWkid": 3857
+ },
+ "fields": [
+  {
+   "name": "TRACTFIPS",
+   "type": "esriFieldTypeString",
+   "alias": "Census Tract FIPS Code",
+   "sqlType": "sqlTypeOther",
+   "length": 20,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "COUNTY",
+   "type": "esriFieldTypeString",
+   "alias": "County Name",
+   "sqlType": "sqlTypeOther",
+   "length": 250,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "STATE",
+   "type": "esriFieldTypeString",
+   "alias": "State Name",
+   "sqlType": "sqlTypeOther",
+   "length": 250,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "NRI_VER",
+   "type": "esriFieldTypeString",
+   "alias": "National Risk Index Version",
+   "sqlType": "sqlTypeOther",
+   "length": 50,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "RISK_SCORE",
+   "type": "esriFieldTypeDouble",
+   "alias": "National Risk Index - Score - Composite",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "RISK_RATNG",
+   "type": "esriFieldTypeString",
+   "alias": "National Risk Index - Rating - Composite",
+   "sqlType": "sqlTypeOther",
+   "length": 50,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "RISK_SPCTL",
+   "type": "esriFieldTypeDouble",
+   "alias": "National Risk Index - State Percentile - Composite",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "SOVI_SCORE",
+   "type": "esriFieldTypeDouble",
+   "alias": "Social Vulnerability - Score",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "SOVI_RATNG",
+   "type": "esriFieldTypeString",
+   "alias": "Social Vulnerability - Rating",
+   "sqlType": "sqlTypeOther",
+   "length": 50,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "RESL_SCORE",
+   "type": "esriFieldTypeDouble",
+   "alias": "Community Resilience - Score",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "RESL_RATNG",
+   "type": "esriFieldTypeString",
+   "alias": "Community Resilience - Rating",
+   "sqlType": "sqlTypeOther",
+   "length": 50,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "WFIR_RISKS",
+   "type": "esriFieldTypeDouble",
+   "alias": "Wildfire - Hazard Type Risk Index Score",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "WFIR_RISKR",
+   "type": "esriFieldTypeString",
+   "alias": "Wildfire - Hazard Type Risk Index Rating",
+   "sqlType": "sqlTypeOther",
+   "length": 50,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "WFIR_EALT",
+   "type": "esriFieldTypeDouble",
+   "alias": "Wildfire - Expected Annual Loss - Total",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "ERQK_RISKS",
+   "type": "esriFieldTypeDouble",
+   "alias": "Earthquake - Hazard Type Risk Index Score",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "ERQK_RISKR",
+   "type": "esriFieldTypeString",
+   "alias": "Earthquake - Hazard Type Risk Index Rating",
+   "sqlType": "sqlTypeOther",
+   "length": 50,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "ERQK_EALT",
+   "type": "esriFieldTypeDouble",
+   "alias": "Earthquake - Expected Annual Loss - Total",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "DRGT_RISKS",
+   "type": "esriFieldTypeDouble",
+   "alias": "Drought - Hazard Type Risk Index Score",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "DRGT_RISKR",
+   "type": "esriFieldTypeString",
+   "alias": "Drought - Hazard Type Risk Index Rating",
+   "sqlType": "sqlTypeOther",
+   "length": 50,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "DRGT_EALT",
+   "type": "esriFieldTypeDouble",
+   "alias": "Drought - Expected Annual Loss - Total",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "HWAV_RISKS",
+   "type": "esriFieldTypeDouble",
+   "alias": "Heat Wave - Hazard Type Risk Index Score",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "HWAV_RISKR",
+   "type": "esriFieldTypeString",
+   "alias": "Heat Wave - Hazard Type Risk Index Rating",
+   "sqlType": "sqlTypeOther",
+   "length": 50,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "HWAV_EALT",
+   "type": "esriFieldTypeDouble",
+   "alias": "Heat Wave - Expected Annual Loss - Total",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "LNDS_RISKS",
+   "type": "esriFieldTypeDouble",
+   "alias": "Landslide - Hazard Type Risk Index Score",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "LNDS_RISKR",
+   "type": "esriFieldTypeString",
+   "alias": "Landslide - Hazard Type Risk Index Rating",
+   "sqlType": "sqlTypeOther",
+   "length": 50,
+   "domain": null,
+   "defaultValue": null
+  },
+  {
+   "name": "LNDS_EALT",
+   "type": "esriFieldTypeDouble",
+   "alias": "Landslide - Expected Annual Loss - Total",
+   "sqlType": "sqlTypeOther",
+   "domain": null,
+   "defaultValue": null
+  }
+ ],
+ "features": [
+  {
+   "attributes": {
+    "TRACTFIPS": "06007002100",
+    "COUNTY": "Butte",
+    "STATE": "California",
+    "NRI_VER": "December 2025",
+    "RISK_SCORE": 32.318980176709125,
+    "RISK_RATNG": "Relatively Low",
+    "RISK_SPCTL": 32.318980176709125,
+    "SOVI_SCORE": 68.478351,
+    "SOVI_RATNG": "Relatively High",
+    "RESL_SCORE": 48.271531809027366,
+    "RESL_RATNG": "Relatively Moderate",
+    "WFIR_RISKS": 95.24098319717456,
+    "WFIR_RISKR": "Relatively Moderate",
+    "WFIR_EALT": 103671.79428558791,
+    "ERQK_RISKS": 86.16769528973875,
+    "ERQK_RISKR": "Relatively Moderate",
+    "ERQK_EALT": 426040.3008799637,
+    "DRGT_RISKS": 0,
+    "DRGT_RISKR": "No Rating",
+    "DRGT_EALT": 0,
+    "HWAV_RISKS": 9.105534105534105,
+    "HWAV_RISKR": "Very Low",
+    "HWAV_EALT": 6214.203115967517,
+    "LNDS_RISKS": 82.8618315436481,
+    "LNDS_RISKR": "Relatively Low",
+    "LNDS_EALT": 113.37386032960515
+   }
+  }
+ ]
+}

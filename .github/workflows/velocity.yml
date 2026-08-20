@@ -1,0 +1,39 @@
+name: Refresh market velocity snapshot
+
+on:
+  workflow_dispatch:
+  # Redfin publishes a monthly series. 13:17 UTC is 09:17 EDT / 08:17 EST: an early
+  # Eastern-morning refresh after the new monthly file is likely available, without trying
+  # to encode daylight-saving time in cron. A daily job would only re-read a huge archive.
+  schedule:
+    - cron: "17 13 5 * *"
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build bounded Redfin aggregate snapshot
+        run: python tools/build_velocity_snapshot.py
+        # The tool treats an upstream outage as a successful no-op, preserving the prior
+        # stamped snapshot rather than failing repository CI over Redfin availability.
+
+      - name: Commit only an actual snapshot change
+        run: |
+          if git diff --quiet -- data/market_velocity.json; then
+            echo "No market velocity snapshot change."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/market_velocity.json
+          git commit -m "data: refresh market velocity snapshot"
+          git push

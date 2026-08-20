@@ -1,0 +1,40 @@
+{
+ "code": "Ok",
+ "routes": [
+  {
+   "legs": [
+    {
+     "steps": [],
+     "weight": 144,
+     "summary": "",
+     "duration": 144,
+     "distance": 1178
+    }
+   ],
+   "weight_name": "routability",
+   "weight": 144,
+   "duration": 144,
+   "distance": 1178
+  }
+ ],
+ "waypoints": [
+  {
+   "hint": "zcmyhNPJsoQSAAAAGgAAAGUAAAAWAAAAHp5LQaO1jEEiCY1CuM12QRIAAAAaAAAAZQAAABYAAAAIfgAAImn0-KqrBwIyafT44asHAgYAfwYAAAAA",
+   "location": [
+    -118.20003,
+    34.05713
+   ],
+   "name": "Verde Street",
+   "distance": 6.277016442
+  },
+  {
+   "hint": "DhMAgLxkP4WiAAAAEAAAABEAAAAIAAAA0JThQnfDMUHFYDlBFjy0QKIAAAAQAAAAEQAAAAgAAAAIfgAA71z0-ETABwJeXfT4LMAHAgIALwwAAAAA",
+   "location": [
+    -118.203153,
+    34.062404
+   ],
+   "name": "San Pablo Street",
+   "distance": 10.58590157
+  }
+ ]
+}

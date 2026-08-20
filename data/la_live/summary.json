@@ -1,0 +1,18 @@
+{
+ "retrieved_utc": "2026-08-20T03:52:08.023015+00:00",
+ "zcta_features": 20,
+ "zcta_missing": [
+  "91804"
+ ],
+ "district_features": 74,
+ "flood_features": 393,
+ "poi": 0,
+ "poi_error": "Overpass primary unavailable (ConnectionError); fallback unavailable (HTTPError).",
+ "poi_categories": {
+  "grocery": 0,
+  "hospital": 0,
+  "ramp": 0
+ },
+ "drive_grid": 525,
+ "unroutable_grid_points": 0
+}

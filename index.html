@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Los Angeles Home-Buy · 2027 Decision Deck</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0e1113; --surface:#151a1e; --surface-2:#1c2227; --surface-3:#232a30;
+  --border:#2b333a; --divider:#232a30;
+  --text:#eaefef; --text-muted:#9aa5ad; --text-faint:#5c6870;
+  --primary:#7dd3c0; --primary-strong:#00b899;
+  --gold:#e0a83a; --red:#e06767; --green:#65c58b; --blue:#6ea8ff;
+  --purple:#b48be0;
+  --space-1:.25rem; --space-2:.5rem; --space-3:.75rem; --space-4:1rem; --space-6:1.5rem; --space-8:2rem;
+  --radius:8px;
+  --text-xs: clamp(.75rem,.7rem + .2vw,.85rem);
+  --text-sm: clamp(.875rem,.8rem + .25vw,.95rem);
+  --text-base: clamp(1rem,.95rem + .2vw,1.05rem);
+  --text-lg: clamp(1.05rem,1rem + .4vw,1.25rem);
+  --text-xl: clamp(1.35rem,1.2rem + .7vw,1.75rem);
+  --font-body: 'Satoshi', system-ui, sans-serif;
+  --font-display: 'General Sans', system-ui, sans-serif;
+}
+[data-theme="light"]{
+  --bg:#f7f6f2; --surface:#ffffff; --surface-2:#fbfbf9; --surface-3:#f3f0ec;
+  --border:#d4d1ca; --divider:#e2dfd9;
+  --text:#191c1f; --text-muted:#586268; --text-faint:#8a8f95;
+  --primary:#01696f; --primary-strong:#005660;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;overflow:hidden;background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:var(--text-sm);line-height:1.5}
+button,input,select{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;margin:0;letter-spacing:-.01em}
+.numeric{font-variant-numeric:tabular-nums lining-nums}
+
+.dashboard{display:grid;grid-template-columns:280px 1fr;grid-template-rows:auto 1fr;height:100dvh}
+.sidebar{grid-row:1/-1;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;overscroll-behavior:contain;padding:var(--space-4)}
+.header{grid-column:2;background:var(--surface);border-bottom:1px solid var(--border);padding:var(--space-3) var(--space-6);display:flex;align-items:center;gap:var(--space-4);position:sticky;top:0;z-index:20}
+.main{grid-column:2;overflow-y:auto;overscroll-behavior:contain;padding:var(--space-4) var(--space-6) var(--space-8)}
+
+.logo{display:flex;align-items:center;gap:var(--space-2);font-family:var(--font-display);font-weight:700}
+.logo svg{width:26px;height:26px;color:var(--primary)}
+.brand{font-size:var(--text-lg)}
+.brand-sub{color:var(--text-muted);font-size:var(--text-xs);margin-top:2px}
+.header-spacer{flex:1}
+.pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border:1px solid var(--border);border-radius:99px;font-size:var(--text-xs);color:var(--text-muted);background:var(--surface-2)}
+.pill .dot{width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.theme-btn{background:transparent;border:1px solid var(--border);color:var(--text-muted);padding:6px 10px;border-radius:6px;cursor:pointer}
+.theme-btn:hover{color:var(--text)}
+
+.side-h{font-family:var(--font-display);font-weight:600;font-size:var(--text-xs);color:var(--text-faint);text-transform:uppercase;letter-spacing:.08em;margin:var(--space-4) 0 var(--space-2)}
+.nav a{display:block;padding:8px 10px;border-radius:6px;color:var(--text-muted);text-decoration:none;font-size:var(--text-sm)}
+.nav a:hover{background:var(--surface-2);color:var(--text)}
+.nav a.active{background:var(--surface-3);color:var(--text)}
+.slider-wrap{margin-bottom:var(--space-3)}
+.slider-wrap label{display:flex;justify-content:space-between;font-size:var(--text-xs);color:var(--text-muted);margin-bottom:4px}
+.slider-wrap label b{color:var(--text);font-weight:600}
+input[type=range]{width:100%;accent-color:var(--primary)}
+input[type=number],input[type=text]{width:100%;background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:6px 8px}
+
+section{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:var(--space-4) var(--space-6);margin-bottom:var(--space-4)}
+section h2{font-size:var(--text-lg);margin-bottom:var(--space-1)}
+section .sub{font-size:var(--text-xs);color:var(--text-muted);margin-bottom:var(--space-4)}
+.grid{display:grid;gap:var(--space-4)}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.kpi{background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:var(--space-3) var(--space-4)}
+.kpi .k{font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em}
+.kpi .v{font-family:var(--font-display);font-size:var(--text-xl);font-weight:600;margin-top:4px}
+.kpi .d{font-size:var(--text-xs);color:var(--text-faint);margin-top:2px}
+.up{color:var(--green)} .down{color:var(--red)} .flat{color:var(--text-muted)}
+.formula{background:var(--surface-3);border-left:2px solid var(--primary);padding:8px 10px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:.78rem;color:var(--text-muted);border-radius:0 6px 6px 0;overflow-x:auto;white-space:nowrap}
+
+/* map */
+#map{height:520px;border-radius:8px;border:1px solid var(--border);overflow:hidden}
+.map-controls{display:flex;flex-wrap:wrap;gap:6px;margin:var(--space-3) 0}
+.map-controls button{padding:5px 10px;border:1px solid var(--border);border-radius:99px;background:var(--surface-2);color:var(--text-muted);cursor:pointer;font-size:var(--text-xs)}
+.map-controls button.on{background:var(--primary);color:#0e1113;border-color:var(--primary)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:var(--text-xs);color:var(--text-muted);margin-top:var(--space-2)}
+.legend .sw{display:inline-block;width:14px;height:10px;border-radius:2px;margin-right:6px;vertical-align:middle}
+.leaflet-container{background:var(--surface-2)}
+[data-theme="light"] .leaflet-container{background:#e8e6e0}
+.leaflet-tooltip.z-tip{background:var(--surface-3);color:var(--text);border:1px solid var(--border);font-family:var(--font-body);font-size:var(--text-xs);padding:4px 8px;border-radius:4px;box-shadow:none;font-variant-numeric:tabular-nums}
+.leaflet-tooltip.z-tip:before{display:none}
+.leaflet-popup-content-wrapper{background:var(--surface);color:var(--text);border-radius:8px}
+.leaflet-popup-tip{background:var(--surface)}
+.leaflet-popup-content{margin:12px;font-family:var(--font-body);font-size:var(--text-xs);line-height:1.55}
+
+/* scorecard table */
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+thead{position:sticky;top:0;background:var(--surface-2);z-index:1}
+th{text-align:left;padding:8px 10px;font-size:var(--text-xs);font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--divider);cursor:pointer;user-select:none}
+th.num,td.num{text-align:right}
+td{padding:10px;border-bottom:1px solid var(--divider);font-size:var(--text-sm);vertical-align:top}
+tr.top-2 td:first-child{border-left:3px solid var(--gold);padding-left:8px;font-weight:600}
+tr.reject td:first-child{border-left:3px solid var(--red);padding-left:8px;color:var(--text-muted)}
+.bar{display:inline-block;height:6px;background:linear-gradient(90deg,var(--primary),var(--gold));border-radius:99px;vertical-align:middle;margin-right:6px}
+.chip{display:inline-block;padding:2px 8px;border-radius:99px;font-size:var(--text-xs);border:1px solid var(--border)}
+.chip.take{background:rgba(101,197,139,.14);color:var(--green);border-color:transparent}
+.chip.watch{background:rgba(224,168,58,.14);color:var(--gold);border-color:transparent}
+.chip.pass{background:rgba(224,103,103,.14);color:var(--red);border-color:transparent}
+
+.list{margin:0;padding-left:1rem;color:var(--text-muted);font-size:var(--text-sm)}
+.list li{margin-bottom:6px}
+.callout{background:var(--surface-3);border-left:3px solid var(--primary);padding:var(--space-3) var(--space-4);border-radius:0 6px 6px 0;font-size:var(--text-sm);margin:var(--space-3) 0}
+.callout b{color:var(--text)}
+.small-src{font-size:var(--text-xs);color:var(--text-faint);margin-top:6px}
+.k-lab{font-size:var(--text-xs);color:var(--text-muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--space-2)}
+.summary-row{cursor:pointer;font-size:var(--text-sm);color:var(--primary);padding:var(--space-2) 0;user-select:none}
+.summary-row:hover{color:var(--primary-strong)}
+#a-table td{font-variant-numeric:tabular-nums}
+@media(max-width:560px){#a-table td,#a-table th{padding:8px 5px;font-size:.78rem}}
+.small-src a{color:var(--text-muted)}
+/* There is no global `a` rule in this stylesheet, so any link added inside a table fell
+   back to the browser default #0000EE against a near-black surface -- about 1.9:1, well
+   under the 4.5:1 WCAG AA floor. The school-district links in the scorecard hit exactly
+   that. Scoping to tables keeps the deliberately muted source-note links unchanged. */
+table a{color:var(--primary);text-decoration:none;border-bottom:1px dotted rgba(125,211,192,.45)}
+table a:hover{border-bottom-style:solid}
+/* Leaflet renders its popups and tooltips outside the table, and they carry links too. */
+.leaflet-popup-content a,.leaflet-tooltip a{color:var(--primary)}
+
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.tag{padding:2px 8px;font-size:var(--text-xs);border-radius:99px;background:var(--surface-3);color:var(--text-muted)}
+.tag.h{background:rgba(1,105,111,.15);color:var(--primary)}
+
+textarea{width:100%;min-height:120px;background:var(--surface-2);border:1px solid var(--border);border-radius:6px;padding:8px;color:var(--text);font-family:var(--font-body)}
+
+.checklist{list-style:none;padding:0}
+.checklist li{padding:6px 0;border-bottom:1px dashed var(--divider);font-size:var(--text-sm);color:var(--text-muted);display:flex;gap:8px}
+.checklist li:before{content:"◇";color:var(--primary)}
+
+/* Rate band is hand-drawn SVG rather than another Chart.js canvas. It only has eleven
+   fixed points, and direct SVG labels remain crisp in screenshots and when the page prints. */
+.sensitivity-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(240px,.8fr);gap:var(--space-4);align-items:start}
+.sensitivity-chart{display:block;width:100%;min-height:230px;background:var(--surface-2);border:1px solid var(--border);border-radius:8px}
+.sensitivity-side{display:grid;gap:var(--space-3)}
+.sensitivity-table{font-size:var(--text-xs)}
+.sensitivity-table td,.sensitivity-table th{padding:7px 8px}
+.sensitivity-table tr.anchor td{background:color-mix(in srgb,var(--primary) 12%,transparent)}
+.sensitivity-table td:last-child,.sensitivity-table th:last-child{text-align:right}
+#rate-sensitivity{scroll-margin-top:64px}
+@media(max-width:760px){.sensitivity-grid{grid-template-columns:1fr}.sensitivity-chart{min-height:210px}}
+.footer-note{color:var(--text-faint);font-size:var(--text-xs);margin-top:var(--space-6);border-top:1px solid var(--divider);padding-top:var(--space-4)}
+.footer-note a{color:var(--text-muted)}
+/* No global anchor rule existed, so any new link fell back to the browser's default blue —
+   which is nearly unreadable on the dark surface. Set once here rather than inline per link. */
+#engine a{color:var(--primary)}
+
+@media (max-width: 900px){
+  html,body{overflow:auto}
+  .dashboard{grid-template-columns:1fr;grid-template-rows:auto auto 1fr;height:auto}
+  .sidebar{grid-row:auto;border-right:none;border-bottom:1px solid var(--border)}
+  .header{grid-column:1}
+  .main{grid-column:1;padding:var(--space-3)}
+  #map{height:380px}
+}
+</style>
+</head>
+<body>
+<div class="dashboard">
+  <aside class="sidebar">
+    <div class="logo">
+      <svg viewBox="0 0 32 32" fill="none" aria-label="Home compass logo">
+        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2"/>
+        <path d="M10 20 L16 8 L22 20 L16 16 Z" fill="currentColor"/>
+      </svg>
+      <div>
+        <div class="brand">Homing In</div>
+        <div class="brand-sub">Los Angeles · 2027</div>
+      </div>
+    </div>
+
+    <div class="side-h">Sections</div>
+    <nav class="nav">
+      <a href="#map-section">Map</a>
+      <a href="#kpi">Market snapshot</a>
+      <a href="#afford">Affordability</a>
+      <a href="#amort">Amortization</a>
+      <a href="#rate-sensitivity">Rate sensitivity</a>
+      <a href="#break-even">Rent vs buy</a>
+      <a href="#scorecard">Submarket scores</a>
+      <a href="#schools">Schools</a>
+      <a href="#hazard">Hazard risk</a>
+      <a href="#timing">Timing signals</a>
+      <a href="#property">Property scorer</a>
+      <a href="#runway">Cash-flow runway</a>
+      <a href="#decisions">Decisions</a>
+      <a href="#engine">Run the full engine</a>
+    </nav>
+
+    <div class="side-h">Global inputs</div>
+    <div class="slider-wrap"><label>Household gross <b id="l-inc">$406,480</b></label><input id="i-inc" type="range" min="150000" max="600000" step="1000" value="406480"/></div>
+    <div class="slider-wrap"><label>Non-housing exp/mo <b id="l-exp">$9,400</b></label><input id="i-exp" type="range" min="3000" max="15000" step="100" value="9400"/></div>
+    <div class="slider-wrap"><label>Max housing % of gross <b id="l-dti">22%</b></label><input id="i-dti" type="range" min="15" max="36" step="1" value="22"/></div>
+    <div class="slider-wrap"><label>Down payment <b id="l-down">$190,000</b></label><input id="i-down" type="range" min="0" max="308347" step="1000" value="190000"/></div>
+    <div class="slider-wrap"><label>Target price <b id="l-price">$950,000</b></label><input id="i-price" type="range" min="645000" max="1920000" step="1000" value="950000"/></div>
+    <div class="slider-wrap"><label>Rate <b id="l-rate">6.67%</b></label><input id="i-rate" type="range" min="5" max="8" step="0.05" value="6.67"/></div>
+    <div class="slider-wrap"><label>HOA / mo <b id="l-hoa">$0</b></label><input id="i-hoa" type="range" min="0" max="300" step="10" value="0"/></div>
+    <div class="slider-wrap"><label>Homelab & fiber weight <b id="l-w-fiber">25%</b></label><input id="i-w-fiber" type="range" min="0" max="40" step="1" value="25"/></div>
+    <div class="slider-wrap"><label>School quality weight <b id="l-w-school">30%</b></label><input id="i-w-school" type="range" min="0" max="50" step="1" value="30"/></div>
+
+    <div class="side-h">Scenario</div>
+    <div style="font-size:var(--text-xs);color:var(--text-muted)">
+      Purchase window · <b style="color:var(--text)">Q2–Q3 2027</b><br>Commute anchor · Keck Hospital of USC<br>Arrival · weekday 06:30–07:00 · fiber, ≤20 min, low HOA
+    </div>
+  </aside>
+
+  <header class="header">
+    <div style="font-family:var(--font-display);font-weight:600;font-size:var(--text-lg)">Home-Buy Decision Deck</div>
+    <span class="pill"><span class="dot"></span> Data snapshot · <span id="asof">2026-08-20</span></span>
+    <div class="header-spacer"></div>
+    <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">◐</button>
+  </header>
+
+  <main class="main">
+    <!-- MAP -->
+    <section id="map-section">
+      <h2>Where to look</h2>
+      <div class="sub">Los Angeles eastside + San Gabriel Valley. Toggle layers to compare price, taxes, schools, drives, flood risk, and infrastructure.</div>
+      <div class="map-controls" id="layer-toggles"></div>
+      <div id="map"></div>
+      <div class="legend" id="legend"></div>
+      <div class="small-src">Sources — ZIP price/PPSF: <a href="https://www.redfin.com/news/data-center/" target="_blank">Redfin Data Center (3-mo rolling, ends 2026-05-31)</a>. County market: <a href="https://mynewsla.com/business/2026/08/17/home-prices-sales-decline-in-la-orange-counties/" target="_blank">C.A.R. data via MyNewsLA (Jul 2026)</a>. Flood: <a href="https://msc.fema.gov/portal/search" target="_blank">FEMA Map Service Center</a>. School districts: <a href="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer/14" target="_blank">Census TIGERweb</a>. Anchor: <a href="https://www.keckmedicine.org/locations/keck-hospital-of-usc/" target="_blank">Keck Hospital of USC</a>. School proficiency: <a href="https://caaspp-elpac.ets.org/caaspp/" target="_blank">CAASPP 2025</a>. Basemap: <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>. <span style="opacity:.8">This snapshot carries no points of interest — every public Overpass mirror refused the request when it was built. Those layers are marked “no data” rather than drawn empty.</span></div>
+    </section>
+
+    <!-- KPI -->
+    <section id="kpi">
+      <h2>Market snapshot · Los Angeles County</h2>
+      <div class="sub">The one-line read: the county median is down 2.6% YoY with 3.5 months of supply. Softer, not cheap.</div>
+      <div class="grid grid-4">
+        <div class="kpi"><div class="k">County median SFR</div><div class="v numeric">$888,120</div><div class="d down">▼ 2.6% YoY · Jul 2026</div></div>
+        <div class="kpi"><div class="k">County supply</div><div class="v numeric">3.5 mo</div><div class="d flat">Unsold inventory · Jul 2026</div></div>
+        <div class="kpi"><div class="k">Metro median</div><div class="v numeric">$849,450</div><div class="d up">▲ 0.5% YoY · Jul 2026</div></div>
+        <div class="kpi"><div class="k">3BR rent · LA</div><div class="v numeric">$4,080</div><div class="d flat">Apartment average / mo</div></div>
+        <div class="kpi"><div class="k">30-yr fixed rate</div><div class="v numeric">6.67%</div><div class="d flat">Freddie Mac · Aug 13, 2026</div></div>
+        <div class="kpi"><div class="k">Metro permits</div><div class="v numeric">2,385</div><div class="d down">Units · Jun 2026</div></div>
+        <div class="kpi"><div class="k">County population</div><div class="v numeric">9.84M</div><div class="d down">▼ 0.6% YoY · Jan 2026</div></div>
+        <div class="kpi"><div class="k">CA DOI insurance</div><div class="v numeric">$1,571</div><div class="d flat">Statewide annual average</div></div>
+      </div>
+      <div class="small-src">Sources — <a href="https://mynewsla.com/business/2026/08/17/home-prices-sales-decline-in-la-orange-counties/" target="_blank">C.A.R. data via MyNewsLA</a> · <a href="https://www.zillow.com/rental-manager/market-trends/los-angeles-ca/" target="_blank">Zillow Rental Manager</a> · <a href="https://www.freddiemac.com/pmms" target="_blank">Freddie Mac PMMS</a> · <a href="https://fred.stlouisfed.org/data/LOSA106BPPRIV.txt" target="_blank">FRED LOSA106BPPRIV</a> · <a href="https://dof.ca.gov/media/docs/forecasting/demographics/estimates/e-1_2026_press_release.Pdf" target="_blank">CA Department of Finance</a> · <a href="https://www.insurance.ca.gov/01-consumers/180-climate-change/sustainable-insurance-strategy.Cfm" target="_blank">California Department of Insurance</a>.</div>
+    </section>
+
+    <!-- AFFORDABILITY -->
+    <section id="afford">
+      <h2>Affordability engine</h2>
+      <div class="sub">Move the sliders. Numbers update live. Formula is visible below.</div>
+      <div class="grid grid-4">
+        <div class="kpi"><div class="k">Loan amount</div><div class="v numeric" id="k-loan">$760,000</div><div class="d" id="k-loan-d">Price − Down</div></div>
+        <div class="kpi"><div class="k">Monthly P & I</div><div class="v numeric" id="k-pi">—</div><div class="d">30-yr fixed</div></div>
+        <div class="kpi"><div class="k">Est. taxes / mo <span title="TRA 00004 · Prop 13 new-buyer base" style="color:var(--text-faint);cursor:help">?</span></div><div class="v numeric" id="k-tax">—</div><div class="d">TRA 00004 · 1.187380%</div></div>
+        <div class="kpi"><div class="k">Est. insurance / mo</div><div class="v numeric" id="k-ins">—</div><div class="d">$2,058/yr profile baseline</div></div>
+        <div class="kpi"><div class="k">Earthquake / yr</div><div class="v numeric">$1,800</div><div class="d">Separate · outside PITI</div></div>
+        <div class="kpi"><div class="k">HOA / mo</div><div class="v numeric" id="k-hoa">$0</div><div class="d">Deal-breaker: >$100</div></div>
+        <div class="kpi"><div class="k"><b style="color:var(--primary)">PITI + HOA</b></div><div class="v numeric" id="k-piti">—</div><div class="d">Total housing payment</div></div>
+        <div class="kpi"><div class="k">Front-end DTI</div><div class="v numeric" id="k-fdti">—</div><div class="d" id="k-fdti-d">Target ≤22%</div></div>
+        <div class="kpi"><div class="k">Cash to close</div><div class="v numeric" id="k-ctc">—</div><div class="d">Down + closing costs</div></div>
+        <div class="kpi" style="border-color:var(--primary)"><div class="k"><b style="color:var(--primary)">Max price at DTI cap</b></div><div class="v numeric" id="k-maxp">—</div><div class="d" id="k-maxp-d">Solved from the DTI slider</div></div>
+      </div>
+      <div class="callout" id="maxp-note" style="margin-top:12px"></div>
+      <div class="formula" style="margin-top:12px">P&I = L × r(1+r)^n / ((1+r)^n − 1) &nbsp;·&nbsp; Tax/mo = (purchase price − $7,000 exemption) × 1.187380% / 12 &nbsp;·&nbsp; Prop 13 base resets at sale, then grows ≤2%/yr</div>
+      <div class="callout"><b>Do not trust the listing’s tax line.</b> It reflects the seller’s frozen Prop 13 base; a new buyer near the anchor resets to purchase price, so tax can be roughly quadruple. Budget the post-close supplemental bill. File the $7,000 homeowners’ exemption by Feb 15 for the full reduction.</div>
+      <div class="callout"><b>Transfer tax is seller-side by local custom.</b> LA County charges $1.10 per $1,000 and the City adds $4.50 per $1,000. Confirm the allocation in the contract; do not put it in buyer cash-to-close by default.</div>
+      <div class="small-src">Sources — TRA 00004 rate: <a href="https://auditor.lacounty.gov/wp-content/uploads/2025/09/Highest-Value-TRA-Report-FY-2025-2026_SORTED.xlsx" target="_blank">LA County Auditor-Controller FY2025–26 rate table</a> · Prop 13 reset/cap: <a href="https://lao.ca.gov/publications/report/3497" target="_blank">California Legislative Analyst’s Office</a> · seller/new-buyer gap: <a href="https://www.ppic.org/wp-content/uploads/content/pubs/rb/RB_998SSRB.pdf" target="_blank">PPIC LA County analysis</a> · exemption and supplemental bill: <a href="https://boe.ca.gov/pdf/pub800-6.pdf" target="_blank">BOE Publication 800-6</a> and <a href="https://www.boe.ca.gov/proptaxes/supplemental-assessment/" target="_blank">BOE Supplemental Assessment</a> · transfer tax: <a href="https://www.lavote.gov/home/recorder/property-document-recording/documentary-transfer-taxes/general-info" target="_blank">LA County Recorder</a> and <a href="https://www.dlapiper.com/en/insights/publications/2023/03/new-guidance-and-new-challenges-for-las-mansion-tax" target="_blank">DLA Piper</a> · earthquake exclusion/deductibles: <a href="https://www.insurance.ca.gov/01-consumers/105-type/95-guides/03-res/eq-ins.cfm" target="_blank">California Department of Insurance</a> and <a href="https://www.earthquakeauthority.com/california-earthquake-insurance-policies/earthquake-insurance-premium-calculator" target="_blank">CEA premium calculator</a>.</div>
+      <div class="callout" id="afford-verdict"></div>
+    </section>
+
+    <!-- AMORTIZATION -->
+    <section id="amort">
+      <h2>Amortization &middot; where the payment actually goes</h2>
+      <div class="sub">Driven by the price, down-payment and rate sliders above. Principal and interest only &mdash; this is the loan, not the housing payment.</div>
+      <div class="grid grid-4">
+        <div class="kpi"><div class="k">Monthly P &amp; I</div><div class="v numeric" id="a-pmt">&mdash;</div><div class="d" id="a-pmt-d">30-yr fixed</div></div>
+        <div class="kpi"><div class="k">Interest over the life</div><div class="v numeric" id="a-int">&mdash;</div><div class="d" id="a-int-d">On top of the loan</div></div>
+        <div class="kpi"><div class="k">Principal beats interest</div><div class="v numeric" id="a-cross">&mdash;</div><div class="d" id="a-cross-d">First payment mostly principal</div></div>
+        <div class="kpi" style="border-color:var(--primary)"><div class="k"><b style="color:var(--primary)">Payoff</b></div><div class="v numeric" id="a-payoff">&mdash;</div><div class="d" id="a-payoff-d">At the scheduled payment</div></div>
+      </div>
+
+      <div class="slider-wrap" style="margin-top:var(--space-4);max-width:520px"><label>Extra principal each month <b id="l-extra">$0</b></label><input id="i-extra" type="range" min="0" max="1000" step="25" value="0"/></div>
+      <div class="callout" id="a-extra-note"></div>
+
+      <div class="grid grid-2" style="margin-top:var(--space-4)">
+        <div>
+          <div class="k-lab">Interest vs principal, per payment</div>
+          <div style="position:relative;height:260px;width:100%"><canvas id="split-chart"></canvas></div>
+          <div class="small-src">The crossing point is the crossover above. Left of it, most of the payment is rent on the money.</div>
+        </div>
+        <div>
+          <div class="k-lab">Balance remaining</div>
+          <div style="position:relative;height:260px;width:100%"><canvas id="bal-chart"></canvas></div>
+          <div class="small-src">The dashed line is the schedule with no extra payment, for comparison.</div>
+        </div>
+      </div>
+
+      <details style="margin-top:var(--space-4)">
+        <summary class="summary-row">Year-by-year table</summary>
+        <div style="max-height:340px;overflow:auto;margin-top:var(--space-3)">
+          <table id="a-table">
+            <thead><tr>
+              <th style="cursor:default">Year</th>
+              <th style="cursor:default;text-align:right">Interest</th>
+              <th style="cursor:default;text-align:right">Principal</th>
+              <th style="cursor:default;text-align:right">Extra</th>
+              <th style="cursor:default;text-align:right">End balance</th>
+            </tr></thead>
+            <tbody id="a-body"></tbody>
+          </table>
+        </div>
+      </details>
+
+      <div class="formula" style="margin-top:12px">interest = balance &times; rate/12 &nbsp;&middot;&nbsp; principal = payment &minus; interest &nbsp;&middot;&nbsp; balance &minus;= principal + extra &nbsp;&middot;&nbsp; last payment = balance + interest, not the level payment</div>
+      <div class="callout" id="a-excludes"></div>
+    </section>
+
+    <!-- RATE SENSITIVITY -->
+    <section id="rate-sensitivity">
+      <h2>Rate sensitivity band · one house, 5.00%–7.50%</h2>
+      <div class="sub">The chart holds your price, down payment, HOA, tax and insurance inputs fixed, then moves only the 30-year rate. The vertical marker is the rate slider above — an assumption, not a rate forecast.</div>
+      <div class="sensitivity-grid">
+        <div>
+          <svg id="rate-band-chart" class="sensitivity-chart" viewBox="0 0 720 250" role="img" aria-label="Monthly full PITI across mortgage rates from five percent through seven point five percent"></svg>
+          <div class="small-src">Full PITI includes principal and interest, estimated owner-occupied tax, statewide-average insurance, and HOA. It does not include mortgage insurance, which remains unmodeled.</div>
+        </div>
+        <div class="sensitivity-side">
+          <div class="kpi"><div class="k">At the rate slider</div><div class="v numeric" id="rate-band-anchor">—</div><div class="d" id="rate-band-anchor-d">Full PITI / month</div></div>
+          <div class="kpi"><div class="k">5.00% → 7.50%</div><div class="v numeric" id="rate-band-spread">—</div><div class="d" id="rate-band-spread-d">Same house, full PITI delta</div></div>
+          <div class="callout" id="rate-wait-note" style="margin:0"></div>
+        </div>
+      </div>
+      <div style="overflow-x:auto;margin-top:var(--space-3)">
+        <table class="sensitivity-table"><thead><tr><th>Rate</th><th class="num">Full PITI / mo</th><th class="num">P &amp; I / mo</th><th class="num">Interest, 30 yr</th></tr></thead><tbody id="rate-band-table"></tbody></table>
+      </div>
+    </section>
+
+    <!-- RENT vs BUY -->
+    <section id="break-even">
+      <h2>Rent vs buy · break-even</h2>
+      <div class="sub">How many years you must own before buying beats renting, given opportunity cost on your down payment.</div>
+      <div class="grid grid-2">
+        <div>
+          <div class="slider-wrap"><label>Assumed rent equivalent <b id="l-rent">$4,080</b></label><input id="i-rent" type="range" min="2673" max="4556" step="50" value="4080"/></div>
+          <div class="slider-wrap"><label>Home appreciation / yr <b id="l-appr">2.0%</b></label><input id="i-appr" type="range" min="-3" max="7" step="0.1" value="2.0"/></div>
+          <div class="slider-wrap"><label>Investment return (opportunity) <b id="l-invret">7.0%</b></label><input id="i-invret" type="range" min="0" max="12" step="0.1" value="7.0"/></div>
+          <div class="slider-wrap"><label>Sell-side cost <b id="l-sell">6%</b></label><input id="i-sell" type="range" min="4" max="9" step="0.5" value="6"/></div>
+          <div class="small-src">Comparable LA 3BR rents span $4,080 for apartments to $4,556 for single-family rentals. The appreciation and return sliders are scenarios, not forecasts. Sources: <a href="https://www.zillow.com/rental-manager/market-trends/los-angeles-ca/" target="_blank">Zillow Rental Manager</a> · <a href="https://www.doorstead.com/blog/los-angeles-ca-rental-market-report" target="_blank">Doorstead LA rental report</a>.</div>
+        </div>
+        <div>
+          <div style="position:relative;height:260px;width:100%"><canvas id="be-chart"></canvas></div>
+          <div class="kpi" style="margin-top:12px"><div class="k">Break-even</div><div class="v numeric" id="k-be">—</div><div class="d" id="k-be-d">Longer than your likely stay? Rent longer.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCORECARD -->
+    <section id="scorecard">
+      <h2>Submarket scorecard</h2>
+      <div class="sub">One row per submarket. Change the weights in the sidebar to re-score. Click a column header to sort.</div>
+      <div class="tag-row" id="weight-tags"></div>
+      <div style="overflow-x:auto;margin-top:8px">
+        <table id="score-table">
+          <thead><tr>
+            <th data-sort="name">Submarket</th>
+            <th data-sort="schools">School district · CAASPP</th>
+            <th class="num" data-sort="price">Median</th>
+            <th class="num" data-sort="ppsf">$/sqft</th>
+            <th class="num" data-sort="yoy">YoY</th>
+            <th class="num" data-sort="dom">DoM</th>
+            <th class="num" data-sort="inv">Inv</th>
+            <th class="num" data-sort="drive">Drive</th>
+            <th class="num" data-sort="score">Score</th>
+            <th>Decision</th>
+          </tr></thead>
+          <tbody id="score-body"></tbody>
+        </table>
+      </div>
+      <div class="small-src">ZIP-level median sale price, $/sqft, DoM and inventory: <a href="https://www.redfin.com/news/data-center/" target="_blank">Redfin Data Center</a> (3-mo rolling ends 2026-05-31). Drive minutes are estimates to <a href="https://www.keckmedicine.org/locations/keck-hospital-of-usc/" target="_blank">Keck Hospital of USC</a>; verify the actual property for weekday 06:30–07:00 arrival. Score = weighted normalized composite; edit weight in the sidebar.</div>
+    </section>
+
+    <!-- SCHOOLS -->
+    <section id="schools">
+      <h2>Schools · rank the trade-off</h2>
+      <div class="sub">Priority metric: 2024–25 CAASPP all-student ELA + math “met or exceeded,” averaged. This is a measured outcome, not a school-effectiveness claim.</div>
+      <div class="grid grid-4">
+        <div class="kpi"><div class="k">Anchor district</div><div class="v">LAUSD</div><div class="d">Boyle Heights · address-specific</div></div>
+        <div class="kpi"><div class="k">LAUSD CAASPP avg</div><div class="v numeric">41.6%</div><div class="d">Below the 55% profile floor</div></div>
+        <div class="kpi"><div class="k">South Pasadena</div><div class="v numeric">81.4%</div><div class="d">$1.92M ZIP median</div></div>
+        <div class="kpi"><div class="k">Alhambra / San Gabriel</div><div class="v numeric">58.5% / 54.1%</div><div class="d">Stronger, price-sensitive options</div></div>
+      </div>
+      <div class="callout"><b>Central tension.</b> South Pasadena is the standout school district but its ZIP median is far above the $950K target. Alhambra and San Gabriel offer materially stronger district averages than LAUSD and are the nearer budget tests; a specific house still has to clear commute, garage, fiber, and its actual boundary.</div>
+      <div class="callout"><b>LAUSD is not one assigned high school.</b> In the Boyle Heights Zone of Choice, an address can map to several high schools — including Roosevelt and Mendez — and the family ranks options for a lottery. Report this as eligibility, never a guaranteed school.</div>
+      <div class="small-src">Sources — district boundary: <a href="https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Current/MapServer/14" target="_blank">Census TIGERweb</a> · CAASPP district reports: <a href="https://caaspp-elpac.ets.org/caaspp/DashViewReportSB?ps=true&amp;lstTestYear=2025&amp;lstTestType=B&amp;lstGroup=1&amp;lstSubGroup=1&amp;lstGrade=13&amp;lstSchoolType=A&amp;lstCounty=19&amp;lstDistrict=64733-000&amp;lstSchool=0000000" target="_blank">LAUSD</a>, <a href="https://caaspp-elpac.ets.org/caaspp/DashViewReportSB?ps=true&amp;lstTestYear=2025&amp;lstTestType=B&amp;lstGroup=1&amp;lstSubGroup=1&amp;lstGrade=13&amp;lstSchoolType=A&amp;lstCounty=19&amp;lstDistrict=65029-000&amp;lstSchool=0000000" target="_blank">South Pasadena Unified</a>, <a href="https://caaspp-elpac.ets.org/caaspp/DashViewReportSB?ps=true&amp;lstTestYear=2025&amp;lstTestType=B&amp;lstGroup=1&amp;lstSubGroup=1&amp;lstGrade=13&amp;lstSchoolType=A&amp;lstCounty=19&amp;lstDistrict=75713-000&amp;lstSchool=0000000" target="_blank">Alhambra Unified</a>, <a href="https://caaspp-elpac.ets.org/caaspp/DashViewReportSB?ps=true&amp;lstTestYear=2025&amp;lstTestType=B&amp;lstGroup=1&amp;lstSubGroup=1&amp;lstGrade=13&amp;lstSchoolType=A&amp;lstCounty=19&amp;lstDistrict=52911-000&amp;lstSchool=0000000" target="_blank">San Gabriel Unified</a> · Zone of Choice: <a href="https://zoc.lausd.org/apps/pages/index.jsp?uREC_ID=4428620&amp;type=d&amp;pREC_ID=2666076" target="_blank">LAUSD Zones of Choice</a> · ZIP medians: <a href="https://www.redfin.com/news/data-center/" target="_blank">Redfin Data Center</a>.</div>
+    </section>
+
+    <!-- HAZARD RISK -->
+    <section id="hazard">
+      <h2>Hazard risk · FEMA National Risk Index</h2>
+      <div class="sub">Wildfire, earthquake, landslide, heat wave, and drought at census-tract resolution. <b>None of this scores a house.</b> It is a reason to price insurance and ask questions, not a deduction.</div>
+
+      <div class="grid grid-2">
+        <div>
+          <div class="slider-wrap"><label>ZIP <span style="color:var(--text-faint)">— shows the one tract at the ZIP centroid</span></label><select id="hz-zip" style="width:100%;padding:7px 9px;background:var(--surface-2);color:var(--text);border:1px solid var(--border);border-radius:7px;font-family:inherit;font-size:var(--text-sm)"></select></div>
+          <div id="hz-bars" style="margin-top:14px"></div>
+        </div>
+        <div>
+          <div class="grid grid-2" style="gap:10px">
+            <div class="kpi"><div class="k">All-hazard composite</div><div class="v numeric" id="hz-comp">–</div><div class="d" id="hz-comp-d"></div></div>
+            <div class="kpi"><div class="k">Social vulnerability</div><div class="v numeric" id="hz-sovi">–</div><div class="d" id="hz-sovi-d"></div></div>
+            <div class="kpi"><div class="k">Community resilience</div><div class="v numeric" id="hz-resl">–</div><div class="d" id="hz-resl-d"></div></div>
+            <div class="kpi"><div class="k">Census tract</div><div class="v numeric" style="font-size:var(--text-base)" id="hz-tract">–</div><div class="d">FEMA's smallest unit</div></div>
+          </div>
+          <div id="hz-notes" style="margin-top:12px"></div>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:14px;border-left-color:var(--red)">
+        <b>Two ways this dataset misleads you, both measured rather than assumed.</b>
+        <div style="margin-top:6px"><b>A rating label is not a scale.</b> FEMA bins its five labels separately by hazard. Compare the percentile, not the adjective; earthquake is the anchor tract’s <b>95th percentile</b> exposure.</div>
+        <div style="margin-top:6px"><b>A blank is not a zero.</b> The anchor tract has <b>no wildfire rating</b>, not a low wildfire score: it is dense Boyle Heights urban fabric with no wildland to model. Treat the blank as unrated, then use the parcel’s fire-zone and insurance quote. The same rule applies wherever FEMA does not publish a tract value for drought, heat wave, or landslide.<span id="hz-drgt-n" hidden>—</span><span id="hz-drgt-r" hidden>—</span></div>
+      </div>
+
+      <div class="small-src" id="hz-src">Source — <a href="https://www.fema.gov/flood-maps/products-tools/national-risk-index" target="_blank">FEMA National Risk Index</a> · parcel fire-zone check: <a href="https://experience.arcgis.com/experience/03beab8511814e79a0e4eabf0d3e7247" target="_blank">CAL FIRE FHSZ Viewer</a>.</div>
+    </section>
+
+    <!-- TIMING -->
+    <section id="timing">
+      <h2>Timing signals · nine watch-items to Q3 2027</h2>
+      <div class="sub">Current reading and thresholds that would shift you toward or away from buying. Estimates labeled.</div>
+      <div class="grid grid-2">
+        <div id="timing-body"></div>
+        <div>
+          <div class="callout">
+            <b>Do not wait for a rate forecast.</b> Stress-test the current 6.67% rate, the actual price, and the TRA-specific tax reset. A lower rate is upside; it is not the purchase plan.
+            <div class="small-src">Source: <a href="https://www.freddiemac.com/pmms" target="_blank">Freddie Mac PMMS</a> · TRA rate: <a href="https://auditor.lacounty.gov/wp-content/uploads/2025/09/Highest-Value-TRA-Report-FY-2025-2026_SORTED.xlsx" target="_blank">LA County Auditor-Controller</a>.</div>
+          </div>
+          <div class="callout" style="border-left-color:var(--red)">
+            <b>Los Angeles analogue · the one thing that would change my mind.</b> A material LA County WARN cluster in healthcare/logistics, paired with a Port of LA cargo reversal, turns “buy into a soft market” into “wait for the labor shock to price through.”
+            <div class="small-src">Sources: <a href="https://edd.ca.gov/siteassets/files/jobs_and_training/warn/warn_report1.xlsx" target="_blank">California EDD WARN report</a> · <a href="https://portoflosangeles.org/references/2026-news-releases/news_071526_june_cargo" target="_blank">Port of Los Angeles cargo release</a> · <a href="https://www.keckmedicine.org/keck-medicine-careers-information/" target="_blank">Keck Medicine careers</a>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROPERTY SCORER -->
+    <section id="property">
+      <h2>Property scorer</h2>
+      <div class="sub">Paste a listing address + a few facts. Get a 0–100 fit score against your must-haves and a red-flag checklist. Thresholds and weights are compiled from <code>buyer_profile.toml</code>, the same file the Python engine reads — change the profile, rebuild, and this page changes with it. <b>Leave a field blank when you genuinely do not know it</b>; blank is treated as unknown and caps the score below TAKE rather than scoring it as if the answer were good.</div>
+      <div class="grid grid-2">
+        <div>
+          <div class="slider-wrap"><label>Address / MLS #</label><input id="p-addr" type="text" placeholder="1500 San Pablo St, Los Angeles, CA 90033"/></div>
+          <div class="slider-wrap"><label>Price</label><input id="p-price" type="number" value="950000"/></div>
+          <div class="slider-wrap"><label>Beds / Baths <span style="color:var(--text-faint)">— blank = unknown</span></label><input id="p-bb" type="text" value="3 / 2"/></div>
+          <div class="slider-wrap"><label>Square feet <span style="color:var(--text-faint)">— blank = unknown</span></label><input id="p-sqft" type="number" value="1400"/></div>
+          <div class="slider-wrap"><label>HOA / mo <span style="color:var(--text-faint)">— over $100 deducts, does not disqualify</span></label><input id="p-hoa" type="number"/></div>
+          <div class="slider-wrap"><label>Garage bays</label><input id="p-gar" type="number" value="2"/></div>
+          <div class="slider-wrap"><label>Fiber available (0/1)</label><input id="p-fib" type="number" min="0" max="1"/></div>
+          <div class="slider-wrap"><label>Est. commute (min) <span style="color:var(--text-faint)">— to Keck Hospital, weekday 06:30–07:00 arrival</span></label><input id="p-com" type="number"/></div>
+          <div class="slider-wrap"><label>Water/sewer verified (0/1)</label><input id="p-sep" type="number" min="0" max="1"/></div>
+          <div class="slider-wrap"><label>In FEMA flood zone (0/1)</label><input id="p-fld" type="number" min="0" max="1"/></div>
+          <div class="slider-wrap"><label>Roof age (yrs) <span style="color:var(--text-faint)">— 15+ deducts, 20+ deducts more</span></label><input id="p-roof" type="number"/></div>
+          <div class="slider-wrap"><label>HVAC age (yrs) <span style="color:var(--text-faint)">— 12+ deducts, 18+ deducts more</span></label><input id="p-hvac" type="number"/></div>
+        </div>
+        <div>
+          <div class="kpi" style="margin-bottom:12px"><div class="k">Fit score</div><div class="v numeric" id="p-score">–</div><div class="d" id="p-score-d">Weighted must-haves × deal-breakers</div></div>
+          <div style="font-family:var(--font-display);font-weight:600;margin-bottom:6px">Why it scored that way</div>
+          <ul class="checklist" id="p-flags"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- RUNWAY -->
+    <section id="runway">
+      <h2>Cash-flow readiness timeline</h2>
+      <div class="sub">Down-payment runway to the Q2–Q3 2027 purchase window. Enter current savings and monthly savings before reading the result; neither is supplied in the buyer profile.</div>
+      <div class="grid grid-2">
+        <div>
+          <div class="slider-wrap"><label>Current savings toward down <b id="l-save">$45,000</b></label><input id="i-save" type="range" min="0" max="200000" step="500" value="45000"/></div>
+          <div class="slider-wrap"><label>Monthly savings rate <b id="l-msave">$4,500</b></label><input id="i-msave" type="range" min="0" max="15000" step="100" value="4500"/></div>
+          <div class="slider-wrap"><label>Target down %</label><input id="i-dpct" type="range" min="5" max="25" step="1" value="15"><span id="l-dpct" style="font-size:var(--text-xs);color:var(--text-muted)">15% of price</span></div>
+          <div class="kpi"><div class="k">Runway status</div><div class="v numeric" id="k-runway">On track</div><div class="d" id="k-runway-d"></div></div>
+        </div>
+        <div style="position:relative;height:260px;width:100%"><canvas id="runway-chart"></canvas></div>
+      </div>
+    </section>
+
+    <!-- DECISIONS -->
+    <section id="decisions">
+      <h2>The five decisions you actually need to make · in order</h2>
+      <ol class="list" style="font-size:var(--text-base);color:var(--text)">
+        <li><b>Confirm the top-2 submarkets by Nov 2026.</b> Start with Boyle Heights/El Sereno for commute and price, then test Alhambra/Monterey Park for school outcomes and house fit. Drive at the actual weekday hospital-arrival window; walk candidate streets after dark.</li>
+        <li><b>Lock the $190K down-payment target by Dec 2026.</b> It is the profile’s 20% down assumption on the $950K target. Keep reserves outside the down payment; the dashboard does not model mortgage insurance below 20%.</li>
+        <li><b>Get two insurance quotes before contract.</b> Quote standard homeowners and earthquake coverage separately. A hillside or fire-zone address is a different insurance product from the Boyle Heights flatlands.</li>
+        <li><b>Underwrite the buyer tax, not the seller tax.</b> Pull the parcel’s TRA, model the Prop 13 reset, reserve for the supplemental bill, and file the homeowners’ exemption on time.</li>
+        <li><b>Trigger buy or wait in Apr 2027 using the timing table.</b> Buy signal: supply remains available and your target house clears the school/commute tests. Wait signal: a material LA WARN cluster plus a Port cargo reversal. Otherwise, execute the normal purchase.</li>
+      </ol>
+      <div class="callout"><b>Discipline note.</b> Protecting capital comes first. Your household has strong income and a specific, near-in-time window. The edge is not predicting price or rate — it is choosing a submarket that fits your commute + fiber + schools rules, and moving decisively when supply and time-on-market look this favorable.</div>
+      <div class="small-src">Sources — buyer assumptions: <a href="https://www.freddiemac.com/pmms" target="_blank">Freddie Mac PMMS</a> · schools: <a href="https://caaspp-elpac.ets.org/caaspp/ResearchFileListSB" target="_blank">CAASPP research files</a> · insurance: <a href="https://www.insurance.ca.gov/01-consumers/105-type/95-guides/03-res/eq-ins.cfm" target="_blank">California Department of Insurance</a> · tax mechanics: <a href="https://lao.ca.gov/publications/report/3497" target="_blank">California Legislative Analyst’s Office</a> · economic risks: <a href="https://edd.ca.gov/siteassets/files/jobs_and_training/warn/warn_report1.xlsx" target="_blank">California EDD WARN report</a> and <a href="https://portoflosangeles.org/references/2026-news-releases/news_071526_june_cargo" target="_blank">Port of Los Angeles</a>.</div>
+    </section>
+
+    <!-- ENGINE -->
+    <section id="engine">
+      <h2>Run the full engine</h2>
+      <div class="sub">This page is a <b>snapshot</b> on purpose — static files, no backend, no keys, works offline. The analyzer behind it does the part a snapshot cannot: it goes and looks things up.</div>
+
+      <div class="grid grid-2">
+        <div>
+          <div style="font-family:var(--font-display);font-weight:600;margin-bottom:6px">What this page does</div>
+          <ul class="list">
+            <li>Scores facts <b>you</b> type in, against thresholds compiled from <code>buyer_profile.toml</code></li>
+            <li>Applies deductions, capital-expense tiers, the unknown-facts cap, and the verdict bands in the same order the engine does</li>
+            <li>Models affordability, rent-vs-buy, and down-payment runway from the sliders</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:var(--font-display);font-weight:600;margin-bottom:6px">What only the engine does</div>
+          <ul class="list">
+            <li>Geocodes the address, then pulls the county parcel record, FEMA flood layer, school context, and drive time to Keck Hospital of USC — so hard fails are <b>looked up</b>, not typed</li>
+            <li>Parcel-specific TRA property tax with the Prop 13 base-year reset on sale, supplemental-assessment flag, and homeowners’ exemption</li>
+            <li>Full amortisation, insurance proration, cash-to-close, and three separate maintenance-reserve methods reported side by side rather than averaged</li>
+            <li>Scores a whole CSV shortlist at once and ranks it</li>
+            <li>Says clearly when a source was unreachable instead of quietly guessing</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:14px">
+        <b>Three doors, one engine.</b> A CLI, a batch runner, and an HTTP API all call the same scoring core — they cannot disagree about a house. This page is the fourth door, and it is the one that can't import Python, so its rules are <i>compiled</i> out of the profile by <code>tools/build_snapshot.py</code> and a CI check fails the build if the two ever drift apart again.
+      </div>
+
+      <div style="font-family:var(--font-display);font-weight:600;margin:16px 0 6px">Run it locally</div>
+      <pre style="background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:12px;overflow-x:auto;font-size:var(--text-xs);line-height:1.7"><code>git clone https://github.com/flux1618/home-buying-dashboard
+cd home-buying-dashboard
+
+# one address, full report
+pip install -e '.[api]'
+python -m analyzer.cli "1500 San Pablo St, Los Angeles, CA 90033" 950000 --roof-age 17 --hvac-age 14
+
+# a whole shortlist, ranked
+python -m analyzer.batch examples/shortlist.csv
+
+# or the API in a container, bound to localhost only
+docker compose up --build     # then http://127.0.0.1:8000/docs</code></pre>
+      <div style="font-size:var(--text-xs);color:var(--text-muted);margin-top:8px">Source, architecture decision records, and known limitations: <a href="https://github.com/flux1618/home-buying-dashboard" target="_blank" style="color:var(--primary)">github.com/flux1618/home-buying-dashboard</a></div>
+    </section>
+
+    <div class="footer-note">
+      Not financial advice. Every value on this page traces to the linked sources above. Estimates (e.g. drive time, generic fiber coverage, insurance quotes, forecast paths) are labeled and should be verified on a specific parcel before you commit. Portfolio demonstration · commute anchor: <a href="https://www.keckmedicine.org/locations/keck-hospital-of-usc/" target="_blank">Keck Hospital of USC, 1500 San Pablo St</a> · weekday arrival: 06:30–07:00 · purchase window: Q2–Q3 2027.
+    </div>
+  </main>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

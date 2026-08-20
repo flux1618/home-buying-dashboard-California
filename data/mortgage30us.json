@@ -1,0 +1,1068 @@
+{
+  "derived": {
+    "4_week_change_pct_points": 0.12,
+    "52_week_high_pct": 6.69,
+    "52_week_low_pct": 5.98,
+    "5_year_percentile": 64.1
+  },
+  "fallback_note": null,
+  "fetched_at": "2026-08-20T01:45:48+00:00",
+  "history": [
+    {
+      "observation_date": "2021-08-12",
+      "rate_pct": 2.87
+    },
+    {
+      "observation_date": "2021-08-19",
+      "rate_pct": 2.86
+    },
+    {
+      "observation_date": "2021-08-26",
+      "rate_pct": 2.87
+    },
+    {
+      "observation_date": "2021-09-02",
+      "rate_pct": 2.87
+    },
+    {
+      "observation_date": "2021-09-09",
+      "rate_pct": 2.88
+    },
+    {
+      "observation_date": "2021-09-16",
+      "rate_pct": 2.86
+    },
+    {
+      "observation_date": "2021-09-23",
+      "rate_pct": 2.88
+    },
+    {
+      "observation_date": "2021-09-30",
+      "rate_pct": 3.01
+    },
+    {
+      "observation_date": "2021-10-07",
+      "rate_pct": 2.99
+    },
+    {
+      "observation_date": "2021-10-14",
+      "rate_pct": 3.05
+    },
+    {
+      "observation_date": "2021-10-21",
+      "rate_pct": 3.09
+    },
+    {
+      "observation_date": "2021-10-28",
+      "rate_pct": 3.14
+    },
+    {
+      "observation_date": "2021-11-04",
+      "rate_pct": 3.09
+    },
+    {
+      "observation_date": "2021-11-10",
+      "rate_pct": 2.98
+    },
+    {
+      "observation_date": "2021-11-18",
+      "rate_pct": 3.1
+    },
+    {
+      "observation_date": "2021-11-24",
+      "rate_pct": 3.1
+    },
+    {
+      "observation_date": "2021-12-02",
+      "rate_pct": 3.11
+    },
+    {
+      "observation_date": "2021-12-09",
+      "rate_pct": 3.1
+    },
+    {
+      "observation_date": "2021-12-16",
+      "rate_pct": 3.12
+    },
+    {
+      "observation_date": "2021-12-23",
+      "rate_pct": 3.05
+    },
+    {
+      "observation_date": "2021-12-30",
+      "rate_pct": 3.11
+    },
+    {
+      "observation_date": "2022-01-06",
+      "rate_pct": 3.22
+    },
+    {
+      "observation_date": "2022-01-13",
+      "rate_pct": 3.45
+    },
+    {
+      "observation_date": "2022-01-20",
+      "rate_pct": 3.56
+    },
+    {
+      "observation_date": "2022-01-27",
+      "rate_pct": 3.55
+    },
+    {
+      "observation_date": "2022-02-03",
+      "rate_pct": 3.55
+    },
+    {
+      "observation_date": "2022-02-10",
+      "rate_pct": 3.69
+    },
+    {
+      "observation_date": "2022-02-17",
+      "rate_pct": 3.92
+    },
+    {
+      "observation_date": "2022-02-24",
+      "rate_pct": 3.89
+    },
+    {
+      "observation_date": "2022-03-03",
+      "rate_pct": 3.76
+    },
+    {
+      "observation_date": "2022-03-10",
+      "rate_pct": 3.85
+    },
+    {
+      "observation_date": "2022-03-17",
+      "rate_pct": 4.16
+    },
+    {
+      "observation_date": "2022-03-24",
+      "rate_pct": 4.42
+    },
+    {
+      "observation_date": "2022-03-31",
+      "rate_pct": 4.67
+    },
+    {
+      "observation_date": "2022-04-07",
+      "rate_pct": 4.72
+    },
+    {
+      "observation_date": "2022-04-14",
+      "rate_pct": 5.0
+    },
+    {
+      "observation_date": "2022-04-21",
+      "rate_pct": 5.11
+    },
+    {
+      "observation_date": "2022-04-28",
+      "rate_pct": 5.1
+    },
+    {
+      "observation_date": "2022-05-05",
+      "rate_pct": 5.27
+    },
+    {
+      "observation_date": "2022-05-12",
+      "rate_pct": 5.3
+    },
+    {
+      "observation_date": "2022-05-19",
+      "rate_pct": 5.25
+    },
+    {
+      "observation_date": "2022-05-26",
+      "rate_pct": 5.1
+    },
+    {
+      "observation_date": "2022-06-02",
+      "rate_pct": 5.09
+    },
+    {
+      "observation_date": "2022-06-09",
+      "rate_pct": 5.23
+    },
+    {
+      "observation_date": "2022-06-16",
+      "rate_pct": 5.78
+    },
+    {
+      "observation_date": "2022-06-23",
+      "rate_pct": 5.81
+    },
+    {
+      "observation_date": "2022-06-30",
+      "rate_pct": 5.7
+    },
+    {
+      "observation_date": "2022-07-07",
+      "rate_pct": 5.3
+    },
+    {
+      "observation_date": "2022-07-14",
+      "rate_pct": 5.51
+    },
+    {
+      "observation_date": "2022-07-21",
+      "rate_pct": 5.54
+    },
+    {
+      "observation_date": "2022-07-28",
+      "rate_pct": 5.3
+    },
+    {
+      "observation_date": "2022-08-04",
+      "rate_pct": 4.99
+    },
+    {
+      "observation_date": "2022-08-11",
+      "rate_pct": 5.22
+    },
+    {
+      "observation_date": "2022-08-18",
+      "rate_pct": 5.13
+    },
+    {
+      "observation_date": "2022-08-25",
+      "rate_pct": 5.55
+    },
+    {
+      "observation_date": "2022-09-01",
+      "rate_pct": 5.66
+    },
+    {
+      "observation_date": "2022-09-08",
+      "rate_pct": 5.89
+    },
+    {
+      "observation_date": "2022-09-15",
+      "rate_pct": 6.02
+    },
+    {
+      "observation_date": "2022-09-22",
+      "rate_pct": 6.29
+    },
+    {
+      "observation_date": "2022-09-29",
+      "rate_pct": 6.7
+    },
+    {
+      "observation_date": "2022-10-06",
+      "rate_pct": 6.66
+    },
+    {
+      "observation_date": "2022-10-13",
+      "rate_pct": 6.92
+    },
+    {
+      "observation_date": "2022-10-20",
+      "rate_pct": 6.94
+    },
+    {
+      "observation_date": "2022-10-27",
+      "rate_pct": 7.08
+    },
+    {
+      "observation_date": "2022-11-03",
+      "rate_pct": 6.95
+    },
+    {
+      "observation_date": "2022-11-10",
+      "rate_pct": 7.08
+    },
+    {
+      "observation_date": "2022-11-17",
+      "rate_pct": 6.61
+    },
+    {
+      "observation_date": "2022-11-23",
+      "rate_pct": 6.58
+    },
+    {
+      "observation_date": "2022-12-01",
+      "rate_pct": 6.49
+    },
+    {
+      "observation_date": "2022-12-08",
+      "rate_pct": 6.33
+    },
+    {
+      "observation_date": "2022-12-15",
+      "rate_pct": 6.31
+    },
+    {
+      "observation_date": "2022-12-22",
+      "rate_pct": 6.27
+    },
+    {
+      "observation_date": "2022-12-29",
+      "rate_pct": 6.42
+    },
+    {
+      "observation_date": "2023-01-05",
+      "rate_pct": 6.48
+    },
+    {
+      "observation_date": "2023-01-12",
+      "rate_pct": 6.33
+    },
+    {
+      "observation_date": "2023-01-19",
+      "rate_pct": 6.15
+    },
+    {
+      "observation_date": "2023-01-26",
+      "rate_pct": 6.13
+    },
+    {
+      "observation_date": "2023-02-02",
+      "rate_pct": 6.09
+    },
+    {
+      "observation_date": "2023-02-09",
+      "rate_pct": 6.12
+    },
+    {
+      "observation_date": "2023-02-16",
+      "rate_pct": 6.32
+    },
+    {
+      "observation_date": "2023-02-23",
+      "rate_pct": 6.5
+    },
+    {
+      "observation_date": "2023-03-02",
+      "rate_pct": 6.65
+    },
+    {
+      "observation_date": "2023-03-09",
+      "rate_pct": 6.73
+    },
+    {
+      "observation_date": "2023-03-16",
+      "rate_pct": 6.6
+    },
+    {
+      "observation_date": "2023-03-23",
+      "rate_pct": 6.42
+    },
+    {
+      "observation_date": "2023-03-30",
+      "rate_pct": 6.32
+    },
+    {
+      "observation_date": "2023-04-06",
+      "rate_pct": 6.28
+    },
+    {
+      "observation_date": "2023-04-13",
+      "rate_pct": 6.27
+    },
+    {
+      "observation_date": "2023-04-20",
+      "rate_pct": 6.39
+    },
+    {
+      "observation_date": "2023-04-27",
+      "rate_pct": 6.43
+    },
+    {
+      "observation_date": "2023-05-04",
+      "rate_pct": 6.39
+    },
+    {
+      "observation_date": "2023-05-11",
+      "rate_pct": 6.35
+    },
+    {
+      "observation_date": "2023-05-18",
+      "rate_pct": 6.39
+    },
+    {
+      "observation_date": "2023-05-25",
+      "rate_pct": 6.57
+    },
+    {
+      "observation_date": "2023-06-01",
+      "rate_pct": 6.79
+    },
+    {
+      "observation_date": "2023-06-08",
+      "rate_pct": 6.71
+    },
+    {
+      "observation_date": "2023-06-15",
+      "rate_pct": 6.69
+    },
+    {
+      "observation_date": "2023-06-22",
+      "rate_pct": 6.67
+    },
+    {
+      "observation_date": "2023-06-29",
+      "rate_pct": 6.71
+    },
+    {
+      "observation_date": "2023-07-06",
+      "rate_pct": 6.81
+    },
+    {
+      "observation_date": "2023-07-13",
+      "rate_pct": 6.96
+    },
+    {
+      "observation_date": "2023-07-20",
+      "rate_pct": 6.78
+    },
+    {
+      "observation_date": "2023-07-27",
+      "rate_pct": 6.81
+    },
+    {
+      "observation_date": "2023-08-03",
+      "rate_pct": 6.9
+    },
+    {
+      "observation_date": "2023-08-10",
+      "rate_pct": 6.96
+    },
+    {
+      "observation_date": "2023-08-17",
+      "rate_pct": 7.09
+    },
+    {
+      "observation_date": "2023-08-24",
+      "rate_pct": 7.23
+    },
+    {
+      "observation_date": "2023-08-31",
+      "rate_pct": 7.18
+    },
+    {
+      "observation_date": "2023-09-07",
+      "rate_pct": 7.12
+    },
+    {
+      "observation_date": "2023-09-14",
+      "rate_pct": 7.18
+    },
+    {
+      "observation_date": "2023-09-21",
+      "rate_pct": 7.19
+    },
+    {
+      "observation_date": "2023-09-28",
+      "rate_pct": 7.31
+    },
+    {
+      "observation_date": "2023-10-05",
+      "rate_pct": 7.49
+    },
+    {
+      "observation_date": "2023-10-12",
+      "rate_pct": 7.57
+    },
+    {
+      "observation_date": "2023-10-19",
+      "rate_pct": 7.63
+    },
+    {
+      "observation_date": "2023-10-26",
+      "rate_pct": 7.79
+    },
+    {
+      "observation_date": "2023-11-02",
+      "rate_pct": 7.76
+    },
+    {
+      "observation_date": "2023-11-09",
+      "rate_pct": 7.5
+    },
+    {
+      "observation_date": "2023-11-16",
+      "rate_pct": 7.44
+    },
+    {
+      "observation_date": "2023-11-22",
+      "rate_pct": 7.29
+    },
+    {
+      "observation_date": "2023-11-30",
+      "rate_pct": 7.22
+    },
+    {
+      "observation_date": "2023-12-07",
+      "rate_pct": 7.03
+    },
+    {
+      "observation_date": "2023-12-14",
+      "rate_pct": 6.95
+    },
+    {
+      "observation_date": "2023-12-21",
+      "rate_pct": 6.67
+    },
+    {
+      "observation_date": "2023-12-28",
+      "rate_pct": 6.61
+    },
+    {
+      "observation_date": "2024-01-04",
+      "rate_pct": 6.62
+    },
+    {
+      "observation_date": "2024-01-11",
+      "rate_pct": 6.66
+    },
+    {
+      "observation_date": "2024-01-18",
+      "rate_pct": 6.6
+    },
+    {
+      "observation_date": "2024-01-25",
+      "rate_pct": 6.69
+    },
+    {
+      "observation_date": "2024-02-01",
+      "rate_pct": 6.63
+    },
+    {
+      "observation_date": "2024-02-08",
+      "rate_pct": 6.64
+    },
+    {
+      "observation_date": "2024-02-15",
+      "rate_pct": 6.77
+    },
+    {
+      "observation_date": "2024-02-22",
+      "rate_pct": 6.9
+    },
+    {
+      "observation_date": "2024-02-29",
+      "rate_pct": 6.94
+    },
+    {
+      "observation_date": "2024-03-07",
+      "rate_pct": 6.88
+    },
+    {
+      "observation_date": "2024-03-14",
+      "rate_pct": 6.74
+    },
+    {
+      "observation_date": "2024-03-21",
+      "rate_pct": 6.87
+    },
+    {
+      "observation_date": "2024-03-28",
+      "rate_pct": 6.79
+    },
+    {
+      "observation_date": "2024-04-04",
+      "rate_pct": 6.82
+    },
+    {
+      "observation_date": "2024-04-11",
+      "rate_pct": 6.88
+    },
+    {
+      "observation_date": "2024-04-18",
+      "rate_pct": 7.1
+    },
+    {
+      "observation_date": "2024-04-25",
+      "rate_pct": 7.17
+    },
+    {
+      "observation_date": "2024-05-02",
+      "rate_pct": 7.22
+    },
+    {
+      "observation_date": "2024-05-09",
+      "rate_pct": 7.09
+    },
+    {
+      "observation_date": "2024-05-16",
+      "rate_pct": 7.02
+    },
+    {
+      "observation_date": "2024-05-23",
+      "rate_pct": 6.94
+    },
+    {
+      "observation_date": "2024-05-30",
+      "rate_pct": 7.03
+    },
+    {
+      "observation_date": "2024-06-06",
+      "rate_pct": 6.99
+    },
+    {
+      "observation_date": "2024-06-13",
+      "rate_pct": 6.95
+    },
+    {
+      "observation_date": "2024-06-20",
+      "rate_pct": 6.87
+    },
+    {
+      "observation_date": "2024-06-27",
+      "rate_pct": 6.86
+    },
+    {
+      "observation_date": "2024-07-03",
+      "rate_pct": 6.95
+    },
+    {
+      "observation_date": "2024-07-11",
+      "rate_pct": 6.89
+    },
+    {
+      "observation_date": "2024-07-18",
+      "rate_pct": 6.77
+    },
+    {
+      "observation_date": "2024-07-25",
+      "rate_pct": 6.78
+    },
+    {
+      "observation_date": "2024-08-01",
+      "rate_pct": 6.73
+    },
+    {
+      "observation_date": "2024-08-08",
+      "rate_pct": 6.47
+    },
+    {
+      "observation_date": "2024-08-15",
+      "rate_pct": 6.49
+    },
+    {
+      "observation_date": "2024-08-22",
+      "rate_pct": 6.46
+    },
+    {
+      "observation_date": "2024-08-29",
+      "rate_pct": 6.35
+    },
+    {
+      "observation_date": "2024-09-05",
+      "rate_pct": 6.35
+    },
+    {
+      "observation_date": "2024-09-12",
+      "rate_pct": 6.2
+    },
+    {
+      "observation_date": "2024-09-19",
+      "rate_pct": 6.09
+    },
+    {
+      "observation_date": "2024-09-26",
+      "rate_pct": 6.08
+    },
+    {
+      "observation_date": "2024-10-03",
+      "rate_pct": 6.12
+    },
+    {
+      "observation_date": "2024-10-10",
+      "rate_pct": 6.32
+    },
+    {
+      "observation_date": "2024-10-17",
+      "rate_pct": 6.44
+    },
+    {
+      "observation_date": "2024-10-24",
+      "rate_pct": 6.54
+    },
+    {
+      "observation_date": "2024-10-31",
+      "rate_pct": 6.72
+    },
+    {
+      "observation_date": "2024-11-07",
+      "rate_pct": 6.79
+    },
+    {
+      "observation_date": "2024-11-14",
+      "rate_pct": 6.78
+    },
+    {
+      "observation_date": "2024-11-21",
+      "rate_pct": 6.84
+    },
+    {
+      "observation_date": "2024-11-27",
+      "rate_pct": 6.81
+    },
+    {
+      "observation_date": "2024-12-05",
+      "rate_pct": 6.69
+    },
+    {
+      "observation_date": "2024-12-12",
+      "rate_pct": 6.6
+    },
+    {
+      "observation_date": "2024-12-19",
+      "rate_pct": 6.72
+    },
+    {
+      "observation_date": "2024-12-26",
+      "rate_pct": 6.85
+    },
+    {
+      "observation_date": "2025-01-02",
+      "rate_pct": 6.91
+    },
+    {
+      "observation_date": "2025-01-09",
+      "rate_pct": 6.93
+    },
+    {
+      "observation_date": "2025-01-16",
+      "rate_pct": 7.04
+    },
+    {
+      "observation_date": "2025-01-23",
+      "rate_pct": 6.96
+    },
+    {
+      "observation_date": "2025-01-30",
+      "rate_pct": 6.95
+    },
+    {
+      "observation_date": "2025-02-06",
+      "rate_pct": 6.89
+    },
+    {
+      "observation_date": "2025-02-13",
+      "rate_pct": 6.87
+    },
+    {
+      "observation_date": "2025-02-20",
+      "rate_pct": 6.85
+    },
+    {
+      "observation_date": "2025-02-27",
+      "rate_pct": 6.76
+    },
+    {
+      "observation_date": "2025-03-06",
+      "rate_pct": 6.63
+    },
+    {
+      "observation_date": "2025-03-13",
+      "rate_pct": 6.65
+    },
+    {
+      "observation_date": "2025-03-20",
+      "rate_pct": 6.67
+    },
+    {
+      "observation_date": "2025-03-27",
+      "rate_pct": 6.65
+    },
+    {
+      "observation_date": "2025-04-03",
+      "rate_pct": 6.64
+    },
+    {
+      "observation_date": "2025-04-10",
+      "rate_pct": 6.62
+    },
+    {
+      "observation_date": "2025-04-17",
+      "rate_pct": 6.83
+    },
+    {
+      "observation_date": "2025-04-24",
+      "rate_pct": 6.81
+    },
+    {
+      "observation_date": "2025-05-01",
+      "rate_pct": 6.76
+    },
+    {
+      "observation_date": "2025-05-08",
+      "rate_pct": 6.76
+    },
+    {
+      "observation_date": "2025-05-15",
+      "rate_pct": 6.81
+    },
+    {
+      "observation_date": "2025-05-22",
+      "rate_pct": 6.86
+    },
+    {
+      "observation_date": "2025-05-29",
+      "rate_pct": 6.89
+    },
+    {
+      "observation_date": "2025-06-05",
+      "rate_pct": 6.85
+    },
+    {
+      "observation_date": "2025-06-12",
+      "rate_pct": 6.84
+    },
+    {
+      "observation_date": "2025-06-18",
+      "rate_pct": 6.81
+    },
+    {
+      "observation_date": "2025-06-26",
+      "rate_pct": 6.77
+    },
+    {
+      "observation_date": "2025-07-03",
+      "rate_pct": 6.67
+    },
+    {
+      "observation_date": "2025-07-10",
+      "rate_pct": 6.72
+    },
+    {
+      "observation_date": "2025-07-17",
+      "rate_pct": 6.75
+    },
+    {
+      "observation_date": "2025-07-24",
+      "rate_pct": 6.74
+    },
+    {
+      "observation_date": "2025-07-31",
+      "rate_pct": 6.72
+    },
+    {
+      "observation_date": "2025-08-07",
+      "rate_pct": 6.63
+    },
+    {
+      "observation_date": "2025-08-14",
+      "rate_pct": 6.58
+    },
+    {
+      "observation_date": "2025-08-21",
+      "rate_pct": 6.58
+    },
+    {
+      "observation_date": "2025-08-28",
+      "rate_pct": 6.56
+    },
+    {
+      "observation_date": "2025-09-04",
+      "rate_pct": 6.5
+    },
+    {
+      "observation_date": "2025-09-11",
+      "rate_pct": 6.35
+    },
+    {
+      "observation_date": "2025-09-18",
+      "rate_pct": 6.26
+    },
+    {
+      "observation_date": "2025-09-25",
+      "rate_pct": 6.3
+    },
+    {
+      "observation_date": "2025-10-02",
+      "rate_pct": 6.34
+    },
+    {
+      "observation_date": "2025-10-09",
+      "rate_pct": 6.3
+    },
+    {
+      "observation_date": "2025-10-16",
+      "rate_pct": 6.27
+    },
+    {
+      "observation_date": "2025-10-23",
+      "rate_pct": 6.19
+    },
+    {
+      "observation_date": "2025-10-30",
+      "rate_pct": 6.17
+    },
+    {
+      "observation_date": "2025-11-06",
+      "rate_pct": 6.22
+    },
+    {
+      "observation_date": "2025-11-13",
+      "rate_pct": 6.24
+    },
+    {
+      "observation_date": "2025-11-20",
+      "rate_pct": 6.26
+    },
+    {
+      "observation_date": "2025-11-26",
+      "rate_pct": 6.23
+    },
+    {
+      "observation_date": "2025-12-04",
+      "rate_pct": 6.19
+    },
+    {
+      "observation_date": "2025-12-11",
+      "rate_pct": 6.22
+    },
+    {
+      "observation_date": "2025-12-18",
+      "rate_pct": 6.21
+    },
+    {
+      "observation_date": "2025-12-24",
+      "rate_pct": 6.18
+    },
+    {
+      "observation_date": "2025-12-31",
+      "rate_pct": 6.15
+    },
+    {
+      "observation_date": "2026-01-08",
+      "rate_pct": 6.16
+    },
+    {
+      "observation_date": "2026-01-15",
+      "rate_pct": 6.06
+    },
+    {
+      "observation_date": "2026-01-22",
+      "rate_pct": 6.09
+    },
+    {
+      "observation_date": "2026-01-29",
+      "rate_pct": 6.1
+    },
+    {
+      "observation_date": "2026-02-05",
+      "rate_pct": 6.11
+    },
+    {
+      "observation_date": "2026-02-12",
+      "rate_pct": 6.09
+    },
+    {
+      "observation_date": "2026-02-19",
+      "rate_pct": 6.01
+    },
+    {
+      "observation_date": "2026-02-26",
+      "rate_pct": 5.98
+    },
+    {
+      "observation_date": "2026-03-05",
+      "rate_pct": 6.0
+    },
+    {
+      "observation_date": "2026-03-12",
+      "rate_pct": 6.11
+    },
+    {
+      "observation_date": "2026-03-19",
+      "rate_pct": 6.22
+    },
+    {
+      "observation_date": "2026-03-26",
+      "rate_pct": 6.38
+    },
+    {
+      "observation_date": "2026-04-02",
+      "rate_pct": 6.46
+    },
+    {
+      "observation_date": "2026-04-09",
+      "rate_pct": 6.37
+    },
+    {
+      "observation_date": "2026-04-16",
+      "rate_pct": 6.3
+    },
+    {
+      "observation_date": "2026-04-23",
+      "rate_pct": 6.23
+    },
+    {
+      "observation_date": "2026-04-30",
+      "rate_pct": 6.3
+    },
+    {
+      "observation_date": "2026-05-07",
+      "rate_pct": 6.37
+    },
+    {
+      "observation_date": "2026-05-14",
+      "rate_pct": 6.36
+    },
+    {
+      "observation_date": "2026-05-21",
+      "rate_pct": 6.51
+    },
+    {
+      "observation_date": "2026-05-28",
+      "rate_pct": 6.53
+    },
+    {
+      "observation_date": "2026-06-04",
+      "rate_pct": 6.48
+    },
+    {
+      "observation_date": "2026-06-11",
+      "rate_pct": 6.52
+    },
+    {
+      "observation_date": "2026-06-18",
+      "rate_pct": 6.47
+    },
+    {
+      "observation_date": "2026-06-25",
+      "rate_pct": 6.49
+    },
+    {
+      "observation_date": "2026-07-02",
+      "rate_pct": 6.43
+    },
+    {
+      "observation_date": "2026-07-09",
+      "rate_pct": 6.49
+    },
+    {
+      "observation_date": "2026-07-16",
+      "rate_pct": 6.55
+    },
+    {
+      "observation_date": "2026-07-23",
+      "rate_pct": 6.58
+    },
+    {
+      "observation_date": "2026-07-30",
+      "rate_pct": 6.66
+    },
+    {
+      "observation_date": "2026-08-06",
+      "rate_pct": 6.69
+    },
+    {
+      "observation_date": "2026-08-13",
+      "rate_pct": 6.67
+    }
+  ],
+  "latest_rate_pct": 6.67,
+  "observation_date": "2026-08-13",
+  "series_id": "MORTGAGE30US",
+  "source_kind": "fred_graph_csv_undocumented",
+  "source_note": "Answered through FRED's keyless graph CSV, an undocumented path.",
+  "source_url": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=MORTGAGE30US",
+  "stale": false,
+  "staleness_note": null
+}

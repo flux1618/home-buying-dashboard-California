@@ -1,0 +1,404 @@
+# The gate on every push: everything that can be verified without depending on someone
+# else's server being up.
+#
+# The split is deliberate and it is the whole point of the CI design. This workflow must
+# be *boring* — if it ever fails because LA County had a bad afternoon, people
+# learn to ignore red builds, and then it stops protecting anything. Contract checks
+# against live endpoints live in live.yml on a schedule, where a failure means "a source
+# changed, go look" rather than "your commit is broken".
+
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+# A force-push or a quick follow-up commit should cancel the previous run rather than
+# queue behind it. Nothing here is worth paying for twice.
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  offline:
+    name: offline suite (py${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.11 is the floor because the core reads TOML with stdlib tomllib. Testing the
+        # floor and a current release catches the two failures that actually happen:
+        # using a syntax the floor does not have, and a deprecation in a newer runtime.
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install with API and dev extras
+        run: |
+          python -m pip install --upgrade pip
+          # Editable, deliberately. A non-editable install puts a *copy* of the package in
+          # site-packages, and `pytest` (unlike `python -m pytest`) does not add the working
+          # directory to sys.path -- so the suite silently tested the copy rather than the
+          # working tree. Every change would still have to be reinstalled to be tested,
+          # which is a very quiet way for CI to stop verifying the commit in front of it.
+          pip install -e '.[api,dev]'
+
+      - name: Run the offline suite
+        # No -m flag needed: pyproject already sets `-m 'not live'` in addopts, so the
+        # default run is offline by construction rather than by remembering a flag.
+        env:
+          # The static page's amortization and max-price solvers are compared to Python by
+          # shelling out to node. Those tests skip when node is absent, which is correct on a
+          # developer machine and a false green in CI -- the run would report a pass having
+          # never compared the two implementations. This makes a missing node a failure here.
+          # ubuntu-latest ships node, so this asserts a fact rather than adding a dependency.
+          HBA_REQUIRE_NODE: "1"
+        run: pytest -v
+
+  core-is-still-pure:
+    name: core runs on a stdlib-only interpreter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install with no extras at all
+        # The import-ban test in test_core_purity.py reads source with ast and would pass
+        # even if a dependency had quietly become load-bearing. This job proves the
+        # stronger claim by executing a full analysis in an environment where fastapi,
+        # pydantic, and httpx do not exist. ADR 0002 stops being a promise and becomes
+        # a property of the build.
+        run: pip install .
+
+      - name: Score a property with nothing installed but the standard library
+        env:
+          # Point at the rulebook explicitly. Without this the run is ambiguous: the
+          # working directory is the checkout, so `import analyzer` could resolve to the
+          # local source tree instead of the installed package and the job would quietly
+          # stop testing what it claims to test.
+          HBA_PROFILE: ${{ github.workspace }}/buyer_profile.toml
+        run: |
+          cd "$RUNNER_TEMP"      # out of the checkout, so the installed package is used
+          python - <<'PY'
+          from datetime import date
+          from analyzer.core.analyze import analyze
+          from analyzer.core.profile import load_profile
+          from analyzer.core.scoring import PropertyFacts
+
+          # Only the extras this project could plausibly grow a dependency on. Checking
+          # for something like `requests` would risk a spurious failure if a runner image
+          # ships it preinstalled, and a red build for a reason unrelated to the code is
+          # how a test suite loses its credibility.
+          for name in ("fastapi", "pydantic", "httpx", "uvicorn"):
+              try:
+                  __import__(name)
+              except ImportError:
+                  continue
+              raise SystemExit(f"{name} is importable — this job no longer proves anything")
+
+          doc = analyze(
+              PropertyFacts(price=300_000, sqft=1600, beds=3, baths=3, garage_spaces=2,
+                            year_built=2015, flood_zone="X", water_sewer="public",
+                            commute_min=15.0, fiber_available=True),
+              load_profile(),
+              date.today().year,
+              address="ci smoke test",
+          )
+          assert doc["score"]["verdict"] == "TAKE", doc["score"]
+          print("stdlib-only analysis OK:", doc["score"]["verdict"], doc["score"]["value"])
+          PY
+
+  cli-and-batch:
+    name: CLI and batch run offline
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install '.[dev]'
+
+      - name: Batch dry run validates the example shortlist
+        # A dry run makes no requests, so this is safe in CI and it catches the class of
+        # break that unit tests miss: an entry point that no longer starts, or an example
+        # file that drifted out of sync with the parser.
+        run: python -m analyzer.batch examples/shortlist.csv --dry-run
+
+      - name: A malformed shortlist fails loudly rather than half-running
+        run: |
+          printf 'address,beds\n1 Main St,3\n' > /tmp/bad.csv
+          if python -m analyzer.batch /tmp/bad.csv --dry-run; then
+            echo "expected a non-zero exit for a missing required column"
+            exit 1
+          fi
+
+      - name: A rejected row makes the dry run exit non-zero
+        # Matters for scheduling. A cron job must not quietly analyse nine rows of a
+        # ten-row shortlist and report success.
+        run: |
+          printf 'address,price\n1 Main St,268000\n,300000\n' > /tmp/partial.csv
+          if python -m analyzer.batch /tmp/partial.csv --dry-run; then
+            echo "expected a non-zero exit when rows were rejected"
+            exit 1
+          fi
+
+      - name: The extractor runs offline and refuses what ADR 0004 forbids
+        # The unit tests cover the refusal rules. This covers the thing they cannot: that the
+        # CLI entry point still starts, that the sample fixture ships in an installed package,
+        # and above all that a run with no HBA_LLM_API_KEY and no reachable model still works.
+        # If this step ever needs a credential, the offline default has been broken.
+        run: |
+          set -euo pipefail
+          export HBA_DATA_DIR=/tmp/exci
+          python -m analyzer.extract.cli read analyzer/fixtures/sample_inspection.txt \
+            --name "Bao Nguyen" --json > /tmp/extract.json
+          python - <<'PY'
+          import json, pathlib
+
+          out = json.loads(pathlib.Path("/tmp/extract.json").read_text())
+
+          # Redaction is the one control that must not be quietly bypassable, so assert it
+          # fired rather than trusting that it did.
+          assert out["redaction"]["fired"] is True, out["redaction"]
+          assert out["redaction"]["counts"].get("known_name") == 1, out["redaction"]
+
+          # Nothing may arrive pre-confirmed. A confirmed field is one a person accepted, and
+          # no code path is allowed to manufacture that.
+          assert out["accepted"] >= 8, out["accepted"]
+          assert all(f["confirmed"] is False for f in out["findings"]), "a field arrived confirmed"
+          assert all(f["confidence"] == "extracted" for f in out["findings"]), "wrong confidence"
+
+          # Neither the payload nor the log may carry a redacted value.
+          body = json.dumps(out)
+          for leaked in ("Nguyen", "james@ortegainspect.com", "555-0134"):
+              assert leaked not in body, f"{leaked} survived into the response"
+
+          log = pathlib.Path("/tmp/exci/llm_calls.jsonl").read_text()
+          assert log.strip(), "no call was logged"
+          for leaked in ("vapor barrier", "architectural", "Nguyen"):
+              assert leaked not in log, f"the log stored {leaked!r}"
+          PY
+
+      - name: A forbidden field is refused end to end, not just in a unit test
+        # Drives the parser with a response a real model plausibly returns: a confident dollar
+        # figure, and a plausible number whose quote is not in the document. Both must be
+        # refused by the installed package, on the real fixture, outside pytest.
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from analyzer.core.extraction import parse_findings
+
+          text = "Roof covering: architectural asphalt shingle. Year built: 1998."
+          result = parse_findings(
+              [
+                  {"field": "monthly_payment", "value": 1477, "quote": "Year built: 1998."},
+                  {"field": "roof_age_years", "value": 12, "quote": "The roof was replaced in 2014."},
+              ],
+              sent_text=text,
+              document="ci-check",
+              document_sha256="0" * 64,
+              provider="ci",
+          )
+          assert not result.findings, result.findings
+          reasons = {r.field_name: r.reason for r in result.rejections}
+          assert "forbidden" in reasons["monthly_payment"], reasons
+          assert "citation" in reasons["roof_age_years"], reasons
+          PY
+
+      - name: The amortization schedule closes on an installed package
+        # Arithmetic invariants, checked against the *installed* package with no working
+        # directory on sys.path. The unit tests assert the same things, but they run with the
+        # repo importable by accident of the current directory, and this repo has already
+        # been bitten twice by code that imports locally and not once installed.
+        #
+        # The two claims are the ones that would embarrass the tool in front of a reader: a
+        # 30-year note has exactly 360 payments, and the principal repaid equals the loan to
+        # the cent. Both were false in the first working version of the loop.
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from analyzer.core.amortization import schedule
+          from analyzer.core.profile import load_profile
+
+          p = load_profile()
+          loan = p.target_price - p.down_payment
+          s = schedule(loan, p.mortgage_rate, p.loan_term_months)
+
+          assert s.months_to_payoff == p.loan_term_months, s.months_to_payoff
+          assert s.payments[-1].balance == 0.0, s.payments[-1].balance
+          repaid = round(sum(x.principal + x.extra for x in s.payments), 2)
+          assert repaid == round(loan, 2), (repaid, loan)
+
+          e = schedule(loan, p.mortgage_rate, p.loan_term_months, extra_monthly=200)
+          assert e.months_to_payoff < s.months_to_payoff
+          assert e.payments[-1].balance == 0.0
+          assert round(e.interest_saved, 2) == round(s.total_interest - e.total_interest, 2)
+
+          print(f"{s.months_to_payoff} payments, ${s.total_interest:,.2f} interest, closes at 0")
+          PY
+
+      - name: The ledger survives a round trip on a clean machine
+        # An end-to-end check of Phase 3 that no unit test can make: this runs against an
+        # *installed* package with no working directory on sys.path, in a container with no
+        # existing database, as a subprocess. It is the exact shape of failure that has bitten
+        # this repo before -- code that imports fine locally because of the current directory
+        # and not at all once installed.
+        env:
+          HBA_DATA_DIR: /tmp/ledger-ci
+        run: |
+          set -euo pipefail
+          python -m ledger.cli where
+          python -m ledger.cli stats --json > /tmp/before.json
+          python -c "import json,sys; sys.exit(0 if json.load(open('/tmp/before.json'))['properties'] == 0 else 1)"
+          python -m ledger.cli note assumption "CI can write to the ledger"
+          python -m ledger.cli open | grep -q "CI can write"
+
+      - name: Append-only is enforced by the database, not by the client
+        # Checked from a plain sqlite3 connection with no ledger import, because that is the
+        # whole claim: the guarantee has to hold for any client, including a shell.
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import sqlite3, sys
+          conn = sqlite3.connect("/tmp/ledger-ci/ledger.db")
+          try:
+              conn.execute("UPDATE journal SET body = 'tampered' WHERE id = 1")
+          except sqlite3.IntegrityError as exc:
+              print("refused as designed:", exc)
+              sys.exit(0)
+          sys.exit("a journal entry was editable -- the append-only trigger is missing")
+          PY
+
+  snapshot-matches-engine:
+    name: static page agrees with the engine
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -e '.[dev]'
+
+      - name: data.json is not stale
+        # The static page cannot import Python, so its rules are compiled out of
+        # buyer_profile.toml. The failure mode this guards is mundane and was already
+        # real: someone tunes a threshold in the profile, the engine picks it up
+        # immediately, and the published page keeps answering with the old number.
+        #
+        # Before this existed the page treated an HOA over $100/mo as disqualifying while
+        # the engine deducted 25, and ignored roof and HVAC age entirely while the engine
+        # deducted up to 57. On one real address that was a TAKE on the page and a WATCH
+        # from the engine. Two implementations of the same rules always drift; the fix is
+        # to have one implementation and generate the other.
+        run: python tools/build_snapshot.py --check
+
+      - name: Verify committed mortgage-rate snapshot
+        # No FRED request: catches a missing, malformed, drifted-derived, or stale weekly
+        # artifact before the rate-sensitivity door can present it as a current baseline.
+        run: python tools/build_rates_snapshot.py --check
+
+      - name: Verify committed parcel snapshot
+        # The offline check validates the bounded artifact's sidecar and freshness without
+        # importing pyarrow; Arrow remains an optional dependency of the writer, not CI's core.
+        run: python tools/build_parcels_snapshot.py --check
+
+      - name: Verify committed market-velocity snapshot
+        # No Redfin download: catches a stale or profile-scope-drifted aggregate artifact before
+        # it reaches the explicit market-context endpoint.
+        run: python tools/build_velocity_snapshot.py --check
+
+      - name: The page reads the compiled rules rather than restating them
+        run: pytest tests/test_snapshot_rules.py -v
+
+      - name: hazard block in data.json is structurally sound
+        # Deliberately a structural check and not a re-fetch. It verifies the hazard codes
+        # still match buyer_profile.toml and that every configured hazard has a county
+        # entry -- the same drift class as the rules check above.
+        #
+        # It does NOT call FEMA. A CI job that fails when a federal dataset is republished
+        # trains people to ignore CI, and republication is not a defect in this repo.
+        run: python tools/build_hazard_snapshot.py --check
+
+      - name: hazard data is reported and never scored
+        run: pytest tests/test_hazard_snapshot.py -v
+
+  container:
+    name: container builds for amd64 and arm64
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Build both architectures
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: false
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Load the amd64 image so it can actually be started
+        # The multi-arch build above proves it compiles. It cannot prove it runs, because
+        # a manifest list is not loadable into the local daemon. This single-arch build
+        # reuses the same cache and gives us something to boot.
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64
+          push: false
+          load: true
+          tags: home-buying-analyzer:ci
+          cache-from: type=gha
+
+      - name: Smoke test the running container
+        # This is the step that would have caught the real bug found while building this:
+        # load_profile() resolves relative to its own file, which lands in site-packages
+        # once installed, so the container started and then failed on first request.
+        # HBA_PROFILE fixes it, and this asserts it stays fixed.
+        run: |
+          docker run -d --name hba -p 8000:8000 home-buying-analyzer:ci
+          for i in $(seq 1 30); do
+            if curl -fsS http://localhost:8000/health >/dev/null 2>&1; then break; fi
+            sleep 2
+          done
+          curl -fsS http://localhost:8000/health
+          echo
+          # /profile forces the TOML to load and parse. /health alone would pass even if
+          # the rulebook were unreachable, which is precisely the bug described above.
+          curl -fsS http://localhost:8000/profile | python -c "
+          import json, sys
+          body = json.load(sys.stdin)
+          assert body['verdict_bands']['take_min'] > body['verdict_bands']['watch_min'], body
+          print('profile loaded in container:', body['name'])
+          "
+          # A validation rejection needs no network, so it is safe here and proves the
+          # request path works end to end inside the image.
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST http://localhost:8000/analyze \
+            -H 'Content-Type: application/json' -d '{"address":"1 Main St","price":-5}')
+          test "$code" = "422" || { echo "expected 422 for a negative price, got $code"; exit 1; }
+          echo "container smoke test OK"
+
+      - name: Container logs
+        if: always()
+        run: docker logs hba || true
