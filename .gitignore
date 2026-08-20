@@ -37,3 +37,4 @@ ledger.db
 # The small summary and report files stay tracked because they record WHEN the live sources
 # were read, which is provenance rather than duplication.
 data/la_live/geospatial.json
+.vercel
